@@ -28,6 +28,7 @@
 		D20682D82C3BAEB000C4A319 /* DateTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20682D72C3BAEB000C4A319 /* DateTimeFormatter.swift */; };
 		D20682DB2C3BAF4D00C4A319 /* InformationForPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20682DA2C3BAF4D00C4A319 /* InformationForPlant.swift */; };
 		D20682DD2C3BAF7300C4A319 /* PlantInfoField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20682DC2C3BAF7300C4A319 /* PlantInfoField.swift */; };
+		D21D55102C3EC0D700B47123 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D21D550F2C3EC0D700B47123 /* Localizable.xcstrings */; };
 		D29F7C9E2C3E616A00BBE0DE /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29F7C9D2C3E616A00BBE0DE /* CameraView.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		D20682D72C3BAEB000C4A319 /* DateTimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeFormatter.swift; sourceTree = "<group>"; };
 		D20682DA2C3BAF4D00C4A319 /* InformationForPlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationForPlant.swift; sourceTree = "<group>"; };
 		D20682DC2C3BAF7300C4A319 /* PlantInfoField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantInfoField.swift; sourceTree = "<group>"; };
+		D21D550F2C3EC0D700B47123 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		D29F7C9D2C3E616A00BBE0DE /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +73,7 @@
 		D20682992C3B9E3C00C4A319 = {
 			isa = PBXGroup;
 			children = (
+				D21D550F2C3EC0D700B47123 /* Localizable.xcstrings */,
 				D20682A42C3B9E3C00C4A319 /* PlantApp */,
 				D20682A32C3B9E3C00C4A319 /* Products */,
 			);
@@ -235,6 +238,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = D20682992C3B9E3C00C4A319;
 			productRefGroup = D20682A32C3B9E3C00C4A319 /* Products */;
@@ -253,6 +257,7 @@
 			files = (
 				D20682AD2C3B9E3E00C4A319 /* Preview Assets.xcassets in Resources */,
 				D20682AA2C3B9E3E00C4A319 /* Assets.xcassets in Resources */,
+				D21D55102C3EC0D700B47123 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

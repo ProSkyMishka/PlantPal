@@ -27,7 +27,7 @@ struct SettingsTileView: View {
                         .frame(width: 28, height: 28)
                         .foregroundColor(.blue)
                     
-                    Text(text)
+                    Text(LocalizedStringKey(text))
                         .foregroundColor(.black)
                         .font(.system(size: 20))
                     

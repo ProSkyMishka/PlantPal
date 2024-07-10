@@ -10,9 +10,10 @@ import SwiftUI
 struct AppearanceView: View {
     @Binding var barHidden: Bool
     @Environment(\.dismiss) private var dismiss
+    @Environment(LanguageSetting.self) var languageSettings
     let languages = ["English", "Русский"]
-    let languagesPreview = ["Eng", "Рус"]
-    let themes = ["Light", "Dark"]
+    let languagesIdentifiers = ["en", "ru"]
+    let themes = [LocalizedStringKey("Light"), LocalizedStringKey("Dark")]
     @State var lang = 0
     @State var theme = 0
     @State var showLangDialog = false
@@ -31,7 +32,7 @@ struct AppearanceView: View {
                         
                         Spacer()
                         
-                        Text(languagesPreview[lang])
+                        Text("lang")
                             .foregroundColor(.gray)
                         
                         Image(systemName: "chevron.right")
@@ -41,6 +42,7 @@ struct AppearanceView: View {
                         ForEach(0...(languages.count - 1), id: \.self) {num in
                             Button(action: {
                                 lang = num
+                                languageSettings.locale = Locale(identifier: languagesIdentifiers[lang])
                             }, label: {
                                 Text(languages[num])
                             })

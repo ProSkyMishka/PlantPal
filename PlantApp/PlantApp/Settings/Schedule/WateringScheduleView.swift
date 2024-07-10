@@ -26,7 +26,7 @@ struct WateringScheduleView: View {
                                         
                                         Text(flower.name)
                                             .bold()
-                                        Text(flower.schedule_time)
+                                        Text("Scheduled on \(flower.schedule_time)")
                                             .foregroundColor(.gray)
                                         Divider()
                                     }

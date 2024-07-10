@@ -15,9 +15,9 @@ struct DateItem: Identifiable, Equatable {
 
 class ScheduleViewModel: ObservableObject {
     @Published var historyArray: [ScheduleItemModel] = [
-        ScheduleItemModel(name: "Oduvanchik", schedule_time: "Scheduled on 07/06/2024 7:00", moisture: "47 %", moistureInt: 47),
-        ScheduleItemModel(name: "Podsolnuh", schedule_time: "Scheduled on 08/06/2024 8:00", moisture: "29 %", moistureInt: 29),
-        ScheduleItemModel(name: "Rosa", schedule_time: "Scheduled on 09/06/2024 9:00", moisture: "17 %", moistureInt: 17)
+        ScheduleItemModel(name: "Oduvanchik", schedule_time: "07/06/2024 7:00", moisture: "47 %", moistureInt: 47),
+        ScheduleItemModel(name: "Podsolnuh", schedule_time: "08/06/2024 8:00", moisture: "29 %", moistureInt: 29),
+        ScheduleItemModel(name: "Rosa", schedule_time: "09/06/2024 9:00", moisture: "17 %", moistureInt: 17)
     ]
     
     // TODO: В расписании полива данные будут храниться следующим образом:

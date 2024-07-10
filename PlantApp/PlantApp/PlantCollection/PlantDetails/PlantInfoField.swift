@@ -18,7 +18,7 @@ struct PlantInfoField: View {
         HStack {
             VStack(alignment: .leading) {
                 HStack{
-                    Text(textTitle)
+                    Text(LocalizedStringKey(textTitle))
                         .font(.system(size: 20, weight: .bold))
                         .padding(.leading, 15)
                     Button(action: {

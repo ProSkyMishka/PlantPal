@@ -1,0 +1,496 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "      This application was created as part of the All-Russian competition of scientific and technological projects \"Great Challenges\". The project partner is the National Research University Higher School of Economics. The application allows you to maintain a collection of your own plants and water them remotely." : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "      Данное приложение было создано в рамках всероссийского конкурса научно-технологических проектов \"Большие вызовы\". Партнёр проекта - НИУ ВШЭ. Приложение позволяет вести коллекцию собственных растений, осуществлять их удалённый полив."
+          }
+        }
+      }
+    },
+    "% moisture" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "% влажность"
+          }
+        }
+      }
+    },
+    "%@ Info" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Информация: %@ "
+          }
+        }
+      }
+    },
+    "AAA" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ААА"
+          }
+        }
+      }
+    },
+    "App Info" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "О приложении"
+          }
+        }
+      }
+    },
+    "Appearance" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Внешний вид"
+          }
+        }
+      }
+    },
+    "Back" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Назад"
+          }
+        }
+      }
+    },
+    "Bazin Aleksey" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Базин Алексей"
+          }
+        }
+      }
+    },
+    "Bosses:" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Руководители"
+          }
+        }
+      }
+    },
+    "Connect" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Подключить"
+          }
+        }
+      }
+    },
+    "Dark" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тёмная"
+          }
+        }
+      }
+    },
+    "Description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Описание"
+          }
+        }
+      }
+    },
+    "Detailed watering scehdule" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Подробный график"
+          }
+        }
+      }
+    },
+    "Developers:" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Разработчики"
+          }
+        }
+      }
+    },
+    "Every day" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Каждый день"
+          }
+        }
+      }
+    },
+    "Every month" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Каждый месяц"
+          }
+        }
+      }
+    },
+    "Every week" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Каждую неделю"
+          }
+        }
+      }
+    },
+    "Flowers Collection" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Коллекция растений"
+          }
+        }
+      }
+    },
+    "Future watering" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Предстоящий полив"
+          }
+        }
+      }
+    },
+    "Good" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Хорошо"
+          }
+        }
+      }
+    },
+    "Kondratieva Margarita" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кондратьева Маргарита"
+          }
+        }
+      }
+    },
+    "lang" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eng"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Рус"
+          }
+        }
+      }
+    },
+    "Language" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Язык"
+          }
+        }
+      }
+    },
+    "Last watered" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Последний полив"
+          }
+        }
+      }
+    },
+    "Light" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Светлая"
+          }
+        }
+      }
+    },
+    "Loskutov Alexsandr" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Лоскутов Александр"
+          }
+        }
+      }
+    },
+    "Name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Название"
+          }
+        }
+      }
+    },
+    "Naypert Roman" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Найперт Роман"
+          }
+        }
+      }
+    },
+    "Never" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Никогда"
+          }
+        }
+      }
+    },
+    "Next watering" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Следующий полив"
+          }
+        }
+      }
+    },
+    "None" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нет"
+          }
+        }
+      }
+    },
+    "Normal" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нормально"
+          }
+        }
+      }
+    },
+    "Partner:" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Партнёр:"
+          }
+        }
+      }
+    },
+    "Plan of watering" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "План полива"
+          }
+        }
+      }
+    },
+    "Prozorskiy Mikhail" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Прозорский Михаил"
+          }
+        }
+      }
+    },
+    "Recommended Humidity" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рекомендованная влажность"
+          }
+        }
+      }
+    },
+    "Recommended Temperature" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рекомендованная температура"
+          }
+        }
+      }
+    },
+    "Repeat" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Повтор"
+          }
+        }
+      }
+    },
+    "Rezunik Lyudmila" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Резуник Людмила"
+          }
+        }
+      }
+    },
+    "Scheduled on %@" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Таймер на %@"
+          }
+        }
+      }
+    },
+    "Select App Theme" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выберите тему приложения"
+          }
+        }
+      }
+    },
+    "Select Language" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выберите язык"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Настройки"
+          }
+        }
+      }
+    },
+    "Vasilievsky Arthur" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Васильевский Артур"
+          }
+        }
+      }
+    },
+    "Water" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Полить"
+          }
+        }
+      }
+    },
+    "Watering Schedule" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "График полива"
+          }
+        }
+      }
+    },
+    "Weak" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Слабо"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

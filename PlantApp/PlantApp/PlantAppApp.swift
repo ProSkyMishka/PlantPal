@@ -7,11 +7,21 @@
 
 import SwiftUI
 
+@Observable
+class LanguageSetting {
+    // initialise this from UserDefaults if you like
+    var locale = Locale(identifier: NSLocale.current.language.languageCode?.identifier ?? "en")
+}
+
 @main
 struct PlantAppApp: App {
+    @State var languageSettings = LanguageSetting()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(languageSettings)
+                .environment(\.locale, languageSettings.locale)
         }
     }
 }

@@ -15,7 +15,7 @@ struct DeveloperInfoView: View {
     
     var body: some View {
         HStack {
-            Text("\(num). \(name)")
+            Text(LocalizedStringKey(name))
                 .font(.system(size: 22))
             
             Link(destination: URL(string: gitLink)!, label: {
@@ -30,11 +30,5 @@ struct DeveloperInfoView: View {
                     .frame(width: 30, height: 30)
             })
         }
-    }
-}
-
-struct DeveloperInfoView_Previews: PreviewProvider {
-    static var previews: some View {
-        DeveloperInfoView(num: 1, name: "Test name", gitLink: "github.com", tgLink: "t.me/test")
     }
 }

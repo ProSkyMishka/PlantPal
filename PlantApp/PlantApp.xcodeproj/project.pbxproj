@@ -29,6 +29,7 @@
 		D20682DB2C3BAF4D00C4A319 /* InformationForPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20682DA2C3BAF4D00C4A319 /* InformationForPlant.swift */; };
 		D20682DD2C3BAF7300C4A319 /* PlantInfoField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20682DC2C3BAF7300C4A319 /* PlantInfoField.swift */; };
 		D21D55102C3EC0D700B47123 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D21D550F2C3EC0D700B47123 /* Localizable.xcstrings */; };
+		D21D55122C3EC7D700B47123 /* EditCapturedPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21D55112C3EC7D700B47123 /* EditCapturedPlantView.swift */; };
 		D29F7C9E2C3E616A00BBE0DE /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29F7C9D2C3E616A00BBE0DE /* CameraView.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		D20682DA2C3BAF4D00C4A319 /* InformationForPlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationForPlant.swift; sourceTree = "<group>"; };
 		D20682DC2C3BAF7300C4A319 /* PlantInfoField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantInfoField.swift; sourceTree = "<group>"; };
 		D21D550F2C3EC0D700B47123 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		D21D55112C3EC7D700B47123 /* EditCapturedPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCapturedPlantView.swift; sourceTree = "<group>"; };
 		D29F7C9D2C3E616A00BBE0DE /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +130,7 @@
 			children = (
 				D20682B72C3B9ECC00C4A319 /* AddPlantView.swift */,
 				D29F7C9D2C3E616A00BBE0DE /* CameraView.swift */,
+				D21D55112C3EC7D700B47123 /* EditCapturedPlantView.swift */,
 			);
 			path = AddPlant;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				D20682CD2C3BA2CD00C4A319 /* ScheduleViewModel.swift in Sources */,
 				D20682CF2C3BA33500C4A319 /* ScheduleItemModel.swift in Sources */,
 				D20682C02C3B9F9800C4A319 /* SettingsTileView.swift in Sources */,
+				D21D55122C3EC7D700B47123 /* EditCapturedPlantView.swift in Sources */,
 				D20682D62C3BAB6A00C4A319 /* PlantModel.swift in Sources */,
 				D20682C62C3BA01500C4A319 /* DeveloperInfoView.swift in Sources */,
 				D20682DB2C3BAF4D00C4A319 /* InformationForPlant.swift in Sources */,

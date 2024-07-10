@@ -18,7 +18,7 @@ struct ContentView: View {
             case 0:
                 PlantCollectionView(barHidden: $barHidden)
             case 1:
-                AddPlantView()
+                AddPlantView(barHidden: $barHidden)
             case 2:
                 SettingsView(barHidden: $barHidden, path: $path)
             default:
@@ -31,6 +31,7 @@ struct ContentView: View {
                 TabBar(index: $index)
             }
         }
+        .animation(.spring, value: barHidden)
         .padding([.bottom])
         .edgesIgnoringSafeArea(.bottom)
     }

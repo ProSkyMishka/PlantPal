@@ -4,6 +4,9 @@
     "" : {
 
     },
+    " " : {
+
+    },
     "      This application was created as part of the All-Russian competition of scientific and technological projects \"Great Challenges\". The project partner is the National Research University Higher School of Economics. The application allows you to maintain a collection of your own plants and water them remotely." : {
       "localizations" : {
         "ru" : {
@@ -356,6 +359,12 @@
         }
       }
     },
+    "Plant name" : {
+
+    },
+    "Plant type" : {
+
+    },
     "Prozorskiy Mikhail" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -409,6 +418,9 @@
           }
         }
       }
+    },
+    "Save" : {
+
     },
     "Scheduled on %@" : {
       "localizations" : {
@@ -490,6 +502,18 @@
           }
         }
       }
+    },
+    "Название" : {
+
+    },
+    "Описание" : {
+
+    },
+    "Редактировать растение" : {
+
+    },
+    "Это действительно ваше растение?" : {
+
     }
   },
   "version" : "1.0"

@@ -12,6 +12,7 @@ import SwiftUI
 struct CameraView: UIViewControllerRepresentable {
     
     @Binding var image: UIImage?
+    @Binding var barHidden: Bool
     
     typealias UIViewControllerType = UIImagePickerController
     
@@ -45,11 +46,11 @@ extension CameraView {
         
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
             self.parent.image = nil
+            self.parent.barHidden = false
         }
 
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-                
                 // Here we can resize the image if we want (or change the image ratio)
                 self.parent.image = image
             }

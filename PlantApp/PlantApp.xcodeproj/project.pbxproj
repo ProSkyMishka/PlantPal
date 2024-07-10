@@ -28,6 +28,7 @@
 		D20682D82C3BAEB000C4A319 /* DateTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20682D72C3BAEB000C4A319 /* DateTimeFormatter.swift */; };
 		D20682DB2C3BAF4D00C4A319 /* InformationForPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20682DA2C3BAF4D00C4A319 /* InformationForPlant.swift */; };
 		D20682DD2C3BAF7300C4A319 /* PlantInfoField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20682DC2C3BAF7300C4A319 /* PlantInfoField.swift */; };
+		D29F7C9E2C3E616A00BBE0DE /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29F7C9D2C3E616A00BBE0DE /* CameraView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		D20682D72C3BAEB000C4A319 /* DateTimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeFormatter.swift; sourceTree = "<group>"; };
 		D20682DA2C3BAF4D00C4A319 /* InformationForPlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationForPlant.swift; sourceTree = "<group>"; };
 		D20682DC2C3BAF7300C4A319 /* PlantInfoField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantInfoField.swift; sourceTree = "<group>"; };
+		D29F7C9D2C3E616A00BBE0DE /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				D20682B72C3B9ECC00C4A319 /* AddPlantView.swift */,
+				D29F7C9D2C3E616A00BBE0DE /* CameraView.swift */,
 			);
 			path = AddPlant;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				D20682D82C3BAEB000C4A319 /* DateTimeFormatter.swift in Sources */,
 				D20682A82C3B9E3C00C4A319 /* ContentView.swift in Sources */,
 				D20682B62C3B9EBD00C4A319 /* SettingsView.swift in Sources */,
+				D29F7C9E2C3E616A00BBE0DE /* CameraView.swift in Sources */,
 				D20682D42C3BAB2100C4A319 /* StringExtension.swift in Sources */,
 				D20682A62C3B9E3C00C4A319 /* PlantAppApp.swift in Sources */,
 				D20682BE2C3B9F4600C4A319 /* TabBar.swift in Sources */,

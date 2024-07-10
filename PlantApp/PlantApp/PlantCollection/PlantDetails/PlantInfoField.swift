@@ -38,7 +38,7 @@ struct PlantInfoField: View {
                         .onSubmit {
                             notIsEdit = true
                         }
-                        .lineLimit(2)
+                        .lineLimit(3)
                         .focused($focused)
                     
                 }

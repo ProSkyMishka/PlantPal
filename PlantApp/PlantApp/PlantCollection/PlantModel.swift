@@ -25,7 +25,7 @@ struct PlantBaseModel: Identifiable, Comparable {
 }
 
 enum RepeatWatering: String {
-    case none = "None"
+    case never = "Never"
     case everyDay = "Every Day"
     case everyWeek = "Every Week"
     case everyMonth = "Every Month"

@@ -14,8 +14,8 @@ struct InformationForPlant: View {
     @State var isEditOpen = false
     @Binding var barHidden: Bool
     @Environment(\.dismiss) private var dismiss
-    @State var textInRepeat = "None"
-//    @Binding var replay: RepeatWatering
+    @State var textInRepeat = "Never"
+   // @State var replay: RepeatWatering
     
     
     var body: some View {
@@ -71,7 +71,7 @@ struct InformationForPlant: View {
                             .font(.system(size: 20))
                             .padding(.all, 15)
                         Spacer()
-                        DatePicker("", selection: $plant.nextWatering)
+                        DatePicker("", selection: $plant.nextWatering).padding(.trailing, 10)
                     }
                 }
                 HStack{
@@ -83,21 +83,17 @@ struct InformationForPlant: View {
 
                     HStack{
                         
-                        Menu(textInRepeat){
+                        Menu(){
                             Button("Every month", action: {textInRepeat = "Every month"})
                             Button("Every week", action: {textInRepeat = "Every week"})
                             Button("Every day", action: {textInRepeat = "Every day"})
                             Button("Never", action: {textInRepeat = "Never"})
                             
                             // TODO: функция для обновления значения plant.replay
-                        }
-                        Image(systemName: "timer")
-                            .resizable()
-                            .frame(width: 23, height: 23)
-                            .foregroundColor(.blue)
-                            .padding(.trailing, 10)
-                        
-                        
+                        }label:{
+                            Label(textInRepeat, systemImage: "timer")
+                                .padding(.trailing, 10)
+                            }
                     }
                 }
                 Spacer()

@@ -31,7 +31,7 @@ struct ContentView: View {
                 TabBar(index: $index)
             }
         }
-        .padding([.bottom, .leading, .trailing])
+        .padding([.bottom])
         .edgesIgnoringSafeArea(.bottom)
     }
 }

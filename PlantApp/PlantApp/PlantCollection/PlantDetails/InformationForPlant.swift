@@ -91,7 +91,7 @@ struct InformationForPlant: View {
                             
                             // TODO: функция для обновления значения plant.replay
                         }label:{
-                            Label(textInRepeat, systemImage: "timer")
+                            Label(LocalizedStringKey(textInRepeat), systemImage: "timer")
                                 .padding(.trailing, 10)
                             }
                     }

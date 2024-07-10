@@ -44,11 +44,8 @@ struct DetailedScheduleView: View {
                             }
                         }
                     }
-                    .onChange(of: scheduleViewModel.pastDateArray) { _ in
-                        val.scrollTo(scheduleViewModel.pastDateArray.count - 1)
-                    }
                 }
-                //.defaultScrollAnchor(.trailing)
+                .defaultScrollAnchor(.trailing)
                 VStack {
                     HStack {
                         Text("% moisture")
@@ -136,7 +133,7 @@ struct DetailedScheduleView: View {
                         }
                     }
                 }
-                // .defaultScrollAnchor(.leading)
+                .defaultScrollAnchor(.leading)
                 Spacer()
             }
         }

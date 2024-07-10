@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DetailedScheduleView: View {
+    @Environment(\.dismiss) private var dismiss
     @Binding var flower: ScheduleItemModel
     @ObservedObject var scheduleViewModel: ScheduleViewModel
     
@@ -138,7 +139,25 @@ struct DetailedScheduleView: View {
             }
         }
         .padding(.top, 20)
-        .navigationTitle(flower.name)
-        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden()
+        .toolbar(content: {
+            ToolbarItem(placement: .automatic) {
+                Text(flower.name)
+                    .font(.title2)
+            }
+            ToolbarItem(placement: .navigationBarLeading) {
+                HStack {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(.blue)
+                    
+                    Text("Back")
+                        .font(.system(size: 20))
+                        .foregroundColor(.blue)
+                }
+                    .onTapGesture {
+                    dismiss()
+                }
+            }
+        })
     }
 }

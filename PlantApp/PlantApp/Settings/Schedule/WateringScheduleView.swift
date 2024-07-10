@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct WateringScheduleView: View {
+    @Binding var barHidden: Bool
+    @Environment(\.dismiss) private var dismiss
     @StateObject var scheduleViewModel = ScheduleViewModel()
+    
     var body: some View {
             ZStack (alignment: .center){
                 List {
@@ -49,8 +52,28 @@ struct WateringScheduleView: View {
                 .scrollContentBackground(.hidden)
     
         }
-            .navigationTitle("Schedule")
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden()
+            .toolbar(content: {
+                ToolbarItem(placement: .automatic) {
+                    Text("Watering Schedule")
+                        .font(.title2)
+                }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(.blue)
+                        
+                        Text("Back")
+                            .font(.system(size: 20))
+                            .foregroundColor(.blue)
+                    }
+                        .onTapGesture {
+                        barHidden.toggle()
+                        dismiss()
+                    }
+                }
+            })
+
         
     }
 }

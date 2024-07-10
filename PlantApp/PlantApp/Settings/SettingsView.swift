@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @Binding var barHidden: Bool
-    @State var path = NavigationPath()
+    @Binding var path: NavigationPath
 
     var body: some View {
         
@@ -20,7 +20,8 @@ struct SettingsView: View {
                     
                     
                     SettingsTileView(imageName: "app.connected.to.app.below.fill", text: "Connect Device", path: $path, barHidden: $barHidden, index: 1)
-                    
+                        .disabled(true)
+
                     
                     SettingsTileView(imageName: "clock.fill", text: "Watering Schedule", path: $path, barHidden: $barHidden, index: 2)
                     
@@ -44,7 +45,7 @@ struct SettingsView: View {
                 case 1:
                     Text("Connect")
                 case 2:
-                    WateringScheduleView()
+                    WateringScheduleView(barHidden: $barHidden)
                 case 3:
                     AppInfoView(barHidden: $barHidden)
                 default:

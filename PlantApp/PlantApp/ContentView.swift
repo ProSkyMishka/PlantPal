@@ -10,16 +10,17 @@ import SwiftUI
 struct ContentView: View {
     @State var index = 0
     @State var barHidden = false
+    @State var path = NavigationPath()
     
     var body: some View {
         VStack {
             switch index {
             case 0:
-                PlantCollectionView()
+                PlantCollectionView(barHidden: $barHidden)
             case 1:
                 AddPlantView()
             case 2:
-                SettingsView(barHidden: $barHidden)
+                SettingsView(barHidden: $barHidden, path: $path)
             default:
                 Text("AAA")
             }

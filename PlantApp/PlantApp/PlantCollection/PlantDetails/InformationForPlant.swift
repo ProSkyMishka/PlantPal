@@ -11,8 +11,10 @@ struct InformationForPlant: View {
     @State var plant: PlantBaseModel
     @State var notIsEdit = true
     @State var isPresented = false
-    
     @State var isEditOpen = false
+    @Binding var barHidden: Bool
+    @Environment(\.dismiss) private var dismiss
+    
     
     var body: some View {
         VStack {
@@ -108,5 +110,32 @@ struct InformationForPlant: View {
             }
             Spacer()
         }
+        .onAppear {
+            barHidden = true
+        }
+        .navigationBarBackButtonHidden()
+        .toolbar(content: {
+            ToolbarItem(placement: .automatic) {
+                Text("\(plant.name) Info")
+                    .font(.title2)
+            }
+            ToolbarItem(placement: .navigationBarLeading) {
+                HStack {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(.blue)
+                    
+                    Text("Back")
+                        .font(.system(size: 20))
+                        .foregroundColor(.blue)
+                }
+                    .onTapGesture {
+                    barHidden.toggle()
+                    dismiss()
+                }
+            }
+        })
+        
     }
 }
+//\(Image(systemName:"timer"))
+//plant.replay.rawValue

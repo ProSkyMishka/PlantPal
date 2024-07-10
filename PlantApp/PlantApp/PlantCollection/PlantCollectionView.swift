@@ -17,6 +17,7 @@ struct PlantCollectionView: View {
     @State var search = ""
     @State var flag = false
     @State var sorted_enabled: [PlantBaseModel] = []
+    @Binding var barHidden: Bool
     
     var body: some View {
         NavigationStack {
@@ -51,7 +52,7 @@ struct PlantCollectionView: View {
                     ForEach(plants) { suggestion in
                         if search.isEmpty || suggestion.name.lowercased().contains(search.lowercased()) || suggestion.name.maxSubstring(b: search) {
                             NavigationLink {
-                                InformationForPlant(plant: suggestion)
+                                InformationForPlant(plant: suggestion, barHidden: $barHidden)
                             } label: {
                                 ZStack {
                                     Rectangle()
@@ -92,7 +93,7 @@ struct PlantCollectionView: View {
             ForEach($plants) { $flower in
             label: do {
                 NavigationLink {
-                    InformationForPlant(plant: flower)
+                    InformationForPlant(plant: flower, barHidden: $barHidden)
                 } label: {
                     ZStack {
                         Rectangle()
@@ -124,11 +125,5 @@ struct PlantCollectionView: View {
             }
             }
         }
-    }
-}
-
-struct PlantCollectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        PlantCollectionView()
     }
 }

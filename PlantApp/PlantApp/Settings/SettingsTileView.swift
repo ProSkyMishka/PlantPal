@@ -13,6 +13,7 @@ struct SettingsTileView: View {
     @Binding var path: NavigationPath
     @Binding var barHidden: Bool
     let index: Int
+    @State var colorTheme = ColorLight()
     
     var body: some View {
         
@@ -28,8 +29,9 @@ struct SettingsTileView: View {
                         .foregroundColor(.blue)
                     
                     Text(LocalizedStringKey(text))
-                        .foregroundColor(.black)
+                        .foregroundColor(Theme.textBrown)
                         .font(.system(size: 20))
+                    
                     
                     Spacer()
                     

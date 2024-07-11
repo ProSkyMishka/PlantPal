@@ -14,6 +14,7 @@ struct InformationForPlant: View {
     @State var isEditOpen = false
     @Binding var barHidden: Bool
     @Environment(\.dismiss) private var dismiss
+    @State var colorTheme = ColorLight()
     @State var textInRepeat = "Never"
    // @State var replay: RepeatWatering
     
@@ -36,6 +37,7 @@ struct InformationForPlant: View {
                         VStack{
                             Text("Last watered")
                                 .font(.system(size: 20, weight: .bold))
+                                .foregroundColor(Theme.textBrown)
                             
                             if plant.lastWatered != nil {
                                 Text(DateTimeFormatter.shared.toString(date: plant.lastWatered!))
@@ -43,6 +45,7 @@ struct InformationForPlant: View {
                             } else {
                                 Text("None")
                                     .font(.system(size: 20))
+                                    .foregroundColor(Theme.textColor)
                             }}.padding(.leading, 20)
                         Spacer()
                         Button(action:{
@@ -55,12 +58,12 @@ struct InformationForPlant: View {
                                 Image(systemName: "drop.fill")
                                     .foregroundColor(.white)
                                 Text("Water")
-                                    .font(.system(size: 20))
+                                    .font(.system(size: 20, weight: .bold))
                                     .foregroundColor(.white)
                             }
                             .padding(.horizontal, 24)
                             .padding(.vertical,8)
-                            .background(.blue)
+                            .background(Theme.buttonColor)
                             .cornerRadius(18)
                         }.padding(.all, 10)
                     }
@@ -68,16 +71,18 @@ struct InformationForPlant: View {
                 ZStack{
                     HStack{
                         Text("Next watering")
-                            .font(.system(size: 20))
+                            .font(.system(size: 20, weight: .bold))
                             .padding(.all, 15)
+                            .foregroundColor(Theme.textBrown)
                         Spacer()
                         DatePicker("", selection: $plant.nextWatering).padding(.trailing, 10)
                     }
                 }
                 HStack{
                     Text("Repeat")
-                        .font(.system(size: 20))
+                        .font(.system(size: 20, weight: .bold))
                         .padding(.leading, 15)
+                        .foregroundColor(Theme.textBrown)
                     
                     Spacer()
 
@@ -93,11 +98,13 @@ struct InformationForPlant: View {
                         }label:{
                             Label(LocalizedStringKey(textInRepeat), systemImage: "timer")
                                 .padding(.trailing, 10)
+                                .foregroundColor(Theme.textBrown)
                             }
                     }
                 }
                 Spacer()
             }
+            .background(Theme.backGround)
             .onAppear {
                 barHidden = true
             }
@@ -106,6 +113,7 @@ struct InformationForPlant: View {
                 ToolbarItem(placement: .automatic) {
                     Text("\(plant.name) Info")
                         .font(.title2)
+                        .foregroundColor(Theme.textGreen)
                 }
                 ToolbarItem(placement: .navigationBarLeading) {
                     HStack {

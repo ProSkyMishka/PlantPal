@@ -11,6 +11,7 @@ struct DetailedScheduleView: View {
     @Environment(\.dismiss) private var dismiss
     @Binding var flower: ScheduleItemModel
     @ObservedObject var scheduleViewModel: ScheduleViewModel
+    @State var colorTheme = ColorLight()
     
     var body: some View {
         
@@ -18,6 +19,7 @@ struct DetailedScheduleView: View {
             VStack (spacing: 30) {
                 HStack(alignment: .top) {
                     Text("Detailed watering scehdule")
+                        .foregroundColor(Theme.textBrown)
                         .font(.system(size: 25, weight: .bold))
                         .padding(.bottom, 5)
                 }
@@ -50,6 +52,7 @@ struct DetailedScheduleView: View {
                 VStack {
                     HStack {
                         Text("% moisture")
+                            .foregroundColor(Theme.textBrown)
                             .font(.system(size: 25, weight: .bold))
                             .padding(.bottom, 15)
                     }
@@ -90,6 +93,7 @@ struct DetailedScheduleView: View {
                 VStack {
                     HStack {
                         Text("Future watering")
+                            .foregroundColor(Theme.textBrown)
                             .font(.system(size: 25, weight: .bold))
                             .padding(.bottom, 15)
                     }
@@ -107,6 +111,7 @@ struct DetailedScheduleView: View {
                 }
                 HStack {
                     Text("Plan of watering")
+                        .foregroundColor(Theme.textBrown)
                         .font(.system(size: 25, weight: .bold))
                         .padding(.bottom, 15)
                 }
@@ -143,6 +148,7 @@ struct DetailedScheduleView: View {
         .toolbar(content: {
             ToolbarItem(placement: .automatic) {
                 Text(flower.name)
+                    .foregroundColor(Theme.textGreen)
                     .font(.title2)
             }
             ToolbarItem(placement: .navigationBarLeading) {
@@ -159,5 +165,6 @@ struct DetailedScheduleView: View {
                 }
             }
         })
+        .background(Theme.backGround)
     }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 struct SettingsView: View {
     @Binding var barHidden: Bool
     @Binding var path: NavigationPath
+    @State var colorTheme = ColorLight()
 
     var body: some View {
         
@@ -35,8 +36,10 @@ struct SettingsView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Text("Settings")
                         .font(.title2)
+                        .foregroundColor(Theme.textGreen)
                 }
             })
+            .background(Theme.backGround)
             .navigationDestination(for: Int.self) {path in
 
                 switch (path) {

@@ -13,6 +13,7 @@ struct CameraView: UIViewControllerRepresentable {
     
     @Binding var image: UIImage?
     @Binding var barHidden: Bool
+    @State var colorTheme = ColorLight()
     
     typealias UIViewControllerType = UIImagePickerController
     

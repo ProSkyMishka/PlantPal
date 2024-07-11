@@ -14,6 +14,7 @@ struct PlantCollectionView: View {
     @State private var offsets: [UUID: CGSize] = [:]
     @State private var showDeleteIcons: [UUID: Bool] = [:]
     @Binding var barHidden: Bool
+    @State var colorTheme = ColorLight()
     
     var body: some View {
         NavigationStack {
@@ -22,8 +23,14 @@ struct PlantCollectionView: View {
                     grid
                 }
             }
-            .navigationTitle("Flowers Collection")
+            .background(Theme.backGround)
             .toolbar {
+                ToolbarItem {
+                    Text("Flowers Collection")
+                      .font(.system(size: 30))
+                      .bold()
+                      .foregroundColor(Theme.textAzure)
+                }
                 ToolbarItem {
                     Button(action: {
                         if !flag {
@@ -38,11 +45,13 @@ struct PlantCollectionView: View {
                             .resizable()
                             .frame(width: 20, height: 20)
                             .padding(.horizontal, 10)
-                            .foregroundColor(Color.blue)
+                            .background(Theme.backGround)
                     })
                 }
             }
+            .foregroundColor(Theme.textBrown)
             .searchable(text: $collectionViewModel.search)
+          
         }
     }
     
@@ -57,7 +66,9 @@ struct PlantCollectionView: View {
                         Rectangle()
                             .frame(width: 140, height: 180)
                             .cornerRadius(20)
-                            .foregroundColor(Color(red: 0.8, green: 0.8, blue: 0.85))
+//                            .foregroundColor(Color(red: 0.8, green: 0.8, blue: 0.85))
+                            .foregroundColor(Theme.pink)
+
                             .padding(.vertical, 10)
                         VStack {
                             Rectangle()
@@ -71,9 +82,11 @@ struct PlantCollectionView: View {
                             Spacer()
                             Text(flower.name)
                                 .font(.system(size: 20, weight: .bold))
+                                .foregroundColor(Theme.textGreen)
                             
                             Text(flower.description)
                                 .font(.system(size: 18, weight: .light))
+                                .foregroundColor(Theme.description)
                         }
                         .tint(.black)
                         .padding(.vertical, 17)

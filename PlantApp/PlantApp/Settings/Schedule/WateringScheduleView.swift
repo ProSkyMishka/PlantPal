@@ -11,12 +11,12 @@ struct WateringScheduleView: View {
     @Binding var barHidden: Bool
     @Environment(\.dismiss) private var dismiss
     @StateObject var scheduleViewModel = ScheduleViewModel()
+    @State var colorTheme = ColorLight()
     
     var body: some View {
             ZStack (alignment: .center){
                 List {
                     ForEach($scheduleViewModel.historyArray) {$flower in
-                        
                         NavigationLink {
                             DetailedScheduleView(flower: $flower, scheduleViewModel: scheduleViewModel)
                         } label: {
@@ -25,9 +25,10 @@ struct WateringScheduleView: View {
                                     VStack (alignment: .leading) {
                                         
                                         Text(flower.name)
+                                            .foregroundColor(Theme.textBrown)
                                             .bold()
                                         Text("Scheduled on \(flower.schedule_time)")
-                                            .foregroundColor(.gray)
+                                            .foregroundColor(Theme.description)
                                         Divider()
                                     }
                                     
@@ -46,10 +47,10 @@ struct WateringScheduleView: View {
                                 .tint(.red)
                         }
                     }
-                   
-                    
+                    .listRowBackground(Theme.backGround)
                 }
                 .scrollContentBackground(.hidden)
+                .background(Theme.backGround)
     
         }
             .navigationBarBackButtonHidden()
@@ -57,6 +58,7 @@ struct WateringScheduleView: View {
                 ToolbarItem(placement: .automatic) {
                     Text("Watering Schedule")
                         .font(.title2)
+                        .foregroundColor(Theme.textGreen)
                 }
                 ToolbarItem(placement: .navigationBarLeading) {
                     HStack {

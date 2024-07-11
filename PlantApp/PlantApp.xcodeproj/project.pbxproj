@@ -32,6 +32,8 @@
 		D21D55122C3EC7D700B47123 /* EditCapturedPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21D55112C3EC7D700B47123 /* EditCapturedPlantView.swift */; };
 		D29F7C9E2C3E616A00BBE0DE /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29F7C9D2C3E616A00BBE0DE /* CameraView.swift */; };
 		D2A2B3672C3F89CD00164139 /* PlantCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A2B3662C3F89CD00164139 /* PlantCollectionViewModel.swift */; };
+		D2A2B3692C3FC1D100164139 /* ColorLightDark.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A2B3682C3FC1D100164139 /* ColorLightDark.swift */; };
+		D2A2B36B2C3FC79800164139 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A2B36A2C3FC79800164139 /* ColorExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		D21D55112C3EC7D700B47123 /* EditCapturedPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCapturedPlantView.swift; sourceTree = "<group>"; };
 		D29F7C9D2C3E616A00BBE0DE /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		D2A2B3662C3F89CD00164139 /* PlantCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCollectionViewModel.swift; sourceTree = "<group>"; };
+		D2A2B3682C3FC1D100164139 /* ColorLightDark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLightDark.swift; sourceTree = "<group>"; };
+		D2A2B36A2C3FC79800164139 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,7 @@
 			children = (
 				D20682D92C3BAF3B00C4A319 /* PlantDetails */,
 				D20682B32C3B9EAA00C4A319 /* PlantCollectionView.swift */,
+				D2A2B3682C3FC1D100164139 /* ColorLightDark.swift */,
 				D20682D52C3BAB6A00C4A319 /* PlantModel.swift */,
 				D2A2B3662C3F89CD00164139 /* PlantCollectionViewModel.swift */,
 			);
@@ -189,6 +194,7 @@
 			children = (
 				D20682D32C3BAB2100C4A319 /* StringExtension.swift */,
 				D20682D72C3BAEB000C4A319 /* DateTimeFormatter.swift */,
+				D2A2B36A2C3FC79800164139 /* ColorExtensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -284,6 +290,7 @@
 				D20682CB2C3BA28B00C4A319 /* WateringScheduleView.swift in Sources */,
 				D20682C42C3B9FF300C4A319 /* AppearanceView.swift in Sources */,
 				D20682DD2C3BAF7300C4A319 /* PlantInfoField.swift in Sources */,
+				D2A2B3692C3FC1D100164139 /* ColorLightDark.swift in Sources */,
 				D20682C22C3B9FC300C4A319 /* AppInfoView.swift in Sources */,
 				D20682CD2C3BA2CD00C4A319 /* ScheduleViewModel.swift in Sources */,
 				D20682CF2C3BA33500C4A319 /* ScheduleItemModel.swift in Sources */,
@@ -296,6 +303,7 @@
 				D20682D12C3BA3B500C4A319 /* DetailedScheduleView.swift in Sources */,
 				D20682B42C3B9EAA00C4A319 /* PlantCollectionView.swift in Sources */,
 				D20682B82C3B9ECC00C4A319 /* AddPlantView.swift in Sources */,
+				D2A2B36B2C3FC79800164139 /* ColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

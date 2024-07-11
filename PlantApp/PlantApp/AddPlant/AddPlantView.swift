@@ -15,6 +15,7 @@ struct AddPlantView: View {
     @Binding var barHidden: Bool
     @State var isEditViewPresented = false
     @State var capturedPlant: PlantBaseModel = PlantBaseModel(name: "Rosa", description: "Description", url: "URL", temperatureRange: "temperature", humidity: "Yes", waterInterval: 12, nextWatering: Date(), replay: .everyDay)
+    @State var colorTheme = ColorLight()
     
     
     var body: some View {
@@ -25,6 +26,7 @@ struct AddPlantView: View {
                 VStack {
                     
                     Text("Это действительно ваше растение?")
+//                    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                         .font(.system(size: 30))
                     
                     Image(uiImage: image!)
@@ -33,6 +35,7 @@ struct AddPlantView: View {
 
             
                     Text("Описание")
+//                    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                         .font(.title3)
                         .foregroundColor(.gray)
                     
@@ -40,6 +43,9 @@ struct AddPlantView: View {
                         ProgressView()
                     } else {
                         Text("Название")
+                        
+    //                    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
                             .font(.title)
                         // Show plant info
                         HStack {
@@ -77,7 +83,8 @@ struct AddPlantView: View {
                         .cornerRadius(10)
                         .padding(.horizontal)
                     }
-                }.onAppear {
+                }.background(Theme.backGround)
+                .onAppear {
                     barHidden = false
                     recognizePlant()
                 }

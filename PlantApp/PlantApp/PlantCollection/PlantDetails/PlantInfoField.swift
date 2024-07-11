@@ -12,6 +12,7 @@ struct PlantInfoField: View {
     @Binding var text: String
     @State var notIsEdit: Bool = true
     @FocusState var focused: Bool
+    @State var colorTheme = ColorLight()
     
     
     var body: some View {
@@ -21,6 +22,7 @@ struct PlantInfoField: View {
                     Text(LocalizedStringKey(textTitle))
                         .font(.system(size: 20, weight: .bold))
                         .padding(.leading, 15)
+                        .foregroundColor(Theme.textBrown)
                     Button(action: {
                         notIsEdit = false
                         focused = true
@@ -38,6 +40,7 @@ struct PlantInfoField: View {
                         .onSubmit {
                             notIsEdit = true
                         }
+                        .foregroundColor(Theme.textColor)
                         .lineLimit(3)
                         .focused($focused)
                     

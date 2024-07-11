@@ -10,6 +10,7 @@ import SwiftUI
 struct AppInfoView: View {
     @Binding var barHidden: Bool
     @Environment(\.dismiss) private var dismiss
+    @State var colorTheme = ColorLight()
     
     let developers = [["Bazin Aleksey", "https://t.me/mathusha2023", "https://github.com/mathusha2023"],
                       ["Naypert Roman", "https://t.me/Artecka", "https://github.com/RomaNaybert"],
@@ -26,10 +27,12 @@ struct AppInfoView: View {
                     .font(.system(size: 20))
                     .lineSpacing(15)
                     .padding(.bottom, 30)
+                    .foregroundColor(Theme.textColor)
                 
                 Text("Developers:")
                     .font(.system(size: 24))
                     .bold()
+                    .foregroundColor(Theme.textBrown)
                 
                 ForEach(0...(developers.count - 1), id: \.self) {num in
                     DeveloperInfoView(num: num + 1, name: developers[num][0], gitLink: developers[num][2], tgLink:  developers[num][1])
@@ -39,6 +42,7 @@ struct AppInfoView: View {
                     .font(.system(size: 24))
                     .bold()
                     .padding(.top)
+                    .foregroundColor(Theme.textBrown)
                 
                 ForEach(0...(bosses.count - 1), id: \.self) {num in
                     DeveloperInfoView(num: num + 1, name: bosses[num][0], gitLink: bosses[num][2], tgLink:  bosses[num][1])
@@ -48,11 +52,13 @@ struct AppInfoView: View {
                     .font(.system(size: 24))
                     .bold()
                     .padding(.top)
+                    .foregroundColor(Theme.textBrown)
                 
                 Image("SiriusLogo")
                     .resizable()
                     .frame(width: UIScreen.main.bounds.width - 50, height: 100)
                     .padding(.bottom)
+                    .foregroundColor(Theme.textBrown)
                 
             }
         }
@@ -61,6 +67,7 @@ struct AppInfoView: View {
             ToolbarItem(placement: .automatic) {
                 Text("App Info")
                     .font(.title2)
+                    .foregroundColor(Theme.textGreen)
             }
             ToolbarItem(placement: .navigationBarLeading) {
                 HStack {
@@ -79,5 +86,7 @@ struct AppInfoView: View {
         })
         .padding()
         .edgesIgnoringSafeArea(.bottom)
+        .background(Theme.backGround)
+
     }
 }

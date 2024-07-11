@@ -40,7 +40,9 @@ struct TabBar: View {
             .tint(.black)
         }
         .padding()
-        .background(Color(red: 230/255, green: 230/255, blue: 230/255))
+//        .background(Color(red: 230/255, green: 230/255, blue: 230/255))
+        
+        .background(Theme.tabBar)
         .cornerRadius(30)
         .shadow(radius: 10)
     }

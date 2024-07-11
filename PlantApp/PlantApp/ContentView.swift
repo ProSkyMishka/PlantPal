@@ -11,6 +11,7 @@ struct ContentView: View {
     @State var index = 0
     @State var barHidden = false
     @State var path = NavigationPath()
+    @State var theme = Theme.shared
     
     var body: some View {
         VStack {
@@ -24,13 +25,13 @@ struct ContentView: View {
             default:
                 Text("AAA")
             }
-            
             Spacer()
             
             if !barHidden {
                 TabBar(index: $index)
             }
         }
+        .background(Theme.backGround)
         .animation(.spring, value: barHidden)
         .padding([.bottom])
         .edgesIgnoringSafeArea(.bottom)

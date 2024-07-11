@@ -27,13 +27,13 @@ struct AppearanceView: View {
                 }){
                     HStack {
                         Text("Language")
-                            .foregroundColor(.black)
+                            .foregroundColor(Theme.textBrown)
                             .font(.system(size: 20))
                         
                         Spacer()
                         
                         Text("lang")
-                            .foregroundColor(.gray)
+                            .foregroundColor(Theme.description)
                         
                         Image(systemName: "chevron.right")
                             .foregroundColor(.gray)
@@ -58,13 +58,13 @@ struct AppearanceView: View {
                 })  {
                     HStack {
                         Text("Appearance")
-                            .foregroundColor(.black)
+                            .foregroundColor(Theme.textBrown)
                             .font(.system(size: 20))
                         
                         Spacer()
                         
                         Text(themes[theme])
-                            .foregroundColor(.gray)
+                            .foregroundColor(Theme.description)
                         
                         Image(systemName: "chevron.right")
                             .foregroundColor(.gray)
@@ -88,6 +88,7 @@ struct AppearanceView: View {
         .toolbar(content: {
             ToolbarItem(placement: .automatic) {
                 Text("Appearance")
+                    .foregroundColor(Theme.textGreen)
                     .font(.title2)
             }
             ToolbarItem(placement: .navigationBarLeading) {
@@ -107,5 +108,6 @@ struct AppearanceView: View {
         })
         .padding()
         .edgesIgnoringSafeArea(.bottom)
+        .background(Theme.backGround)
     }
 }

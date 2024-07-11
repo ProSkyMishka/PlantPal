@@ -32,7 +32,7 @@ struct AppInfoView: View {
                     .bold()
                 
                 ForEach(0...(developers.count - 1), id: \.self) {num in
-                    DeveloperInfoView(num: num + 1, name: developers[num][0], gitLink: developers[num][1], tgLink: developers[num][2])
+                    DeveloperInfoView(num: num + 1, name: developers[num][0], gitLink: developers[num][2], tgLink:  developers[num][1])
                 }
                 
                 Text("Bosses:")
@@ -41,7 +41,7 @@ struct AppInfoView: View {
                     .padding(.top)
                 
                 ForEach(0...(bosses.count - 1), id: \.self) {num in
-                    DeveloperInfoView(num: num + 1, name: bosses[num][0], gitLink: bosses[num][1], tgLink: bosses[num][2])
+                    DeveloperInfoView(num: num + 1, name: bosses[num][0], gitLink: bosses[num][2], tgLink:  bosses[num][1])
                 }
                 
                 Text("Partner:")

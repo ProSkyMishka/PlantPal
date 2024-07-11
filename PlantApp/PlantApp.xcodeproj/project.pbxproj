@@ -31,6 +31,7 @@
 		D21D55102C3EC0D700B47123 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D21D550F2C3EC0D700B47123 /* Localizable.xcstrings */; };
 		D21D55122C3EC7D700B47123 /* EditCapturedPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21D55112C3EC7D700B47123 /* EditCapturedPlantView.swift */; };
 		D29F7C9E2C3E616A00BBE0DE /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29F7C9D2C3E616A00BBE0DE /* CameraView.swift */; };
+		D2A2B3672C3F89CD00164139 /* PlantCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A2B3662C3F89CD00164139 /* PlantCollectionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		D21D550F2C3EC0D700B47123 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		D21D55112C3EC7D700B47123 /* EditCapturedPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCapturedPlantView.swift; sourceTree = "<group>"; };
 		D29F7C9D2C3E616A00BBE0DE /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		D2A2B3662C3F89CD00164139 /* PlantCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCollectionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				D20682D92C3BAF3B00C4A319 /* PlantDetails */,
 				D20682B32C3B9EAA00C4A319 /* PlantCollectionView.swift */,
 				D20682D52C3BAB6A00C4A319 /* PlantModel.swift */,
+				D2A2B3662C3F89CD00164139 /* PlantCollectionViewModel.swift */,
 			);
 			path = PlantCollection;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				D20682C02C3B9F9800C4A319 /* SettingsTileView.swift in Sources */,
 				D21D55122C3EC7D700B47123 /* EditCapturedPlantView.swift in Sources */,
 				D20682D62C3BAB6A00C4A319 /* PlantModel.swift in Sources */,
+				D2A2B3672C3F89CD00164139 /* PlantCollectionViewModel.swift in Sources */,
 				D20682C62C3BA01500C4A319 /* DeveloperInfoView.swift in Sources */,
 				D20682DB2C3BAF4D00C4A319 /* InformationForPlant.swift in Sources */,
 				D20682D12C3BA3B500C4A319 /* DetailedScheduleView.swift in Sources */,

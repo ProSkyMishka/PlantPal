@@ -7,14 +7,8 @@
 
 import SwiftUI
 
-struct PlantCollectionView: View {
-    @State var plants: [PlantBaseModel] = [
-        PlantBaseModel(name: "Apple", description: "Tree", lastWatered: Date(), url: "daisy", temperatureRange: "15 - 25", humidity: "65", waterInterval: 5, nextWatering: Date(), replay: .everyDay),
-        PlantBaseModel(name: "Rosa", description: "Flower", lastWatered: Date(), url: "daisy", temperatureRange: "15 - 25", humidity: "65", waterInterval: 5, nextWatering: Date(), replay: .everyDay),
-        PlantBaseModel(name: "Bereza", description: "Tree", lastWatered: Date(), url: "daisy", temperatureRange: "15 - 25", humidity: "65", waterInterval: 5, nextWatering: Date(), replay: .everyDay)
-    ]
-    
-    @State var search = ""
+struct PlantCollectionView: View {    
+    @StateObject var collectionViewModel = PlantCollectionViewModel()
     @State var flag = false
     @State var sorted_enabled: [PlantBaseModel] = []
     @Binding var barHidden: Bool
@@ -31,10 +25,10 @@ struct PlantCollectionView: View {
                 ToolbarItem {
                     Button(action: {
                         if !flag {
-                            sorted_enabled = plants
-                            plants.sort()
+                            sorted_enabled = collectionViewModel.plants
+                            collectionViewModel.plants.sort()
                         } else {
-                            plants = sorted_enabled
+                            collectionViewModel.plants = sorted_enabled
                         }
                         flag = !flag
                     }, label: {
@@ -46,51 +40,13 @@ struct PlantCollectionView: View {
                     })
                 }
             }
-            .searchable(text: $search)
-            .searchSuggestions {
-                LazyVGrid(columns: [GridItem(), GridItem()]) {
-                    ForEach(plants) { suggestion in
-                        if search.isEmpty || suggestion.name.lowercased().contains(search.lowercased()) || suggestion.name.maxSubstring(b: search) {
-                            NavigationLink {
-                                InformationForPlant(plant: suggestion, barHidden: $barHidden)
-                            } label: {
-                                ZStack {
-                                    Rectangle()
-                                        .frame(width: 140, height: 180)
-                                        .cornerRadius(20)
-                                        .foregroundColor(Color(red: 0.8, green: 0.8, blue: 0.85))
-                                        .padding(.vertical, 10)
-                                    VStack {
-                                        Rectangle()
-                                            .frame(width: 100, height: 100)
-                                            .cornerRadius(20)
-                                            .foregroundColor(Color(red: 0.6, green: 0.6, blue: 0.65))
-                                            .padding(.vertical, 25)
-                                        Spacer()
-                                    }
-                                    VStack {
-                                        Spacer()
-                                        Text(suggestion.name)
-                                            .font(.system(size: 20, weight: .bold))
-                                        
-                                        Text(suggestion.description)
-                                            .font(.system(size: 18, weight: .light))
-                                    }
-                                    .tint(.black)
-                                    .padding(.vertical, 17)
-                                }
-                            }
-                            
-                        }
-                    }
-                }
-            }
+            .searchable(text: $collectionViewModel.search)
         }
     }
     
     var grid: some View {
         LazyVGrid(columns: [GridItem(), GridItem()]) {
-            ForEach($plants) { $flower in
+            ForEach(collectionViewModel.filteredPlants) { flower in
             label: do {
                 NavigationLink {
                     InformationForPlant(plant: flower, barHidden: $barHidden)

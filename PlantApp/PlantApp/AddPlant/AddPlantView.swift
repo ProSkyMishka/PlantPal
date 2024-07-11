@@ -7,9 +7,27 @@
 
 import SwiftUI
 
+struct ResponseML: Codable {
+    var classML: String
+    var real_name: String
+}
+
+struct ResultPlant: Codable {
+    var id = UUID()
+    var description: String
+    var humidity: String
+    var temp: String
+    var MLID: String
+    var imageURL: String
+    var seconds: Int
+    var name: String
+}
+
 struct AddPlantView: View {
-    
+    @Binding var index: Int
     @State private var image: UIImage?
+    @State public var resultsML: ResponseML = ResponseML(classML: "", real_name: "")
+    @State public var resultsServer:  ResultPlant = ResultPlant(description: "", humidity: "", temp: "", MLID: "", imageURL: "", seconds: 0, name: "")
     @State private var recognizedPlant: PlantBaseModel?
     @State private var isInfoLoading = true
     @Binding var barHidden: Bool
@@ -26,31 +44,29 @@ struct AddPlantView: View {
                 VStack {
                     
                     Text("Это действительно ваше растение?")
-//                    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                       // .foregroundColor()
                         .font(.system(size: 30))
                     
                     Image(uiImage: image!)
                         .resizable()
                         .frame(width: 250, height: 250)
-
-            
-                    Text("Описание")
-//                    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    
+                    Text(resultsServer.description)
+                        // .foregroundColor()
                         .font(.title3)
                         .foregroundColor(.gray)
-                    
+
                     if (isInfoLoading) {
                         ProgressView()
                     } else {
-                        Text("Название")
-                        
-    //                    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
+                        Text(resultsServer.name)
                             .font(.title)
-                        // Show plant info
+                        // .foregroundColor()
+                 
                         HStack {
                             Button(action: {
                                 // coreData
+                                index = 0
                             }) {
                                 Image(systemName: "checkmark.circle.fill")
                                     .resizable()
@@ -73,7 +89,7 @@ struct AddPlantView: View {
                                     .padding(.horizontal)
                             }
                             .fullScreenCover(isPresented: $isEditViewPresented) {
-                                EditCapturedPlantView(capturedPlant: $capturedPlant)
+                                EditCapturedPlantView(index: $index, isPresented: $isEditViewPresented, capturedPlant: $capturedPlant, image: $image)
                             }
                         }
                         .bold()
@@ -88,7 +104,6 @@ struct AddPlantView: View {
                     barHidden = false
                     recognizePlant()
                 }
-                
             }
             
         }
@@ -118,8 +133,12 @@ struct AddPlantView: View {
         session.uploadTask(with: urlRequest, from: data, completionHandler: { responseData, response, error in
             if error == nil {
                 let jsonData = try? JSONSerialization.jsonObject(with: responseData!, options: .allowFragments)
-                if let json = jsonData as? [String: Any] {
+                if let json = jsonData as? [String: String] {
                     print(json)
+                    resultsML = ResponseML(classML: json["classML"]!, real_name: json["real_name"]!)
+                    Task {
+                        await loadData()
+                    }
                 }
                 
                 DispatchQueue.main.async {
@@ -129,20 +148,32 @@ struct AddPlantView: View {
         }).resume()
     }
     
+    func loadData() async {
+        guard let url = URL(string: "https://5ca7-188-170-214-41.ngrok-free.app/plants/\(resultsML.classML)") else {
+            print("Invalid URL")
+            return
+        }
+        print(url)
+        do {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            print(data)
+            let decodedResponse = try JSONDecoder().decode(ResultPlant.self, from: data)
+            resultsServer = decodedResponse
+        } catch {
+            print(error)
+        }
+    }
+    
+    
     
     
     func recognizePlant() {
         Task {
+            // Send image data to ML model
+            // get MLID from the ML model and get the plant by MLID from server
+            // Change isInfoLoading to false
             await postData(uiimage: image!)
         }
-        
-        // Send image data to ML model
-        
-        
-        
-        // get MLID from the ML model and get the plant by MLID from server
-        
-        // Change isInfoLoading to false
     }
     
 }

@@ -19,7 +19,7 @@ struct ContentView: View {
             case 0:
                 PlantCollectionView(barHidden: $barHidden)
             case 1:
-                AddPlantView(barHidden: $barHidden)
+                AddPlantView(index: $index, barHidden: $barHidden)
             case 2:
                 SettingsView(barHidden: $barHidden, path: $path)
             default:

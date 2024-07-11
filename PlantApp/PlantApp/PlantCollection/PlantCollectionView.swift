@@ -59,67 +59,77 @@ struct PlantCollectionView: View {
         LazyVGrid(columns: [GridItem(), GridItem()]) {
             ForEach(collectionViewModel.filteredPlants) { flower in
             label: do {
-                NavigationLink {
-                    InformationForPlant(plant: flower, barHidden: $barHidden)
-                } label: {
-                    ZStack {
-                        Rectangle()
-                            .frame(width: 140, height: 180)
-                            .cornerRadius(20)
-//                            .foregroundColor(Color(red: 0.8, green: 0.8, blue: 0.85))
-                            .foregroundColor(Theme.pink)
-
-                            .padding(.vertical, 10)
-                        VStack {
-                            Rectangle()
-                                .frame(width: 100, height: 100)
-                                .cornerRadius(20)
-                                .foregroundColor(Color(red: 0.6, green: 0.6, blue: 0.65))
-                                .padding(.vertical, 25)
-                            Spacer()
-                        }
-                        VStack {
-                            Spacer()
-                            Text(flower.name)
-                                .font(.system(size: 20, weight: .bold))
-                                .foregroundColor(Theme.textGreen)
-                            
-                            Text(flower.description)
-                                .font(.system(size: 18, weight: .light))
-                                .foregroundColor(Theme.description)
-                        }
-                        .tint(.black)
-                        .padding(.vertical, 17)
+                ZStack {
+                    if showDeleteIcons[flower.id] == true && offsets[flower.id]?.width ?? 0 < 0 {
+                        Image(systemName: "trash.fill")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.red)
+                            .padding()
+                        //                            .transition(.move(edge: .trailing))
+                        //                            .animation(.easeInOut(duration: 0.1), value: showDeleteIcons[flower.id])
                     }
-                    .offset(x: offsets[flower.id]?.width ?? 0)
-                    .gesture(
-                        DragGesture()
-                            .onChanged { gesture in
-                                if gesture.translation.width < 0 {
-                                    offsets[flower.id] = gesture.translation
-                                    showDeleteIcons[flower.id] = true
-                                }
+                    NavigationLink {
+                        InformationForPlant(plant: flower, barHidden: $barHidden)
+                    } label: {
+                        ZStack {
+                            Rectangle()
+                                .frame(width: 140, height: 180)
+                                .cornerRadius(20)
+                                .foregroundColor(Theme.pink)
+                            
+                                .padding(.vertical, 10)
+                            VStack {
+                                Rectangle()
+                                    .frame(width: 100, height: 100)
+                                    .cornerRadius(20)
+                                    .foregroundColor(Color(red: 0.6, green: 0.6, blue: 0.65))
+                                    .padding(.vertical, 25)
+                                Spacer()
                             }
-                            .onEnded { _ in
-                                if offsets[flower.id]?.width ?? 0 < -100 {
-                                    withAnimation(.easeInOut) {
-                                        if let index = collectionViewModel.plants.firstIndex(where: { $0.id == flower.id }) {
+                            VStack {
+                                Spacer()
+                                Text(flower.name)
+                                    .font(.system(size: 20, weight: .bold))
+                                    .foregroundColor(Theme.textGreen)
+                                
+                                Text(flower.description)
+                                    .font(.system(size: 18, weight: .light))
+                                    .foregroundColor(Theme.description)
+                            }
+                            .tint(.black)
+                            .padding(.vertical, 17)
+                        }
+                        .offset(x: offsets[flower.id]?.width ?? 0)
+                        .gesture(
+                            DragGesture()
+                                .onChanged { gesture in
+                                    if gesture.translation.width < 0 {
+                                        offsets[flower.id] = gesture.translation
+                                        showDeleteIcons[flower.id] = true
+                                    }
+                                }
+                                .onEnded { _ in
+                                    if offsets[flower.id]?.width ?? 0 < -100 {
+                                        withAnimation(.easeInOut) {
+                                            if let index = collectionViewModel.plants.firstIndex(where: { $0.id == flower.id }) {
+                                                offsets[flower.id] = .zero
+                                                showDeleteIcons[flower.id] = false
+                                                collectionViewModel.plants.remove(at: index)
+                                            }
+                                        }
+                                    } else {
+                                        withAnimation {
                                             offsets[flower.id] = .zero
                                             showDeleteIcons[flower.id] = false
-                                            collectionViewModel.plants.remove(at: index)
                                         }
                                     }
-                                } else {
-                                    withAnimation {
-                                        offsets[flower.id] = .zero
-                                        showDeleteIcons[flower.id] = false
-                                    }
                                 }
-                            }
-                    )
-                    .animation(.easeInOut, value: offsets[flower.id])
+                        )
+                        .animation(.easeInOut, value: offsets[flower.id])
+                    }
+                    
                 }
-                
             }
             }
         }

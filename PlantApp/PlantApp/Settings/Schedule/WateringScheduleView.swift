@@ -63,11 +63,11 @@ struct WateringScheduleView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     HStack {
                         Image(systemName: "chevron.left")
-                            .foregroundColor(.blue)
+                            .foregroundColor(Theme.icon)
                         
                         Text("Back")
                             .font(.system(size: 20))
-                            .foregroundColor(.blue)
+                            .foregroundColor(Theme.icon)
                     }
                         .onTapGesture {
                         barHidden.toggle()

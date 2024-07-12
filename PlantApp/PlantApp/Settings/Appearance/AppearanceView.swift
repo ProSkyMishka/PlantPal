@@ -15,7 +15,6 @@ struct AppearanceView: View {
     let languagesIdentifiers = ["en", "ru"]
     let themes = [LocalizedStringKey("Light"), LocalizedStringKey("Dark")]
     @State var lang = 0
-    @State var theme = 0
     @State var showLangDialog = false
     @State var showThemeDialog = false
     
@@ -36,7 +35,7 @@ struct AppearanceView: View {
                             .foregroundColor(Theme.description)
                         
                         Image(systemName: "chevron.right")
-                            .foregroundColor(.gray)
+                            .foregroundColor(Theme.description)
                     }
                     .alert("Select Language", isPresented: $showLangDialog) {
                         ForEach(0...(languages.count - 1), id: \.self) {num in
@@ -63,16 +62,16 @@ struct AppearanceView: View {
                         
                         Spacer()
                         
-                        Text(themes[theme])
+                        Text(themes[Theme.theme])
                             .foregroundColor(Theme.description)
                         
                         Image(systemName: "chevron.right")
-                            .foregroundColor(.gray)
+                            .foregroundColor(Theme.description)
                     }
                     .alert("Select App Theme", isPresented: $showThemeDialog) {
                         ForEach(0...(themes.count - 1), id: \.self) {num in
                             Button(action: {
-                                theme = num
+                                Theme.changeTheme(colorTheme: num)
                             }, label: {
                                 Text(themes[num])
                             })
@@ -94,11 +93,10 @@ struct AppearanceView: View {
             ToolbarItem(placement: .navigationBarLeading) {
                 HStack {
                     Image(systemName: "chevron.left")
-                        .foregroundColor(.blue)
-                    
+                        .foregroundColor(Theme.icon)
                     Text("Back")
                         .font(.system(size: 20))
-                        .foregroundColor(.blue)
+                        .foregroundColor(Theme.icon)
                 }
                     .onTapGesture {
                     barHidden.toggle()

@@ -14,7 +14,6 @@ struct InformationForPlant: View {
     @State var isEditOpen = false
     @Binding var barHidden: Bool
     @Environment(\.dismiss) private var dismiss
-    @State var colorTheme = ColorLight()
     @State var textInRepeat = "Never"
    // @State var replay: RepeatWatering
     
@@ -118,11 +117,11 @@ struct InformationForPlant: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     HStack {
                         Image(systemName: "chevron.left")
-                            .foregroundColor(.blue)
+                            .foregroundColor(Theme.icon)
                         
                         Text("Back")
                             .font(.system(size: 20))
-                            .foregroundColor(.blue)
+                            .foregroundColor(Theme.icon)
                     }
                     .onTapGesture {
                         barHidden.toggle()

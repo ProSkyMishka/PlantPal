@@ -51,7 +51,6 @@ struct PlantCollectionView: View {
             }
             .foregroundColor(Theme.textBrown)
             .searchable(text: $collectionViewModel.search)
-          
         }
     }
     
@@ -66,8 +65,8 @@ struct PlantCollectionView: View {
                             .frame(width: 30, height: 30)
                             .foregroundColor(.red)
                             .padding()
-                        //                            .transition(.move(edge: .trailing))
-                        //                            .animation(.easeInOut(duration: 0.1), value: showDeleteIcons[flower.id])
+                        //   .transition(.move(edge: .trailing))
+                        //   .animation(.easeInOut(duration: 0.1), value: showDeleteIcons[flower.id])
                     }
                     NavigationLink {
                         InformationForPlant(plant: flower, barHidden: $barHidden)
@@ -77,7 +76,6 @@ struct PlantCollectionView: View {
                                 .frame(width: 140, height: 180)
                                 .cornerRadius(20)
                                 .foregroundColor(Theme.pink)
-                            
                                 .padding(.vertical, 10)
                             VStack {
                                 Rectangle()

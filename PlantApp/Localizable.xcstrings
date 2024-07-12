@@ -139,6 +139,9 @@
         }
       }
     },
+    "Connect device" : {
+
+    },
     "Connect Device" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -149,6 +152,9 @@
           }
         }
       }
+    },
+    "Connect the device for\n   automatic watering." : {
+
     },
     "Dark" : {
       "localizations" : {
@@ -391,6 +397,9 @@
         }
       }
     },
+    "Password" : {
+
+    },
     "Plan of watering" : {
       "localizations" : {
         "ru" : {
@@ -504,6 +513,12 @@
         }
       }
     },
+    "The device and the phone should be\n connected to the same wifi network" : {
+
+    },
+    "Value" : {
+
+    },
     "Vasilievsky Arthur" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -544,6 +559,9 @@
           }
         }
       }
+    },
+    "Wi-Fi SSID" : {
+
     },
     "Выберите число" : {
 

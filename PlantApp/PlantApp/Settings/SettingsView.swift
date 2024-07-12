@@ -20,7 +20,6 @@ struct SettingsView: View {
                     
                     
                     SettingsTileView(imageName: "app.connected.to.app.below.fill", text: "Connect Device", path: $path, barHidden: $barHidden, index: 1)
-                        .disabled(true)
 
                     
                     SettingsTileView(imageName: "clock.fill", text: "Watering Schedule", path: $path, barHidden: $barHidden, index: 2)
@@ -45,7 +44,7 @@ struct SettingsView: View {
                 case 0:
                     AppearanceView(barHidden: $barHidden)
                 case 1:
-                    Text("Connect")
+                    NewDeviceView(barHidden: $barHidden)
                 case 2:
                     WateringScheduleView(barHidden: $barHidden)
                 case 3:

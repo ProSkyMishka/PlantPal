@@ -34,6 +34,7 @@
 		D2A2B3672C3F89CD00164139 /* PlantCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A2B3662C3F89CD00164139 /* PlantCollectionViewModel.swift */; };
 		D2A2B3692C3FC1D100164139 /* ColorLightDark.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A2B3682C3FC1D100164139 /* ColorLightDark.swift */; };
 		D2A2B36B2C3FC79800164139 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A2B36A2C3FC79800164139 /* ColorExtensions.swift */; };
+		D2A2B36E2C40EBA500164139 /* NewDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A2B36D2C40EBA500164139 /* NewDeviceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		D2A2B3662C3F89CD00164139 /* PlantCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCollectionViewModel.swift; sourceTree = "<group>"; };
 		D2A2B3682C3FC1D100164139 /* ColorLightDark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLightDark.swift; sourceTree = "<group>"; };
 		D2A2B36A2C3FC79800164139 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		D2A2B36D2C40EBA500164139 /* NewDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeviceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 		D20682B92C3B9ED000C4A319 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				D2A2B36C2C40EB9200164139 /* Device */,
 				D20682C92C3BA27600C4A319 /* Schedule */,
 				D20682C82C3BA03D00C4A319 /* About */,
 				D20682C72C3BA02700C4A319 /* Appearance */,
@@ -206,6 +209,14 @@
 				D20682DC2C3BAF7300C4A319 /* PlantInfoField.swift */,
 			);
 			path = PlantDetails;
+			sourceTree = "<group>";
+		};
+		D2A2B36C2C40EB9200164139 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				D2A2B36D2C40EBA500164139 /* NewDeviceView.swift */,
+			);
+			path = Device;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +309,7 @@
 				D21D55122C3EC7D700B47123 /* EditCapturedPlantView.swift in Sources */,
 				D20682D62C3BAB6A00C4A319 /* PlantModel.swift in Sources */,
 				D2A2B3672C3F89CD00164139 /* PlantCollectionViewModel.swift in Sources */,
+				D2A2B36E2C40EBA500164139 /* NewDeviceView.swift in Sources */,
 				D20682C62C3BA01500C4A319 /* DeveloperInfoView.swift in Sources */,
 				D20682DB2C3BAF4D00C4A319 /* InformationForPlant.swift in Sources */,
 				D20682D12C3BA3B500C4A319 /* DetailedScheduleView.swift in Sources */,

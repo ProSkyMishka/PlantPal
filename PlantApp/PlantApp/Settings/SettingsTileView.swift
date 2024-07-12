@@ -13,7 +13,6 @@ struct SettingsTileView: View {
     @Binding var path: NavigationPath
     @Binding var barHidden: Bool
     let index: Int
-    @State var colorTheme = ColorLight()
     
     var body: some View {
         

@@ -11,7 +11,6 @@ struct DetailedScheduleView: View {
     @Environment(\.dismiss) private var dismiss
     @Binding var flower: ScheduleItemModel
     @ObservedObject var scheduleViewModel: ScheduleViewModel
-    @State var colorTheme = ColorLight()
     
     var body: some View {
         

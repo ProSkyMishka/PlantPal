@@ -11,7 +11,6 @@ struct WateringScheduleView: View {
     @Binding var barHidden: Bool
     @Environment(\.dismiss) private var dismiss
     @StateObject var scheduleViewModel = ScheduleViewModel()
-    @State var colorTheme = ColorLight()
     
     var body: some View {
             ZStack (alignment: .center){

@@ -33,7 +33,6 @@ struct AddPlantView: View {
     @Binding var barHidden: Bool
     @State var isEditViewPresented = false
     @State var capturedPlant: PlantBaseModel = PlantBaseModel(name: "Rosa", description: "Description", url: "URL", temperatureRange: "temperature", humidity: "Yes", waterInterval: 12, nextWatering: Date(), replay: .everyDay)
-    @State var colorTheme = ColorLight()
     
     
     var body: some View {
@@ -45,7 +44,8 @@ struct AddPlantView: View {
                     
                     Text("Это действительно ваше растение?")
                        // .foregroundColor()
-                        .font(.system(size: 30))
+                        .font(.system(size: 28))
+                        .padding(8)
                     
                     Image(uiImage: image!)
                         .resizable()

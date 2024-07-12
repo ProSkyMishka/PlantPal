@@ -10,7 +10,6 @@ import SwiftUI
 struct AppInfoView: View {
     @Binding var barHidden: Bool
     @Environment(\.dismiss) private var dismiss
-    @State var colorTheme = ColorLight()
     
     let developers = [["Bazin Aleksey", "https://t.me/mathusha2023", "https://github.com/mathusha2023"],
                       ["Naypert Roman", "https://t.me/Artecka", "https://github.com/RomaNaybert"],

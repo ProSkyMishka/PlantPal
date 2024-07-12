@@ -11,9 +11,7 @@ struct PlantInfoField: View {
     var textTitle: String
     @Binding var text: String
     @State var notIsEdit: Bool = true
-    @FocusState var focused: Bool
-    @State var colorTheme = ColorLight()
-    
+    @FocusState var focused: Bool    
     
     var body: some View {
         HStack {

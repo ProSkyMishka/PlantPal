@@ -10,7 +10,6 @@ import SwiftUI
 struct SettingsView: View {
     @Binding var barHidden: Bool
     @Binding var path: NavigationPath
-    @State var colorTheme = ColorLight()
 
     var body: some View {
         

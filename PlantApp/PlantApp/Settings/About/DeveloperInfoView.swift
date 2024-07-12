@@ -12,7 +12,6 @@ struct DeveloperInfoView: View {
     let name: String
     let gitLink: String
     let tgLink: String
-    @State var colorTheme = ColorLight()
     
     var body: some View {
         HStack {

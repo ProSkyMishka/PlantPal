@@ -14,7 +14,6 @@ struct PlantCollectionView: View {
     @State private var offsets: [UUID: CGSize] = [:]
     @State private var showDeleteIcons: [UUID: Bool] = [:]
     @Binding var barHidden: Bool
-    @State var colorTheme = ColorLight()
     
     var body: some View {
         NavigationStack {

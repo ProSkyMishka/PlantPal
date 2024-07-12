@@ -11,7 +11,6 @@ struct EditCapturedPlantView: View {
     @Binding var index: Int
     @Binding var isPresented: Bool
     @Binding var capturedPlant: PlantBaseModel
-    @State var colorTheme = ColorLight()
     let numbers = Array(0...100)
     @Binding var image: UIImage?
     @State private var min = 0

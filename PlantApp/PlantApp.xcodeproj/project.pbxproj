@@ -146,7 +146,6 @@
 			children = (
 				D20682D92C3BAF3B00C4A319 /* PlantDetails */,
 				D20682B32C3B9EAA00C4A319 /* PlantCollectionView.swift */,
-				D2A2B3682C3FC1D100164139 /* ColorLightDark.swift */,
 				D20682D52C3BAB6A00C4A319 /* PlantModel.swift */,
 				D2A2B3662C3F89CD00164139 /* PlantCollectionViewModel.swift */,
 			);
@@ -192,6 +191,7 @@
 		D20682D22C3BAAD700C4A319 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D2A2B3682C3FC1D100164139 /* ColorLightDark.swift */,
 				D20682D32C3BAB2100C4A319 /* StringExtension.swift */,
 				D20682D72C3BAEB000C4A319 /* DateTimeFormatter.swift */,
 				D2A2B36A2C3FC79800164139 /* ColorExtensions.swift */,

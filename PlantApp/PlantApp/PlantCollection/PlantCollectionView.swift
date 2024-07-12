@@ -6,14 +6,30 @@
 //
 
 import SwiftUI
+import SwiftData
+
 
 struct PlantCollectionView: View {    
+    @Environment(\.modelContext) var modelContext
+    
     @StateObject var collectionViewModel = PlantCollectionViewModel()
     @State var flag = false
-    @State var sorted_enabled: [PlantBaseModel] = []
-    @State private var offsets: [UUID: CGSize] = [:]
-    @State private var showDeleteIcons: [UUID: Bool] = [:]
+    @State var sorted_enabled: [Plant] = []
+    @State private var offsets: [String: CGSize] = [:]
+    @State private var showDeleteIcons: [String: Bool] = [:]
     @Binding var barHidden: Bool
+    
+    @Query
+    var plants: [Plant]
+    
+    init(barHidden: Binding<Bool>) {
+        _barHidden = barHidden
+        collectionViewModel.plants = plants
+        _plants = Query(filter: #Predicate { plant in
+            return plant.serverId != ""
+            }
+        , sort: [])
+    }
     
     var body: some View {
         NavigationStack {
@@ -55,10 +71,10 @@ struct PlantCollectionView: View {
     
     var grid: some View {
         LazyVGrid(columns: [GridItem(), GridItem()]) {
-            ForEach(collectionViewModel.filteredPlants) { flower in
+            ForEach(plants) { flower in
             label: do {
                 ZStack {
-                    if showDeleteIcons[flower.id] == true && offsets[flower.id]?.width ?? 0 < 0 {
+                    if showDeleteIcons[flower.serverId] == true && offsets[flower.serverId]?.width ?? 0 < 0 {
                         Image(systemName: "trash.fill")
                             .resizable()
                             .frame(width: 30, height: 30)
@@ -77,11 +93,11 @@ struct PlantCollectionView: View {
                                 .foregroundColor(Theme.pink)
                                 .padding(.vertical, 10)
                             VStack {
-                                Rectangle()
+                                Image(uiImage: UIImage(data: flower.image ?? Data()) ?? UIImage())
                                     .frame(width: 100, height: 100)
                                     .cornerRadius(20)
-                                    .foregroundColor(Color(red: 0.6, green: 0.6, blue: 0.65))
                                     .padding(.vertical, 25)
+                                    .scaledToFit()
                                 Spacer()
                             }
                             VStack {
@@ -90,40 +106,40 @@ struct PlantCollectionView: View {
                                     .font(.system(size: 20, weight: .bold))
                                     .foregroundColor(Theme.textGreen)
                                 
-                                Text(flower.description)
+                                Text(flower.desc)
                                     .font(.system(size: 18, weight: .light))
                                     .foregroundColor(Theme.description)
                             }
                             .tint(.black)
                             .padding(.vertical, 17)
                         }
-                        .offset(x: offsets[flower.id]?.width ?? 0)
+                        .offset(x: offsets[flower.serverId]?.width ?? 0)
                         .gesture(
                             DragGesture()
                                 .onChanged { gesture in
                                     if gesture.translation.width < 0 {
-                                        offsets[flower.id] = gesture.translation
-                                        showDeleteIcons[flower.id] = true
+                                        offsets[flower.serverId] = gesture.translation
+                                        showDeleteIcons[flower.serverId] = true
                                     }
                                 }
                                 .onEnded { _ in
-                                    if offsets[flower.id]?.width ?? 0 < -100 {
+                                    if offsets[flower.serverId]?.width ?? 0 < -100 {
                                         withAnimation(.easeInOut) {
-                                            if let index = collectionViewModel.plants.firstIndex(where: { $0.id == flower.id }) {
-                                                offsets[flower.id] = .zero
-                                                showDeleteIcons[flower.id] = false
+                                            if let index = collectionViewModel.plants.firstIndex(where: { $0.serverId == flower.serverId }) {
+                                                offsets[flower.serverId] = .zero
+                                                showDeleteIcons[flower.serverId] = false
                                                 collectionViewModel.plants.remove(at: index)
                                             }
                                         }
                                     } else {
                                         withAnimation {
-                                            offsets[flower.id] = .zero
-                                            showDeleteIcons[flower.id] = false
+                                            offsets[flower.serverId] = .zero
+                                            showDeleteIcons[flower.serverId] = false
                                         }
                                     }
                                 }
                         )
-                        .animation(.easeInOut, value: offsets[flower.id])
+                        .animation(.easeInOut, value: offsets[flower.serverId])
                     }
                     
                 }

@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct EditCapturedPlantView: View {
+    @Environment(\.modelContext) var modelContext
+    
     @Binding var index: Int
     @Binding var isPresented: Bool
-    @Binding var capturedPlant: PlantBaseModel
+    @Binding var capturedPlant: ResultPlant
     let numbers = Array(0...100)
     @Binding var image: UIImage?
     @State private var min = 0
@@ -110,9 +113,19 @@ struct EditCapturedPlantView: View {
                 Spacer()
                 Text(" ")
                 Button(action: {
+                    let plant = Plant(serverId: capturedPlant.id,
+                                      desc: capturedPlant.description,
+                                      humidity: capturedPlant.humidity,
+                                      temp: capturedPlant.temp,
+                                      MLID: capturedPlant.MLID,
+                                      imageURL: capturedPlant.imageURL,
+                                      seconds: capturedPlant.seconds,
+                                      name: capturedPlant.name)
+                    plant.image = image?.jpegData(compressionQuality: 1.0)
+                    modelContext.insert(plant)
+                    
                     isPresented = false
                     index = 0
-                    // coreData сохранение
                 }) {
                     Text("Save")
                         .bold()

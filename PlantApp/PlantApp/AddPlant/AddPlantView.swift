@@ -13,7 +13,7 @@ struct ResponseML: Codable {
 }
 
 struct ResultPlant: Codable {
-    var id = UUID()
+    var id: String
     var description: String
     var humidity: String
     var temp: String
@@ -24,15 +24,16 @@ struct ResultPlant: Codable {
 }
 
 struct AddPlantView: View {
+    @Environment(\.modelContext) var modelContext
+    
     @Binding var index: Int
     @State private var image: UIImage?
     @State public var resultsML: ResponseML = ResponseML(classML: "", real_name: "")
-    @State public var resultsServer:  ResultPlant = ResultPlant(description: "", humidity: "", temp: "", MLID: "", imageURL: "", seconds: 0, name: "")
+    @State public var resultsServer:  ResultPlant = ResultPlant(id: "", description: "", humidity: "", temp: "", MLID: "", imageURL: "", seconds: 0, name: "")
     @State private var recognizedPlant: PlantBaseModel?
     @State private var isInfoLoading = true
     @Binding var barHidden: Bool
     @State var isEditViewPresented = false
-    @State var capturedPlant: PlantBaseModel = PlantBaseModel(name: "Rosa", description: "Description", url: "URL", temperatureRange: "temperature", humidity: "Yes", waterInterval: 12, nextWatering: Date(), replay: .everyDay)
     
     
     var body: some View {
@@ -65,7 +66,20 @@ struct AddPlantView: View {
                  
                         HStack {
                             Button(action: {
-                                // coreData
+                                // Add to Swift data
+                                let plant = Plant(serverId: resultsServer.id,
+                                                  desc: resultsServer.description,
+                                                  humidity: resultsServer.humidity,
+                                                  temp: resultsServer.temp,
+                                                  MLID: resultsServer.MLID,
+                                                  imageURL: resultsServer.imageURL,
+                                                  seconds: resultsServer.seconds,
+                                                  name: resultsServer.name)
+                                
+                                plant.image = image?.jpegData(compressionQuality: 1.0)
+                                modelContext.insert(plant)
+                                
+                                // Change to main screen
                                 index = 0
                             }) {
                                 Image(systemName: "checkmark.circle.fill")
@@ -89,7 +103,7 @@ struct AddPlantView: View {
                                     .padding(.horizontal)
                             }
                             .fullScreenCover(isPresented: $isEditViewPresented) {
-                                EditCapturedPlantView(index: $index, isPresented: $isEditViewPresented, capturedPlant: $capturedPlant, image: $image)
+                                EditCapturedPlantView(index: $index, isPresented: $isEditViewPresented, capturedPlant: $resultsServer, image: $image)
                             }
                         }
                         .bold()

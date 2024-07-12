@@ -8,26 +8,27 @@
 import SwiftUI
 
 struct InformationForPlant: View {
-    @State var plant: PlantBaseModel
+    @Bindable var plant: Plant
     @State var notIsEdit = true
     @State var isPresented = false
     @State var isEditOpen = false
     @Binding var barHidden: Bool
     @Environment(\.dismiss) private var dismiss
     @State var textInRepeat = "Never"
+    @State var date = Date()
    // @State var replay: RepeatWatering
     
     
     var body: some View {
             ScrollView{
-                Image(plant.url)
+                Image(uiImage: UIImage(data: plant.image ?? Data()) ?? UIImage())
                     .resizable()
                     .frame(width: 180, height: 180)
                     .cornerRadius(8)
                 
                 PlantInfoField(textTitle: "Name", text: $plant.name, notIsEdit: notIsEdit)
-                PlantInfoField(textTitle: "Description", text: $plant.description, notIsEdit: notIsEdit)
-                PlantInfoField(textTitle: "Recommended Temperature", text: $plant.temperatureRange, notIsEdit: notIsEdit)
+                PlantInfoField(textTitle: "Description", text: $plant.desc, notIsEdit: notIsEdit)
+                PlantInfoField(textTitle: "Recommended Temperature", text: $plant.temp, notIsEdit: notIsEdit)
                 PlantInfoField(textTitle: "Recommended Humidity", text: $plant.humidity, notIsEdit: notIsEdit)
                 
                 
@@ -38,17 +39,22 @@ struct InformationForPlant: View {
                                 .font(.system(size: 20, weight: .bold))
                                 .foregroundColor(Theme.textBrown)
                             
-                            if plant.lastWatered != nil {
-                                Text(DateTimeFormatter.shared.toString(date: plant.lastWatered!))
-                                    .font(.system(size: 20))
-                            } else {
-                                Text("None")
-                                    .font(.system(size: 20))
-                                    .foregroundColor(Theme.textColor)
-                            }}.padding(.leading, 20)
+                            Text(DateTimeFormatter.shared.toString(date: Date()))
+                                .font(.system(size: 20))
+                                .foregroundColor(Theme.textColor)
+                            
+//                            if plant.lastWatered != nil {
+//                                Text(DateTimeFormatter.shared.toString(date: plant.lastWatered!))
+//                                    .font(.system(size: 20))
+//                            } else {
+//                                Text("None")
+//                                    .font(.system(size: 20))
+//                                    .foregroundColor(Theme.textColor)
+//                            }
+                        }.padding(.leading, 20)
                         Spacer()
                         Button(action:{
-                            plant.lastWatered = Date.now
+                            //plant.lastWatered = Date.now
                             
                             // TODO: Call server with new date
                             
@@ -74,7 +80,8 @@ struct InformationForPlant: View {
                             .padding(.all, 15)
                             .foregroundColor(Theme.textBrown)
                         Spacer()
-                        DatePicker("", selection: $plant.nextWatering).padding(.trailing, 10)
+                        DatePicker("", selection: $date).padding(.trailing, 10)
+                        //DatePicker("", selection: $plant.nextWatering).padding(.trailing, 10)
                     }
                 }
                 HStack{

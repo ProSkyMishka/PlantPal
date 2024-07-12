@@ -35,6 +35,8 @@
 		D2A2B3692C3FC1D100164139 /* ColorLightDark.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A2B3682C3FC1D100164139 /* ColorLightDark.swift */; };
 		D2A2B36B2C3FC79800164139 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A2B36A2C3FC79800164139 /* ColorExtensions.swift */; };
 		D2A2B36E2C40EBA500164139 /* NewDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A2B36D2C40EBA500164139 /* NewDeviceView.swift */; };
+		D2A2B3702C40EE0900164139 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A2B36F2C40EE0900164139 /* Plant.swift */; };
+		D2A2B3722C40EE2400164139 /* Watering.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A2B3712C40EE2400164139 /* Watering.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,8 @@
 		D2A2B3682C3FC1D100164139 /* ColorLightDark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLightDark.swift; sourceTree = "<group>"; };
 		D2A2B36A2C3FC79800164139 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		D2A2B36D2C40EBA500164139 /* NewDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeviceView.swift; sourceTree = "<group>"; };
+		D2A2B36F2C40EE0900164139 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
+		D2A2B3712C40EE2400164139 /* Watering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watering.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,8 @@
 				D20682B72C3B9ECC00C4A319 /* AddPlantView.swift */,
 				D29F7C9D2C3E616A00BBE0DE /* CameraView.swift */,
 				D21D55112C3EC7D700B47123 /* EditCapturedPlantView.swift */,
+				D2A2B36F2C40EE0900164139 /* Plant.swift */,
+				D2A2B3712C40EE2400164139 /* Watering.swift */,
 			);
 			path = AddPlant;
 			sourceTree = "<group>";
@@ -291,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2A2B3722C40EE2400164139 /* Watering.swift in Sources */,
 				D20682D82C3BAEB000C4A319 /* DateTimeFormatter.swift in Sources */,
 				D20682A82C3B9E3C00C4A319 /* ContentView.swift in Sources */,
 				D20682B62C3B9EBD00C4A319 /* SettingsView.swift in Sources */,
@@ -310,6 +317,7 @@
 				D20682D62C3BAB6A00C4A319 /* PlantModel.swift in Sources */,
 				D2A2B3672C3F89CD00164139 /* PlantCollectionViewModel.swift in Sources */,
 				D2A2B36E2C40EBA500164139 /* NewDeviceView.swift in Sources */,
+				D2A2B3702C40EE0900164139 /* Plant.swift in Sources */,
 				D20682C62C3BA01500C4A319 /* DeveloperInfoView.swift in Sources */,
 				D20682DB2C3BAF4D00C4A319 /* InformationForPlant.swift in Sources */,
 				D20682D12C3BA3B500C4A319 /* DetailedScheduleView.swift in Sources */,

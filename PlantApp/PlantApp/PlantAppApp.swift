@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @Observable
 class LanguageSetting {
@@ -22,6 +23,7 @@ struct PlantAppApp: App {
             ContentView()
                 .environment(languageSettings)
                 .environment(\.locale, languageSettings.locale)
+                .modelContainer(for: Plant.self)
         }
     }
 }

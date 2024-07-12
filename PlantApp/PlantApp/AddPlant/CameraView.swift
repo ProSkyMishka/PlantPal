@@ -45,7 +45,7 @@ extension CameraView {
         }
         
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-            self.parent.image = nil
+            //self.parent.image = nil
             self.parent.barHidden = false
         }
 

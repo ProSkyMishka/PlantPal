@@ -66,7 +66,7 @@ struct InformationForPlant: View {
                                     .font(.system(size: 20, weight: .bold))
                                     .foregroundColor(.white)
                             }
-                            .padding(.horizontal, 24)
+                            .padding(.horizontal, 29)
                             .padding(.vertical,8)
                             .background(Theme.buttonColor)
                             .cornerRadius(18)

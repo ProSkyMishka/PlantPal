@@ -14,7 +14,7 @@ class PlantCollectionViewModel: ObservableObject {
 //        PlantBaseModel(name: "Bereza", description: "Tree", lastWatered: Date(), url: "daisy", temperatureRange: "15 - 25", humidity: "65", waterInterval: 5, nextWatering: Date(), replay: .everyDay)
 //    ]
 //    
-    @Published var plants: [Plant] = []
+    @Published var plants: [Plant] = [Plant(serverId: "trst", desc: "Flower", humidity: "67", temp: "56", MLID: "jwygdjq", imageURL: "", seconds: 10, name: "Rose")]
     @Published var search = ""
     
     var filteredPlants: [Plant] {

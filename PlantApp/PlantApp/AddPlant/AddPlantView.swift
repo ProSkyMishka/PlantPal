@@ -43,7 +43,7 @@ struct AddPlantView: View {
             } else {
                 VStack {
                     
-                    Text("Это действительно ваше растение?")
+                    Text("I this really your plant?")
                        // .foregroundColor()
                         .font(.system(size: 28))
                         .padding(8)

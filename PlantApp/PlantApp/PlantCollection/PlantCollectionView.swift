@@ -71,7 +71,7 @@ struct PlantCollectionView: View {
     
     var grid: some View {
         LazyVGrid(columns: [GridItem(), GridItem()]) {
-            ForEach(plants) { flower in
+            ForEach(collectionViewModel.filteredPlants) { flower in
             label: do {
                 ZStack {
                     if showDeleteIcons[flower.serverId] == true && offsets[flower.serverId]?.width ?? 0 < 0 {

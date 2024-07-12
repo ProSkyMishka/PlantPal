@@ -23,7 +23,7 @@ struct PlantAppApp: App {
             ContentView()
                 .environment(languageSettings)
                 .environment(\.locale, languageSettings.locale)
-                .modelContainer(for: Plant.self)
         }
+        .modelContainer(for: Plant.self)
     }
 }

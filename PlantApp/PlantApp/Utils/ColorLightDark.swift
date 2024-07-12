@@ -28,7 +28,7 @@ class Theme {
     static var textAzure = Color(uiColor: UIColor(hex: "7EBDEA")) // My Plant Collection
     static var textBlue = Color(uiColor: UIColor(hex: "3154D3"))  // названия в коллекции/ характеристики в карточке растения
     static var buttonColor = Color(uiColor: UIColor(hex: "2AC1E3")) //
-    static var textColor = Color(uiColor: UIColor(hex: "000000"))
+    static var textColor = Color(uiColor: UIColor(hex: "616161"))
     static var search = Color(uiColor: UIColor(hex: "FFF38C"))
     static var description = Color(uiColor: UIColor(hex: "7C947E"))
     static var icon = Color(uiColor: UIColor(hex: "17980C"))
@@ -81,7 +81,7 @@ struct ColorLight {
     var textAzure = Color(uiColor: UIColor(hex: "7EBDEA")) // My Plant Collection
     var textBlue = Color(uiColor: UIColor(hex: "3154D3"))  // названия в коллекции/ характеристики в карточке растения
     var buttonColor = Color(uiColor: UIColor(hex: "2AC1E3")) //цвет кнопок
-    var textColor = Color(uiColor: UIColor(hex: "000000"))
+    var textColor = Color(uiColor: UIColor(hex: "616161"))
     
     var search = Color(uiColor: UIColor(hex: "DFDDDD"))
     var icon = Color(uiColor: UIColor(hex: "17980C"))

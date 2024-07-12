@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NewDeviceView: View {
+    @Environment(\.dismiss) private var dismiss
     @Binding var barHidden: Bool
     @State var ssid: String = "";
     @State var password: String = "";
@@ -16,15 +17,18 @@ struct NewDeviceView: View {
         ScrollView {
             Text("Connect the device for\n   automatic watering.")
                 .font(.system(size: 30))
+                .foregroundColor(Theme.textBrown)
                 .padding(.vertical, 20)
             Text("The device and the phone should be\n connected to the same wifi network")
-                .font(.system(size: 18))
-                .foregroundColor(Color.gray)
+                .font(.system(size: 17))
+                .foregroundColor(Theme.textColor)
             VStack {
                 HStack {
                     Text("Wi-Fi SSID")
                         .padding(.horizontal, 20)
+                        .foregroundColor(Theme.textGreen)
                     TextField("Value", text: $ssid)
+                        .foregroundColor(Theme.textColor)
                 }
                 Divider()                        .padding(.horizontal, 15)
             }
@@ -33,7 +37,9 @@ struct NewDeviceView: View {
                 HStack {
                     Text("Password")
                         .padding(.horizontal, 20)
+                        .foregroundColor(Theme.textBrown)
                     TextField("Value", text: $password)
+                        .foregroundColor(Theme.textColor)
                 }
                 Divider()
                     .padding(.horizontal, 15)
@@ -46,14 +52,33 @@ struct NewDeviceView: View {
                     .padding(.vertical, 15)
                     .padding(.horizontal, 100)
             })
-            .background(Color.blue)
+            .background(Theme.buttonColor)
             .cornerRadius(10)
             Spacer()
         }
         .padding()
         .edgesIgnoringSafeArea(.bottom)
         .background(Theme.backGround)
-        .navigationTitle("Connect device")
-        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden()
+        .toolbar(content: {
+            ToolbarItem(placement: .automatic) {
+                Text("Connect Device")
+                    .foregroundColor(Theme.textGreen)
+                    .font(.title2)
+            }
+            ToolbarItem(placement: .navigationBarLeading) {
+                HStack {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(Theme.icon)
+                    Text("Back")
+                        .font(.system(size: 20))
+                        .foregroundColor(Theme.icon)
+                }
+                    .onTapGesture {
+                    barHidden.toggle()
+                    dismiss()
+                }
+            }
+        })
     }
 }

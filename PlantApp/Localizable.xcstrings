@@ -140,7 +140,15 @@
       }
     },
     "Connect device" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добавить устройство"
+          }
+        }
+      }
     },
     "Connect Device" : {
       "extractionState" : "manual",
@@ -154,7 +162,14 @@
       }
     },
     "Connect the device for\n   automatic watering." : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Подключите устройство для автоматического полива"
+          }
+        }
+      }
     },
     "Dark" : {
       "localizations" : {
@@ -256,6 +271,23 @@
           }
         }
       }
+    },
+    "I this really your plant?" : {
+
+    },
+    "Is this really your plant?" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Это действительно ваше растение?"
+          }
+        }
+      }
+    },
+    "Key" : {
+      "extractionState" : "manual"
     },
     "Kondratieva Margarita" : {
       "extractionState" : "manual",
@@ -399,7 +431,14 @@
       }
     },
     "Password" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пароль"
+          }
+        }
+      }
     },
     "Plan of watering" : {
       "localizations" : {
@@ -515,10 +554,24 @@
       }
     },
     "The device and the phone should be\n connected to the same wifi network" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Устройство и телефон должны быть подключены к одной сети wifi"
+          }
+        }
+      }
     },
     "Value" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Значение"
+          }
+        }
+      }
     },
     "Vasilievsky Arthur" : {
       "extractionState" : "manual",
@@ -571,7 +624,15 @@
 
     },
     "Это действительно ваше растение?" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Это действительно ваше растение?"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

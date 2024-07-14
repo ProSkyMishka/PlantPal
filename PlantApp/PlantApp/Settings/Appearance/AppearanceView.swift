@@ -44,6 +44,7 @@ struct AppearanceView: View {
                             Button(action: {
                                 lang = num
                                 languageSettings.locale = Locale(identifier: languagesIdentifiers[lang])
+                                UserDefaults.standard.setValue(languagesIdentifiers[lang], forKey: "Language")
                             }, label: {
                                 Text(languages[num])
                             })

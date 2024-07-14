@@ -10,8 +10,17 @@ import SwiftData
 
 @Observable
 class LanguageSetting {
-    // initialise this from UserDefaults if you like
-    var locale = Locale(identifier: NSLocale.current.language.languageCode?.identifier ?? "en")
+    
+    init() {
+        var lang = UserDefaults.standard.value(forKey: "Language")
+        if (lang == nil) {
+            lang = NSLocale.current.language.languageCode?.identifier ?? "en"
+        }
+        
+        locale = Locale(identifier: lang as! String)
+    }
+    
+    var locale: Locale
 }
 
 @main

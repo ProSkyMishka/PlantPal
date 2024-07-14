@@ -512,7 +512,14 @@
       }
     },
     "Search" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поиск"
+          }
+        }
+      }
     },
     "Select App Theme" : {
       "localizations" : {

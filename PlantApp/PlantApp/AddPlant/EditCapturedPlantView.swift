@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct EditCapturedPlantView: View {
-    @Environment(\.modelContext) var modelContext
+    @Environment(\.modelContext) var modelContext: ModelContext
     
     @Binding var index: Int
     @Binding var isPresented: Bool

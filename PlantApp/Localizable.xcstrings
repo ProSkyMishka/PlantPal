@@ -397,7 +397,6 @@
       }
     },
     "None" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -416,6 +415,9 @@
           }
         }
       }
+    },
+    "Not planning date yet" : {
+
     },
     "Partner:" : {
       "localizations" : {

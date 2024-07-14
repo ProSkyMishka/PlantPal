@@ -23,7 +23,7 @@ class Plant: Comparable {
     var MLID: String = ""
     var imageURL: String = ""
     var seconds: Int = 0
-    var watering: [Watering]? = [Watering]()
+    var watering: [Date] = []
     @Attribute(.externalStorage) var image: Data?
     
     init(serverId: String, desc: String, humidity: String, temp: String, MLID: String, imageURL: String, seconds: Int, name: String) {

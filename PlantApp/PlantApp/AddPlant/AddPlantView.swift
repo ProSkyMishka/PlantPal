@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ResponseML: Codable {
     var classML: String
@@ -24,13 +25,12 @@ struct ResultPlant: Codable {
 }
 
 struct AddPlantView: View {
-    @Environment(\.modelContext) var modelContext
+    @Environment(\.modelContext) var modelContext: ModelContext
     
     @Binding var index: Int
     @State private var image: UIImage?
     @State public var resultsML: ResponseML = ResponseML(classML: "", real_name: "")
     @State public var resultsServer:  ResultPlant = ResultPlant(id: "", description: "", humidity: "", temp: "", MLID: "", imageURL: "", seconds: 0, name: "")
-    @State private var recognizedPlant: PlantBaseModel?
     @State private var isInfoLoading = true
     @Binding var barHidden: Bool
     @State var isEditViewPresented = false

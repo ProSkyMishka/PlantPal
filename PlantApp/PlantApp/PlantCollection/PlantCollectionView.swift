@@ -10,35 +10,19 @@ import SwiftData
 
 
 struct PlantCollectionView: View {    
-    @Environment(\.modelContext) private var modelContext
-    
-    @StateObject var collectionViewModel = PlantCollectionViewModel()
-    @State var flag = false
+    @Environment(\.modelContext) private var modelContext: ModelContext
+    @State var sortAlphabet: Bool = false
     @State var sorted_enabled: [Plant] = []
-    @State private var offsets: [String: CGSize] = [:]
-    @State private var showDeleteIcons: [String: Bool] = [:]
+    @State var search = ""
     @Binding var barHidden: Bool
     @FocusState var isFocused: Bool
+    @State var showSearch: Bool = false
+    
 
-    
-    static var descriptor: FetchDescriptor<Plant> =  FetchDescriptor<Plant>(sortBy: [])
-    
-    @Query(descriptor)
-    var plants: [Plant]
-    
-    init(barHidden: Binding<Bool>) {
-        _barHidden = barHidden
-        collectionViewModel.plants = plants
-        _plants = Query(filter: #Predicate { plant in
-            return plant.serverId != ""
-            }
-        , sort: [])
-    }
-    
     var body: some View {
         NavigationStack {
             VStack {
-                if (!isFocused) {
+                if (!showSearch) {
                     HStack {
                         
                         Text("Flowers Collection")
@@ -49,13 +33,7 @@ struct PlantCollectionView: View {
                         Spacer()
                         
                         Button(action: {
-                            if !flag {
-                                sorted_enabled = collectionViewModel.plants
-                                collectionViewModel.plants.sort()
-                            } else {
-                                collectionViewModel.plants = sorted_enabled
-                            }
-                            flag = !flag
+                            sortAlphabet.toggle()
                         }, label: {
                             Image(systemName: "arrow.up.arrow.down")
                                 .resizable()
@@ -71,9 +49,14 @@ struct PlantCollectionView: View {
                         Image(systemName: "magnifyingglass")
                             .foregroundColor(Theme.textColor)
                         
-                        TextField("", text: $collectionViewModel.search, prompt: Text("Search").foregroundColor(Theme.textColor))
+                        TextField("", text: $search, prompt: Text("Search").foregroundColor(Theme.textColor))
                             .foregroundColor(Theme.textColor)
                             .font(.system(size: 20))
+                            .onChange(of: isFocused) {
+                                withAnimation {
+                                    showSearch = isFocused
+                                }
+                            }
                     }
                     .padding(.vertical, 5)
                     .padding(.horizontal)
@@ -81,11 +64,10 @@ struct PlantCollectionView: View {
                     .cornerRadius(10)
                     .focused($isFocused)
                     
-                    if (isFocused) {
+                    if (showSearch) {
                         Button(action: {
                             withAnimation {
                                 isFocused = false
-                                collectionViewModel.search = ""
                             }
                            
                         }) {
@@ -96,121 +78,32 @@ struct PlantCollectionView: View {
                     }
                 }
                 .transition(.slide)
-                
+
                 ScrollView {
                     ZStack {
-                        grid
+                        FlowerListView(sort: sortAlphabet ? [SortDescriptor(\Plant.name)] : [], filter: #Predicate { plant in
+                            if search != "" {
+                                plant.name.localizedStandardContains(search) /*|| plant.maxSubstring(b: search)*/
+                            } else {
+                                return true
+                            }
+                            
+                        }, barHidden: $barHidden)
                     }
                 }
             }
+//            .onAppear {
+//                let plant = Plant(serverId: "1003", desc: "Description", humidity: "45-56", temp: "45", MLID: "038", imageURL: "", seconds: 56, name: "Test")
+//                plant.image = UIImage(systemName: "star.fill")?.jpegData(compressionQuality: 1.0)!
+//                plant.watering = [Date(), Date(timeInterval: 60, since: Date()), Date(timeInterval: -60, since: Date()), Date(timeInterval: 3600, since: Date())]
+//                modelContext.insert(plant)
+//            }
             .transition(.slide)
             .padding(.horizontal)
             .background(Theme.backGround)
-//            .toolbar {
-//                ToolbarItem {
-//                    Text("Flowers Collection")
-//                      .font(.system(size: 30))
-//                      .bold()
-//                      .foregroundColor(Theme.textAzure)
-//                }
-//                ToolbarItem {
-//                    Button(action: {
-//                        if !flag {
-//                            sorted_enabled = collectionViewModel.plants
-//                            collectionViewModel.plants.sort()
-//                        } else {
-//                            collectionViewModel.plants = sorted_enabled
-//                        }
-//                        flag = !flag
-//                    }, label: {
-//                        Image(systemName: "arrow.up.arrow.down")
-//                            .resizable()
-//                            .frame(width: 20, height: 20)
-//                            .padding(.horizontal, 10)
-//                            .background(Theme.backGround)
-//                    })
-//                }
-//            }
             .foregroundColor(Theme.textBrown)
         }
     }
+
     
-    var grid: some View {
-        LazyVGrid(columns: [GridItem(), GridItem()]) {
-            ForEach(plants) { flower in
-            label: do {
-                ZStack {
-                    if showDeleteIcons[flower.serverId] == true && offsets[flower.serverId]?.width ?? 0 < 0 {
-                        Image(systemName: "trash.fill")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .foregroundColor(.red)
-                            .padding()
-                        //   .transition(.move(edge: .trailing))
-                        //   .animation(.easeInOut(duration: 0.1), value: showDeleteIcons[flower.id])
-                    }
-                    NavigationLink {
-                        InformationForPlant(plant: flower, barHidden: $barHidden)
-                    } label: {
-                        ZStack {
-                            Rectangle()
-                                .frame(width: 140, height: 180)
-                                .cornerRadius(20)
-                                .foregroundColor(Theme.pink)
-                                .padding(.vertical, 10)
-                            VStack {
-                                Image(uiImage: UIImage(data: flower.image ?? Data()) ?? UIImage())
-                                    .frame(width: 100, height: 100)
-                                    .cornerRadius(20)
-                                    .padding(.vertical, 25)
-                                    .scaledToFit()
-                                Spacer()
-                            }
-                            VStack {
-                                Spacer()
-                                Text(flower.name)
-                                    .font(.system(size: 20, weight: .bold))
-                                    .foregroundColor(Theme.textGreen)
-                                
-                                Text(flower.desc)
-                                    .font(.system(size: 18, weight: .light))
-                                    .foregroundColor(Theme.description)
-                            }
-                            .tint(.black)
-                            .padding(.vertical, 17)
-                        }
-                        .offset(x: offsets[flower.serverId]?.width ?? 0)
-                        .gesture(
-                            DragGesture()
-                                .onChanged { gesture in
-                                    if gesture.translation.width < 0 {
-                                        offsets[flower.serverId] = gesture.translation
-                                        showDeleteIcons[flower.serverId] = true
-                                    }
-                                }
-                                .onEnded { _ in
-                                    if offsets[flower.serverId]?.width ?? 0 < -100 {
-                                        withAnimation(.easeInOut) {
-                                            if let index = collectionViewModel.plants.firstIndex(where: { $0.serverId == flower.serverId }) {
-                                                offsets[flower.serverId] = .zero
-                                                showDeleteIcons[flower.serverId] = false
-                                                collectionViewModel.plants.remove(at: index)
-                                            }
-                                        }
-                                    } else {
-                                        withAnimation {
-                                            offsets[flower.serverId] = .zero
-                                            showDeleteIcons[flower.serverId] = false
-                                        }
-                                    }
-                                }
-                        )
-                        .animation(.easeInOut, value: offsets[flower.serverId])
-                    }
-                    
-                }
-            }
-            }
-        }
-    }
 }

@@ -10,7 +10,7 @@ import SwiftData
 
 
 struct PlantCollectionView: View {    
-    @Environment(\.modelContext) var modelContext
+    @Environment(\.modelContext) private var modelContext
     
     @StateObject var collectionViewModel = PlantCollectionViewModel()
     @State var flag = false
@@ -19,7 +19,9 @@ struct PlantCollectionView: View {
     @State private var showDeleteIcons: [String: Bool] = [:]
     @Binding var barHidden: Bool
     
-    @Query
+    static var descriptor: FetchDescriptor<Plant> =  FetchDescriptor<Plant>(sortBy: [])
+    
+    @Query(descriptor)
     var plants: [Plant]
     
     init(barHidden: Binding<Bool>) {
@@ -40,28 +42,33 @@ struct PlantCollectionView: View {
             }
             .background(Theme.backGround)
             .toolbar {
-                ToolbarItem {
-                    Text("Flowers Collection")
-                      .font(.system(size: 30))
-                      .bold()
-                      .foregroundColor(Theme.textAzure)
-                }
-                ToolbarItem {
-                    Button(action: {
-                        if !flag {
-                            sorted_enabled = collectionViewModel.plants
-                            collectionViewModel.plants.sort()
-                        } else {
-                            collectionViewModel.plants = sorted_enabled
+                ToolbarItem{
+                    ZStack{
+                        HStack{
+                            Text("Flowers Collection")
+                                .font(.system(size: 28))
+                                .bold()
+                                .foregroundColor(Theme.textAzure)
+                    
+                        Spacer()
+                    
+                            Button(action: {
+                                if !flag {
+                                    sorted_enabled = collectionViewModel.plants
+                                    collectionViewModel.plants.sort()
+                                } else {
+                                    collectionViewModel.plants = sorted_enabled
+                                }
+                                flag = !flag
+                            }, label: {
+                                Image(systemName: "arrow.up.arrow.down")
+                                    .resizable()
+                                    .frame(width: 20, height: 20)
+                                    .padding(.horizontal, 10)
+                                    .background(Theme.backGround)
+                            })
                         }
-                        flag = !flag
-                    }, label: {
-                        Image(systemName: "arrow.up.arrow.down")
-                            .resizable()
-                            .frame(width: 20, height: 20)
-                            .padding(.horizontal, 10)
-                            .background(Theme.backGround)
-                    })
+                    }.background(Theme.backGround)
                 }
             }
             .foregroundColor(Theme.textBrown)
@@ -71,7 +78,7 @@ struct PlantCollectionView: View {
     
     var grid: some View {
         LazyVGrid(columns: [GridItem(), GridItem()]) {
-            ForEach(collectionViewModel.filteredPlants) { flower in
+            ForEach(plants) { flower in
             label: do {
                 ZStack {
                     if showDeleteIcons[flower.serverId] == true && offsets[flower.serverId]?.width ?? 0 < 0 {

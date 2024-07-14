@@ -17,12 +17,14 @@ struct AppearanceView: View {
     @State var lang = 0
     @State var showLangDialog = false
     @State var showThemeDialog = false
+    @State var theme = Theme.theme
     
     var body: some View {
         ScrollView {
             VStack {
                 Button(action: {
                     showLangDialog.toggle()
+                    
                 }){
                     HStack {
                         Text("Language")
@@ -54,8 +56,12 @@ struct AppearanceView: View {
                 
                 Button(action: {
                     showThemeDialog.toggle()
+                    theme += 1
+                    theme %= 2
+                    print(theme)
+                    UserDefaults.standard.setValue(theme, forKey: "theme")
                 })  {
-                    HStack {
+                    HStack{
                         Text("Appearance")
                             .foregroundColor(Theme.textBrown)
                             .font(.system(size: 20))

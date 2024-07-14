@@ -511,6 +511,9 @@
         }
       }
     },
+    "Search" : {
+
+    },
     "Select App Theme" : {
       "localizations" : {
         "ru" : {

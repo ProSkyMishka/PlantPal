@@ -18,6 +18,8 @@ struct PlantCollectionView: View {
     @State private var offsets: [String: CGSize] = [:]
     @State private var showDeleteIcons: [String: Bool] = [:]
     @Binding var barHidden: Bool
+    @FocusState var isFocused: Bool
+
     
     static var descriptor: FetchDescriptor<Plant> =  FetchDescriptor<Plant>(sortBy: [])
     
@@ -35,44 +37,101 @@ struct PlantCollectionView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView {
-                ZStack {
-                    grid
-                }
-            }
-            .background(Theme.backGround)
-            .toolbar {
-                ToolbarItem{
-                    ZStack{
-                        HStack{
-                            Text("Flowers Collection")
-                                .font(.system(size: 28))
-                                .bold()
-                                .foregroundColor(Theme.textAzure)
-                    
+            VStack {
+                if (!isFocused) {
+                    HStack {
+                        
+                        Text("Flowers Collection")
+                            .font(.system(size: 30))
+                            .bold()
+                            .foregroundColor(Theme.textAzure)
+                        
                         Spacer()
+                        
+                        Button(action: {
+                            if !flag {
+                                sorted_enabled = collectionViewModel.plants
+                                collectionViewModel.plants.sort()
+                            } else {
+                                collectionViewModel.plants = sorted_enabled
+                            }
+                            flag = !flag
+                        }, label: {
+                            Image(systemName: "arrow.up.arrow.down")
+                                .resizable()
+                                .frame(width: 20, height: 20)
+                                .padding(.horizontal, 10)
+                                .background(Theme.backGround)
+                        })
+                    }
+                }
+                
+                HStack {
+                    HStack {
+                        Image(systemName: "magnifyingglass")
+                            .foregroundColor(Theme.textColor)
+                        
+                        TextField("", text: $collectionViewModel.search, prompt: Text("Search").foregroundColor(Theme.textColor))
+                            .foregroundColor(Theme.textColor)
+                            .font(.system(size: 20))
+                    }
+                    .padding(.vertical, 5)
+                    .padding(.horizontal)
+                    .background(Theme.search)
+                    .cornerRadius(10)
+                    .focused($isFocused)
                     
-                            Button(action: {
-                                if !flag {
-                                    sorted_enabled = collectionViewModel.plants
-                                    collectionViewModel.plants.sort()
-                                } else {
-                                    collectionViewModel.plants = sorted_enabled
-                                }
-                                flag = !flag
-                            }, label: {
-                                Image(systemName: "arrow.up.arrow.down")
-                                    .resizable()
-                                    .frame(width: 20, height: 20)
-                                    .padding(.horizontal, 10)
-                                    .background(Theme.backGround)
-                            })
+                    if (isFocused) {
+                        Button(action: {
+                            withAnimation {
+                                isFocused = false
+                                collectionViewModel.search = ""
+                            }
+                           
+                        }) {
+                            Text("Cancel")
+                                .foregroundColor(Theme.icon)
+                                .font(.system(size: 20))
                         }
-                    }.background(Theme.backGround)
+                    }
+                }
+                .transition(.slide)
+                
+                ScrollView {
+                    ZStack {
+                        grid
+                    }
                 }
             }
+            .transition(.slide)
+            .padding(.horizontal)
+            .background(Theme.backGround)
+//            .toolbar {
+//                ToolbarItem {
+//                    Text("Flowers Collection")
+//                      .font(.system(size: 30))
+//                      .bold()
+//                      .foregroundColor(Theme.textAzure)
+//                }
+//                ToolbarItem {
+//                    Button(action: {
+//                        if !flag {
+//                            sorted_enabled = collectionViewModel.plants
+//                            collectionViewModel.plants.sort()
+//                        } else {
+//                            collectionViewModel.plants = sorted_enabled
+//                        }
+//                        flag = !flag
+//                    }, label: {
+//                        Image(systemName: "arrow.up.arrow.down")
+//                            .resizable()
+//                            .frame(width: 20, height: 20)
+//                            .padding(.horizontal, 10)
+//                            .background(Theme.backGround)
+//                    })
+//                }
+//            }
             .foregroundColor(Theme.textBrown)
-            .searchable(text: $collectionViewModel.search)
         }
     }
     

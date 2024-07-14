@@ -103,7 +103,7 @@ struct AddPlantView: View {
                                     .padding(.horizontal)
                             }
                             .fullScreenCover(isPresented: $isEditViewPresented) {
-                                EditCapturedPlantView(index: $index, isPresented: $isEditViewPresented, capturedPlant: $resultsServer, image: $image)
+                                EditCapturedPlantView(index: $index, isPresented: $isEditViewPresented, capturedPlant: resultsServer, image: $image)
                             }
                         }
                         .bold()

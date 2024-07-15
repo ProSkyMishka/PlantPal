@@ -81,7 +81,7 @@ struct PlantCollectionView: View {
 
                 ScrollView {
                     ZStack {
-                        FlowerListView(sort: sortAlphabet ? [SortDescriptor(\Plant.name)] : [], barHidden: $barHidden)
+                        FlowerListView(sort: sortAlphabet ? [SortDescriptor(\Plant.name)] : [], search: $search, barHidden: $barHidden)
                     }
                 }
             }

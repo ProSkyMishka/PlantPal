@@ -10,6 +10,7 @@ import Foundation
 extension String {
     func maxSubstring(b: String) -> Bool {
         let a = self
+        if a.count < 1 { return false }
         var arr = [[Int]](repeating: [Int](repeating: 0, count: a.count + 1), count: b.count + 1)
 
         for i in 1...b.count {

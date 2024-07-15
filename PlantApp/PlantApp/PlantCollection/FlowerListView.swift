@@ -14,18 +14,27 @@ struct FlowerListView: View {
     @State private var offsets: [String: CGSize] = [:]
     @State private var showDeleteIcons: [String: Bool] = [:]
     @Binding var barHidden: Bool
+    @Binding var search: String
     
     @Query
     var plants: [Plant]
     
-    init(sort: [SortDescriptor<Plant>], barHidden: Binding<Bool>) {
+    var filteredPlants: [Plant] {
+        guard !search.isEmpty else {return plants}
+        return plants.filter { plant in
+            plant.name.lowercased().contains(search.lowercased()) || plant.name.maxSubstring(b: search)
+        }
+    }
+    
+    init(sort: [SortDescriptor<Plant>], search: Binding<String>, barHidden: Binding<Bool>) {
         _plants = Query(sort: sort)
         _barHidden = barHidden
+        _search = search
     }
     
     var body: some View {
         LazyVGrid(columns: [GridItem(), GridItem()]) {
-            ForEach(plants) { flower in
+            ForEach(filteredPlants) { flower in
             label: do {
                 ZStack {
                     if showDeleteIcons[flower.serverId] == true && offsets[flower.serverId]?.width ?? 0 < 0 {

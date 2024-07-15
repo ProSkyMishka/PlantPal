@@ -17,12 +17,7 @@ struct InformationForPlant: View {
     @State var textInRepeat = "Never"
     @State var nextWatering: Date = Date()
     // @State var replay: RepeatWatering
-    
-    init(plant: Plant, barHidden: Binding<Bool>) {
-        self.plant = plant
-        _barHidden = barHidden
-      
-    }
+
     
     var body: some View {
         ScrollView{

@@ -18,8 +18,8 @@ struct FlowerListView: View {
     @Query
     var plants: [Plant]
     
-    init(sort: [SortDescriptor<Plant>], filter: Predicate<Plant>, barHidden: Binding<Bool>) {
-        _plants = Query(filter: filter, sort: sort)
+    init(sort: [SortDescriptor<Plant>], barHidden: Binding<Bool>) {
+        _plants = Query(sort: sort)
         _barHidden = barHidden
     }
     

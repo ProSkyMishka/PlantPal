@@ -23,6 +23,12 @@ struct EditCapturedPlantView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
+                Text("Edit plant")
+                    .foregroundStyle(Theme.textGreen)
+                    .font(.system(size: 28))
+                    .padding(.vertical, 15)
+                    .bold()
+                
                 if let image = image {
                     Image(uiImage: image)
                         .resizable()
@@ -42,15 +48,24 @@ struct EditCapturedPlantView: View {
                 
                 VStack(spacing: 20) {
                     TextField("Название растения", text: $capturedPlant.name)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.horizontal)
+                    //                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .foregroundColor(Theme.textColor)
+                        .background(Theme.search)
+                        .cornerRadius(10)
+                        .padding(.horizontal, 15)
+                    
+                    
                     
                     TextField("Описание растения", text: $capturedPlant.description)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.horizontal)
+                    //                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .foregroundColor(Theme.textColor)
+                        .background(Theme.search)
+                        .cornerRadius(10)
+                        .padding(.horizontal, 15)
                     
                     HStack {
                         Image(systemName: "humidity")
+                            .foregroundColor(Theme.buttonColor)
                         Picker("Минимум", selection: $min) {
                             ForEach(numbers, id: \.self) { number in
                                 Text("\(number)").tag(number)
@@ -59,6 +74,7 @@ struct EditCapturedPlantView: View {
                         .pickerStyle(MenuPickerStyle())
                         .padding(.horizontal)
                         Text("-")
+                            .foregroundColor(Theme.buttonColor)
                         Picker("Максимум", selection: $max) {
                             ForEach(numbers, id: \.self) { number in
                                 Text("\(number)").tag(number)
@@ -71,6 +87,7 @@ struct EditCapturedPlantView: View {
                     HStack {
                         Image(systemName: "thermometer.transmission")
                             .resizable()
+                            .foregroundColor(Theme.buttonColor)
                             .frame(width: 30, height: 30)
                         
                         Picker("Выберите число", selection: $selectedNumber) {
@@ -86,39 +103,40 @@ struct EditCapturedPlantView: View {
                 
                 Spacer()
                 
-                    Button(action: {
-                        let plant = Plant(serverId: capturedPlant.id,
-                                          desc: capturedPlant.description,
-                                          humidity: capturedPlant.humidity,
-                                          temp: capturedPlant.temp,
-                                          MLID: capturedPlant.MLID,
-                                          imageURL: capturedPlant.imageURL,
-                                          seconds: capturedPlant.seconds,
-                                          name: capturedPlant.name)
-                        plant.image = image?.jpegData(compressionQuality: 1.0)
-                        modelContext.insert(plant)
-                        
-                        isPresented = false
-                        index = 0
-                    }) {
-                        
-                        Text("Сохранить")
-                            .bold()
-                            .font(.title2)
-                            .foregroundColor(.white)
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(Color.blue)
-                            .cornerRadius(10)
-                            .padding(.horizontal)
-                    }
+                Button(action: {
+                    let plant = Plant(serverId: capturedPlant.id,
+                                      desc: capturedPlant.description,
+                                      humidity: capturedPlant.humidity,
+                                      temp: capturedPlant.temp,
+                                      MLID: capturedPlant.MLID,
+                                      imageURL: capturedPlant.imageURL,
+                                      seconds: capturedPlant.seconds,
+                                      name: capturedPlant.name)
+                    plant.image = image?.jpegData(compressionQuality: 1.0)
+                    modelContext.insert(plant)
+                    
+                    isPresented = false
+                    index = 0
+                }) {
+                    
+                    Text("Сохранить")
+                        .bold()
+                        .font(.title2)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Theme.buttonColor)
+                        .cornerRadius(10)
+                        .padding(.horizontal)
+                }
                 
-            //.padding()
+                //.padding()
+            }
+            .padding(.all, 15)
+            .background(Theme.backGround)
+            .navigationTitle("Редактировать растение")
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .navigationTitle("Редактировать растение")
-        .navigationBarTitleDisplayMode(.inline)
-        }
-        .navigationTitle("Редактировать растение")
-        .padding()
+
     }
 }

@@ -35,7 +35,7 @@ struct SettingsTileView: View {
                     Spacer()
                     
                     Image(systemName: "chevron.right")
-                        .foregroundColor(.gray)
+                        .foregroundColor(Theme.textBrown)
                 }
             }
             .padding(.all, 10)

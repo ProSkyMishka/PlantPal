@@ -26,7 +26,7 @@ struct ResultPlant: Codable {
 
 struct AddPlantView: View {
     @Environment(\.modelContext) var modelContext: ModelContext
-    
+    @Binding var path: NavigationPath
     @Binding var index: Int
     @State private var image: UIImage?
     @State public var resultsML: ResponseML = ResponseML(classML: "", real_name: "")
@@ -37,93 +37,120 @@ struct AddPlantView: View {
     
     
     var body: some View {
-        VStack {
-            if (image == nil) {
-                CameraView(image: $image, barHidden: $barHidden)
-            } else {
-                VStack {
-                    
-                    Text("I this really your plant?")
-                       // .foregroundColor()
-                        .font(.system(size: 28))
-                        .padding(8)
-                    
-                    Image(uiImage: image!)
-                        .resizable()
-                        .frame(width: 250, height: 250)
-                    
-                    Text(resultsServer.description)
-                        // .foregroundColor()
-                        .font(.title3)
-                        .foregroundColor(.gray)
-
-                    if (isInfoLoading) {
-                        ProgressView()
-                    } else {
-                        Text(resultsServer.name)
-                            .font(.title)
-                        // .foregroundColor()
-                 
-                        HStack {
-                            Button(action: {
-                                // Add to Swift data
-                                let plant = Plant(serverId: resultsServer.id,
-                                                  desc: resultsServer.description,
-                                                  humidity: resultsServer.humidity,
-                                                  temp: resultsServer.temp,
-                                                  MLID: resultsServer.MLID,
-                                                  imageURL: resultsServer.imageURL,
-                                                  seconds: resultsServer.seconds,
-                                                  name: resultsServer.name)
+        NavigationStack {
+            VStack {
+                if (image == nil) {
+                    CameraView(image: $image, barHidden: $barHidden)
+                } else {
+                    VStack {
+                        
+                        Text("Is this really your plant?")
+                            .foregroundColor(Theme.textBlue)
+                            .font(.system(size: 28))
+                            .padding(8)
+                        
+                        Image(uiImage: image!)
+                            .resizable()
+                            .frame(width: 250, height: 250)
+                        
+                        
+                        if (isInfoLoading) {
+                            ProgressView()
+                        } else {
+                            Text(resultsServer.name)
+                                .font(.title)
+                                .foregroundColor(Theme.textBrown)
+                            
+                            
+                            Text(resultsServer.description)
+                                .foregroundColor(Theme.description)
+                                .font(.title3)
+                            
+                            HStack {
+                                Button(action: {
+                                    // Add to Swift data
+                                    let plant = Plant(serverId: resultsServer.id,
+                                                      desc: resultsServer.description,
+                                                      humidity: resultsServer.humidity,
+                                                      temp: resultsServer.temp,
+                                                      MLID: resultsServer.MLID,
+                                                      imageURL: resultsServer.imageURL,
+                                                      seconds: resultsServer.seconds,
+                                                      name: resultsServer.name)
+                                    
+                                    plant.image = image?.jpegData(compressionQuality: 1.0)
+                                    modelContext.insert(plant)
+                                    
+                                    // Change to main screen
+                                    index = 0
+                                }) {
+                                    Image(systemName: "checkmark.circle.fill")
+                                        .resizable()
+                                        .frame(width: 50, height: 50)
+                                        .foregroundColor(.green)
+                                        .padding()
+                                        .cornerRadius(10)
+                                        .padding(.horizontal)
+                                }
                                 
-                                plant.image = image?.jpegData(compressionQuality: 1.0)
-                                modelContext.insert(plant)
+                                Button(action: {
+                                    isEditViewPresented = true
+                                }) {
+                                    Image(systemName: "xmark.circle.fill")
+                                        .resizable()
+                                        .frame(width: 50, height: 50)
+                                        .foregroundColor(.red)
+                                        .padding()
+                                        .cornerRadius(10)
+                                        .padding(.horizontal)
+                                }
+                                .fullScreenCover(isPresented: $isEditViewPresented) {
+                                    EditCapturedPlantView(index: $index, isPresented: $isEditViewPresented, capturedPlant: resultsServer, image: $image)
+                                }
+                            }
+                            .bold()
+                            .font(.title2)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .cornerRadius(10)
+                            .padding(.horizontal)
+                        }
+                        Text(" ")
+                        HStack{
+                            NavigationLink {
+                                NewDeviceView(barHidden: $barHidden)
+                                    .onAppear(){
+                                        barHidden = true
+                                    }
+                            } label: {
                                 
-                                // Change to main screen
-                                index = 0
-                            }) {
-                                Image(systemName: "checkmark.circle.fill")
-                                    .resizable()
-                                    .frame(width: 50, height: 50)
-                                    .foregroundColor(.green)
+                                Text("Connect the device")
+                                    .bold()
+                                    .font(.title2)
+                                    .foregroundColor(.white)
                                     .padding()
-                                    .cornerRadius(10)
                                     .padding(.horizontal)
+                                    .background(Theme.buttonColor)
+                                    .cornerRadius(10)
                             }
                             
-                            Button(action: {
-                                isEditViewPresented = true
-                            }) {
-                                Image(systemName: "xmark.circle.fill")
-                                    .resizable()
-                                    .frame(width: 50, height: 50)
-                                    .foregroundColor(.red)
-                                    .padding()
-                                    .cornerRadius(10)
-                                    .padding(.horizontal)
-                            }
-                            .fullScreenCover(isPresented: $isEditViewPresented) {
-                                EditCapturedPlantView(index: $index, isPresented: $isEditViewPresented, capturedPlant: resultsServer, image: $image)
-                            }
                         }
-                        .bold()
-                        .font(.title2)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .cornerRadius(10)
-                        .padding(.horizontal)
                     }
-                }.background(Theme.backGround)
-                .onAppear {
-                    barHidden = false
-                    recognizePlant()
+                        .onAppear {
+                            barHidden = false
+                            recognizePlant()
+                        }.background(Theme.backGround)
                 }
+                
             }
-            
+                .frame(height: UIScreen.main.bounds.height)
+                .background(Theme.backGround)
         }
         .onAppear{
             barHidden = true
         }
+        
+
     }
     
     func postData(uiimage: UIImage) async {

@@ -81,14 +81,7 @@ struct PlantCollectionView: View {
 
                 ScrollView {
                     ZStack {
-                        FlowerListView(sort: sortAlphabet ? [SortDescriptor(\Plant.name)] : [], filter: #Predicate { plant in
-                            if search != "" {
-                                plant.name.localizedStandardContains(search) /*|| plant.maxSubstring(b: search)*/
-                            } else {
-                                return true
-                            }
-                            
-                        }, barHidden: $barHidden)
+                        FlowerListView(sort: sortAlphabet ? [SortDescriptor(\Plant.name)] : [], barHidden: $barHidden)
                     }
                 }
             }

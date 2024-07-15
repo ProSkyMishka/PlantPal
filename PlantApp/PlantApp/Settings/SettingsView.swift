@@ -19,14 +19,16 @@ struct SettingsView: View {
                 VStack {
                     SettingsTileView(imageName: "star.fill", text: "Appearance", path: $path, barHidden: $barHidden, index: 0)
                     
+                    SettingsTileView(imageName: "app.connected.to.app.below.fill", text: "Device Settings", path: $path, barHidden: $barHidden, index: 1)
                     
-                    SettingsTileView(imageName: "clock.fill", text: "Watering Schedule", path: $path, barHidden: $barHidden, index: 1)
+                    
+                    SettingsTileView(imageName: "clock.fill", text: "Watering Schedule", path: $path, barHidden: $barHidden, index: 2)
                     
                     
                     SettingsTileView(imageName: "info.circle.fill", text: "About App", path: $path, barHidden: $barHidden, index: 2)
                     
                     
-                    SettingsTileView(imageName: "microbe.fill", text: "Find out if your plant is sick", path: $path, barHidden: $barHidden, index: 3)
+                    SettingsTileView(imageName: "microbe.fill", text: "Find out if your plant is sick", path: $path, barHidden: $barHidden, index: 4)
                     
                     Spacer()
                     
@@ -51,10 +53,12 @@ struct SettingsView: View {
                 case 0:
                     AppearanceView(barHidden: $barHidden)
                 case 1:
-                    WateringScheduleView(barHidden: $barHidden)
+                    SettingsDeviceListView(barHidden: $barHidden)
                 case 2:
-                    AppInfoView(barHidden: $barHidden)
+                    WateringScheduleView(barHidden: $barHidden)
                 case 3:
+                    AppInfoView(barHidden: $barHidden)
+                case 4:
                     SickPlantView(barHidden: $barHidden, index: $index)
                 default:
                     Text("AAA")

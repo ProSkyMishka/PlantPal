@@ -1,8 +1,8 @@
 //
-//  PlantModel.swift
+//  RepeatWatering.swift
 //  PlantApp
 //
-//  Created by Lucy Rez on 08.07.2024.
+//  Created by Lucy Rez on 15.07.2024.
 //
 
 import Foundation

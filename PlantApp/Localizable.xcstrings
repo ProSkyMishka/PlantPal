@@ -4,9 +4,6 @@
     "" : {
 
     },
-    " " : {
-
-    },
     "     " : {
 
     },
@@ -135,6 +132,9 @@
         }
       }
     },
+    "Change Device" : {
+
+    },
     "Connect" : {
       "localizations" : {
         "ru" : {
@@ -168,6 +168,7 @@
       }
     },
     "Connect the device" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -230,6 +231,12 @@
           }
         }
       }
+    },
+    "Device Settings" : {
+
+    },
+    "Device:" : {
+
     },
     "Disease" : {
 
@@ -431,6 +438,9 @@
         }
       }
     },
+    "No device" : {
+
+    },
     "None" : {
       "localizations" : {
         "ru" : {
@@ -598,6 +608,9 @@
         }
       }
     },
+    "There are no plants watering this device" : {
+
+    },
     "Value" : {
       "localizations" : {
         "ru" : {
@@ -628,6 +641,9 @@
           }
         }
       }
+    },
+    "Watering plants: %lld" : {
+
     },
     "Watering Schedule" : {
       "localizations" : {

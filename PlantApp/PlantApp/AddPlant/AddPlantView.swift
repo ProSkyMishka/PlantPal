@@ -115,26 +115,26 @@ struct AddPlantView: View {
                             .cornerRadius(10)
                             .padding(.horizontal)
                         }
-                        Text(" ")
-                        HStack{
-                            NavigationLink {
-                                NewDeviceView(barHidden: $barHidden)
-                                    .onAppear(){
-                                        barHidden = true
-                                    }
-                            } label: {
-                                
-                                Text("Connect the device")
-                                    .bold()
-                                    .font(.title2)
-                                    .foregroundColor(.white)
-                                    .padding()
-                                    .padding(.horizontal)
-                                    .background(Theme.buttonColor)
-                                    .cornerRadius(10)
-                            }
-                            
-                        }
+//                        Text(" ")
+//                        HStack{
+//                            NavigationLink {
+//                                NewDeviceView(barHidden: $barHidden)
+//                                    .onAppear(){
+//                                        barHidden = true
+//                                    }
+//                            } label: {
+//                                
+//                                Text("Connect the device")
+//                                    .bold()
+//                                    .font(.title2)
+//                                    .foregroundColor(.white)
+//                                    .padding()
+//                                    .padding(.horizontal)
+//                                    .background(Theme.buttonColor)
+//                                    .cornerRadius(10)
+//                            }
+//                            
+//                        }
                     }
                         .onAppear {
                             barHidden = false

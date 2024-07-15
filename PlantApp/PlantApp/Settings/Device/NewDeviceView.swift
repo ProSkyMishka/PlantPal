@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct NewDeviceView: View {
     @Environment(\.dismiss) private var dismiss
-    @Binding var barHidden: Bool
-    @State var ssid: String = "";
-    @State var password: String = "";
+    @Environment(\.modelContext) var modelContext: ModelContext
+    @State var ssid: String = ""
+    @State var password: String = ""
     
     var body: some View {
         ScrollView {
@@ -45,7 +46,13 @@ struct NewDeviceView: View {
                     .padding(.horizontal, 15)
             }
             .padding(.bottom, 20)
-            Button(action: {}, label: {
+            Button(action: {
+                if !(password.isEmpty || ssid.isEmpty) {
+                    let device = Device(ssid: ssid, password: password)
+                    modelContext.insert(device)
+                    dismiss()
+                }
+            }, label: {
                 Text("Connect")
                     .font(.system(size: 20))
                     .foregroundColor(Color.white)
@@ -75,7 +82,6 @@ struct NewDeviceView: View {
                         .foregroundColor(Theme.icon)
                 }
                     .onTapGesture {
-                    barHidden.toggle()
                     dismiss()
                 }
             }

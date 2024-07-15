@@ -22,7 +22,6 @@
 		D20682CB2C3BA28B00C4A319 /* WateringScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20682CA2C3BA28B00C4A319 /* WateringScheduleView.swift */; };
 		D20682D12C3BA3B500C4A319 /* DetailedScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20682D02C3BA3B500C4A319 /* DetailedScheduleView.swift */; };
 		D20682D42C3BAB2100C4A319 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20682D32C3BAB2100C4A319 /* StringExtension.swift */; };
-		D20682D62C3BAB6A00C4A319 /* PlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20682D52C3BAB6A00C4A319 /* PlantModel.swift */; };
 		D20682D82C3BAEB000C4A319 /* DateTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20682D72C3BAEB000C4A319 /* DateTimeFormatter.swift */; };
 		D20682DB2C3BAF4D00C4A319 /* InformationForPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20682DA2C3BAF4D00C4A319 /* InformationForPlant.swift */; };
 		D20682DD2C3BAF7300C4A319 /* PlantInfoField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20682DC2C3BAF7300C4A319 /* PlantInfoField.swift */; };
@@ -36,6 +35,12 @@
 		D2C739C32C43F9AA0010B6C9 /* FlowerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C739C22C43F9AA0010B6C9 /* FlowerListView.swift */; };
 		D2FF28092C45091F0033A404 /* GreenTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF28082C45091F0033A404 /* GreenTextField.swift */; };
 		D2FF280B2C453AB10033A404 /* SickPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF280A2C453AB10033A404 /* SickPlantView.swift */; };
+		D2FF280F2C454FED0033A404 /* RepeatWatering.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF280E2C454FED0033A404 /* RepeatWatering.swift */; };
+		D2FF28112C4550DF0033A404 /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF28102C4550DF0033A404 /* DeviceModel.swift */; };
+		D2FF28152C45521A0033A404 /* DeviceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF28142C45521A0033A404 /* DeviceListView.swift */; };
+		D2FF28172C45524B0033A404 /* SettingsDeviceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF28162C45524B0033A404 /* SettingsDeviceListView.swift */; };
+		D2FF28192C4552690033A404 /* DeviceTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF28182C4552690033A404 /* DeviceTileView.swift */; };
+		D2FF281B2C4552980033A404 /* SettingsDeviceTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF281A2C4552980033A404 /* SettingsDeviceTileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +60,6 @@
 		D20682CA2C3BA28B00C4A319 /* WateringScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringScheduleView.swift; sourceTree = "<group>"; };
 		D20682D02C3BA3B500C4A319 /* DetailedScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedScheduleView.swift; sourceTree = "<group>"; };
 		D20682D32C3BAB2100C4A319 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
-		D20682D52C3BAB6A00C4A319 /* PlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModel.swift; sourceTree = "<group>"; };
 		D20682D72C3BAEB000C4A319 /* DateTimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeFormatter.swift; sourceTree = "<group>"; };
 		D20682DA2C3BAF4D00C4A319 /* InformationForPlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationForPlant.swift; sourceTree = "<group>"; };
 		D20682DC2C3BAF7300C4A319 /* PlantInfoField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantInfoField.swift; sourceTree = "<group>"; };
@@ -69,6 +73,12 @@
 		D2C739C22C43F9AA0010B6C9 /* FlowerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerListView.swift; sourceTree = "<group>"; };
 		D2FF28082C45091F0033A404 /* GreenTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenTextField.swift; sourceTree = "<group>"; };
 		D2FF280A2C453AB10033A404 /* SickPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SickPlantView.swift; sourceTree = "<group>"; };
+		D2FF280E2C454FED0033A404 /* RepeatWatering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatWatering.swift; sourceTree = "<group>"; };
+		D2FF28102C4550DF0033A404 /* DeviceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
+		D2FF28142C45521A0033A404 /* DeviceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListView.swift; sourceTree = "<group>"; };
+		D2FF28162C45524B0033A404 /* SettingsDeviceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDeviceListView.swift; sourceTree = "<group>"; };
+		D2FF28182C4552690033A404 /* DeviceTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTileView.swift; sourceTree = "<group>"; };
+		D2FF281A2C4552980033A404 /* SettingsDeviceTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDeviceTileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +112,7 @@
 		D20682A42C3B9E3C00C4A319 /* PlantApp */ = {
 			isa = PBXGroup;
 			children = (
+				D2FF280D2C454FC80033A404 /* Models */,
 				D20682D22C3BAAD700C4A319 /* Utils */,
 				D20682BC2C3B9F2F00C4A319 /* Components */,
 				D20682BB2C3B9EF700C4A319 /* PlantCollection */,
@@ -143,7 +154,6 @@
 				D20682B72C3B9ECC00C4A319 /* AddPlantView.swift */,
 				D29F7C9D2C3E616A00BBE0DE /* CameraView.swift */,
 				D21D55112C3EC7D700B47123 /* EditCapturedPlantView.swift */,
-				D2A2B36F2C40EE0900164139 /* Plant.swift */,
 			);
 			path = AddPlant;
 			sourceTree = "<group>";
@@ -153,7 +163,6 @@
 			children = (
 				D20682D92C3BAF3B00C4A319 /* PlantDetails */,
 				D20682B32C3B9EAA00C4A319 /* PlantCollectionView.swift */,
-				D20682D52C3BAB6A00C4A319 /* PlantModel.swift */,
 				D2C739C22C43F9AA0010B6C9 /* FlowerListView.swift */,
 			);
 			path = PlantCollection;
@@ -218,6 +227,10 @@
 			isa = PBXGroup;
 			children = (
 				D2A2B36D2C40EBA500164139 /* NewDeviceView.swift */,
+				D2FF28142C45521A0033A404 /* DeviceListView.swift */,
+				D2FF28162C45524B0033A404 /* SettingsDeviceListView.swift */,
+				D2FF28182C4552690033A404 /* DeviceTileView.swift */,
+				D2FF281A2C4552980033A404 /* SettingsDeviceTileView.swift */,
 			);
 			path = Device;
 			sourceTree = "<group>";
@@ -228,6 +241,16 @@
 				D2FF280A2C453AB10033A404 /* SickPlantView.swift */,
 			);
 			path = SickPlant;
+			sourceTree = "<group>";
+		};
+		D2FF280D2C454FC80033A404 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D2A2B36F2C40EE0900164139 /* Plant.swift */,
+				D2FF280E2C454FED0033A404 /* RepeatWatering.swift */,
+				D2FF28102C4550DF0033A404 /* DeviceModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,14 +327,18 @@
 			files = (
 				D20682D82C3BAEB000C4A319 /* DateTimeFormatter.swift in Sources */,
 				D20682A82C3B9E3C00C4A319 /* ContentView.swift in Sources */,
+				D2FF28152C45521A0033A404 /* DeviceListView.swift in Sources */,
 				D20682B62C3B9EBD00C4A319 /* SettingsView.swift in Sources */,
 				D2FF28092C45091F0033A404 /* GreenTextField.swift in Sources */,
 				D29F7C9E2C3E616A00BBE0DE /* CameraView.swift in Sources */,
 				D2C739C32C43F9AA0010B6C9 /* FlowerListView.swift in Sources */,
 				D20682D42C3BAB2100C4A319 /* StringExtension.swift in Sources */,
+				D2FF28192C4552690033A404 /* DeviceTileView.swift in Sources */,
 				D20682A62C3B9E3C00C4A319 /* PlantAppApp.swift in Sources */,
 				D20682BE2C3B9F4600C4A319 /* TabBar.swift in Sources */,
 				D20682CB2C3BA28B00C4A319 /* WateringScheduleView.swift in Sources */,
+				D2FF28172C45524B0033A404 /* SettingsDeviceListView.swift in Sources */,
+				D2FF281B2C4552980033A404 /* SettingsDeviceTileView.swift in Sources */,
 				D20682C42C3B9FF300C4A319 /* AppearanceView.swift in Sources */,
 				D20682DD2C3BAF7300C4A319 /* PlantInfoField.swift in Sources */,
 				D2A2B3692C3FC1D100164139 /* ColorLightDark.swift in Sources */,
@@ -319,12 +346,13 @@
 				D2FF280B2C453AB10033A404 /* SickPlantView.swift in Sources */,
 				D20682C02C3B9F9800C4A319 /* SettingsTileView.swift in Sources */,
 				D21D55122C3EC7D700B47123 /* EditCapturedPlantView.swift in Sources */,
-				D20682D62C3BAB6A00C4A319 /* PlantModel.swift in Sources */,
+				D2FF280F2C454FED0033A404 /* RepeatWatering.swift in Sources */,
 				D2A2B36E2C40EBA500164139 /* NewDeviceView.swift in Sources */,
 				D2A2B3702C40EE0900164139 /* Plant.swift in Sources */,
 				D20682C62C3BA01500C4A319 /* DeveloperInfoView.swift in Sources */,
 				D20682DB2C3BAF4D00C4A319 /* InformationForPlant.swift in Sources */,
 				D20682D12C3BA3B500C4A319 /* DetailedScheduleView.swift in Sources */,
+				D2FF28112C4550DF0033A404 /* DeviceModel.swift in Sources */,
 				D20682B42C3B9EAA00C4A319 /* PlantCollectionView.swift in Sources */,
 				D20682B82C3B9ECC00C4A319 /* AddPlantView.swift in Sources */,
 				D2A2B36B2C3FC79800164139 /* ColorExtensions.swift in Sources */,

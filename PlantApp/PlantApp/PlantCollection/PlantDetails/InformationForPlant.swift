@@ -69,7 +69,9 @@ struct InformationForPlant: View {
                         .padding(.vertical,8)
                         .background(Theme.buttonColor)
                         .cornerRadius(18)
-                    }.padding(.all, 10)
+                    }
+                    .padding(.all, 10)
+                    .disabled(plant.device == nil)
                 }
             }
             ZStack{
@@ -109,7 +111,42 @@ struct InformationForPlant: View {
                     }
                 }
             }
-            Spacer()
+            
+            
+            HStack{
+                Text("Device:")
+                    .font(.system(size: 20, weight: .bold))
+                    .padding(.all, 15)
+                    .foregroundColor(Theme.textBrown)
+                Spacer()
+                
+                if (plant.device != nil) {
+                    Text(plant.device!.ssid)
+                        .font(.system(size: 20, weight: .bold))
+                        .padding(.all, 15)
+                        .foregroundColor(Theme.textBrown)
+                } else {
+                    Text(LocalizedStringKey("No device"))
+                        .font(.system(size: 20, weight: .bold))
+                        .padding(.all, 15)
+                        .foregroundColor(Theme.textBrown)
+                }
+            }
+            
+            NavigationLink{
+                DeviceListView(plant: plant)
+            } label: {
+                HStack {
+                    Image(systemName: "shareplay")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                    
+                    Text("Device Settings")
+                        .font(.system(size: 22))
+                }
+            }
+            .foregroundColor(Theme.buttonColor)
+            
         }
         .background(Theme.backGround)
         .onAppear {

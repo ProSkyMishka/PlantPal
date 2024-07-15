@@ -19,13 +19,10 @@ struct SettingsView: View {
                     SettingsTileView(imageName: "star.fill", text: "Appearance", path: $path, barHidden: $barHidden, index: 0)
                     
                     
-                    SettingsTileView(imageName: "app.connected.to.app.below.fill", text: "Connect Device", path: $path, barHidden: $barHidden, index: 1)
-
-                    
-                    SettingsTileView(imageName: "clock.fill", text: "Watering Schedule", path: $path, barHidden: $barHidden, index: 2)
+                    SettingsTileView(imageName: "clock.fill", text: "Watering Schedule", path: $path, barHidden: $barHidden, index: 1)
                     
                     
-                    SettingsTileView(imageName: "info.circle.fill", text: "About App", path: $path, barHidden: $barHidden, index: 3)
+                    SettingsTileView(imageName: "info.circle.fill", text: "About App", path: $path, barHidden: $barHidden, index: 2)
                     
                 }
             }
@@ -44,10 +41,8 @@ struct SettingsView: View {
                 case 0:
                     AppearanceView(barHidden: $barHidden)
                 case 1:
-                    NewDeviceView(barHidden: $barHidden)
-                case 2:
                     WateringScheduleView(barHidden: $barHidden)
-                case 3:
+                case 2:
                     AppInfoView(barHidden: $barHidden)
                 default:
                     Text("AAA")

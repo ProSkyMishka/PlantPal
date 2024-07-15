@@ -46,40 +46,27 @@ struct EditCapturedPlantView: View {
                         .padding()
                 }
                 
-                VStack(spacing: 20) {
-                    TextField("Название растения", text: $capturedPlant.name)
-                    //                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .foregroundColor(Theme.textColor)
-                        .background(Theme.search)
-                        .cornerRadius(10)
-                        .padding(.horizontal, 15)
-                    
-                    
-                    
-                    TextField("Описание растения", text: $capturedPlant.description)
-                    //                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .foregroundColor(Theme.textColor)
-                        .background(Theme.search)
-                        .cornerRadius(10)
-                        .padding(.horizontal, 15)
-                    
+                VStack(spacing: 20) 
+                {
+                    GreenTextField(textTitle: "Name", text: $capturedPlant.name)
+                    GreenTextField(textTitle: "Description", text: $capturedPlant.description)
                     HStack {
                         Image(systemName: "humidity")
                             .foregroundColor(Theme.buttonColor)
                         Picker("Минимум", selection: $min) {
-                            ForEach(numbers, id: \.self) { number in
-                                Text("\(number)").tag(number)
-                            }
-                        }
-                        .pickerStyle(MenuPickerStyle())
-                        .padding(.horizontal)
+                                ForEach(numbers, id: \.self) { number in
+                                    Text("\(number)").tag(number)
+                                    }
+                                }
+                            .pickerStyle(MenuPickerStyle())
+                            .padding(.horizontal)
                         Text("-")
                             .foregroundColor(Theme.buttonColor)
                         Picker("Максимум", selection: $max) {
                             ForEach(numbers, id: \.self) { number in
                                 Text("\(number)").tag(number)
+                                }
                             }
-                        }
                         .pickerStyle(MenuPickerStyle())
                         .padding(.horizontal)
                     }
@@ -106,8 +93,8 @@ struct EditCapturedPlantView: View {
                 Button(action: {
                     let plant = Plant(serverId: capturedPlant.id,
                                       desc: capturedPlant.description,
-                                      humidity: capturedPlant.humidity,
-                                      temp: capturedPlant.temp,
+                                      humidity: "\(min) - \(max)",
+                                      temp: "\(selectedNumber)",
                                       MLID: capturedPlant.MLID,
                                       imageURL: capturedPlant.imageURL,
                                       seconds: capturedPlant.seconds,
@@ -130,12 +117,11 @@ struct EditCapturedPlantView: View {
                         .padding(.horizontal)
                 }
                 
-                //.padding()
             }
             .padding(.all, 15)
             .background(Theme.backGround)
-            .navigationTitle("Редактировать растение")
-            .navigationBarTitleDisplayMode(.inline)
+//            .navigationTitle("Edit Plant")
+//            .navigationBarTitleDisplayMode(.inline)
         }
 
     }

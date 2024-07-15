@@ -162,7 +162,14 @@
       }
     },
     "Connect the device" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Подключить устройство"
+          }
+        }
+      }
     },
     "Connect the device for\n   automatic watering." : {
       "localizations" : {
@@ -216,7 +223,14 @@
       }
     },
     "Edit plant" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Редактирование растения"
+          }
+        }
+      }
     },
     "Every day" : {
       "localizations" : {
@@ -290,6 +304,9 @@
       }
     },
     "Key" : {
+      "extractionState" : "manual"
+    },
+    "Key 1" : {
       "extractionState" : "manual"
     },
     "Kondratieva Margarita" : {
@@ -630,15 +647,6 @@
 
     },
     "Минимум" : {
-
-    },
-    "Название растения" : {
-
-    },
-    "Описание растения" : {
-
-    },
-    "Редактировать растение" : {
 
     },
     "Сохранить" : {

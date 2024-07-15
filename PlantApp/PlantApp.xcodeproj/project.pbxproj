@@ -34,6 +34,7 @@
 		D2A2B36E2C40EBA500164139 /* NewDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A2B36D2C40EBA500164139 /* NewDeviceView.swift */; };
 		D2A2B3702C40EE0900164139 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A2B36F2C40EE0900164139 /* Plant.swift */; };
 		D2C739C32C43F9AA0010B6C9 /* FlowerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C739C22C43F9AA0010B6C9 /* FlowerListView.swift */; };
+		D2FF28092C45091F0033A404 /* GreenTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF28082C45091F0033A404 /* GreenTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		D2A2B36D2C40EBA500164139 /* NewDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeviceView.swift; sourceTree = "<group>"; };
 		D2A2B36F2C40EE0900164139 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		D2C739C22C43F9AA0010B6C9 /* FlowerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerListView.swift; sourceTree = "<group>"; };
+		D2FF28082C45091F0033A404 /* GreenTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				D20682BD2C3B9F4600C4A319 /* TabBar.swift */,
+				D2FF28082C45091F0033A404 /* GreenTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				D20682D82C3BAEB000C4A319 /* DateTimeFormatter.swift in Sources */,
 				D20682A82C3B9E3C00C4A319 /* ContentView.swift in Sources */,
 				D20682B62C3B9EBD00C4A319 /* SettingsView.swift in Sources */,
+				D2FF28092C45091F0033A404 /* GreenTextField.swift in Sources */,
 				D29F7C9E2C3E616A00BBE0DE /* CameraView.swift in Sources */,
 				D2C739C32C43F9AA0010B6C9 /* FlowerListView.swift in Sources */,
 				D20682D42C3BAB2100C4A319 /* StringExtension.swift in Sources */,

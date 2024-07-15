@@ -4,6 +4,9 @@
     "" : {
 
     },
+    " " : {
+
+    },
     "      This application was created as part of the All-Russian competition of scientific and technological projects \"Great Challenges\". The project partner is the National Research University Higher School of Economics. The application allows you to maintain a collection of your own plants and water them remotely." : {
       "localizations" : {
         "ru" : {
@@ -158,6 +161,9 @@
         }
       }
     },
+    "Connect the device" : {
+
+    },
     "Connect the device for\n   automatic watering." : {
       "localizations" : {
         "ru" : {
@@ -208,6 +214,9 @@
           }
         }
       }
+    },
+    "Edit plant" : {
+
     },
     "Every day" : {
       "localizations" : {
@@ -268,9 +277,6 @@
           }
         }
       }
-    },
-    "I this really your plant?" : {
-
     },
     "Is this really your plant?" : {
       "extractionState" : "manual",
@@ -397,7 +403,6 @@
       }
     },
     "None" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -416,6 +421,9 @@
           }
         }
       }
+    },
+    "Not planning date yet" : {
+
     },
     "Partner:" : {
       "localizations" : {

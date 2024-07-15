@@ -6,17 +6,21 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct WateringScheduleView: View {
     @Binding var barHidden: Bool
     @Environment(\.dismiss) private var dismiss
-    @StateObject var scheduleViewModel = ScheduleViewModel()
+    @Environment(\.modelContext) var modelContext: ModelContext
+    
+    @Query
+    var plants: [Plant]
     
     var body: some View {
         List {
-            ForEach($scheduleViewModel.historyArray) {$flower in
+            ForEach(plants) {flower in
                 NavigationLink {
-                    DetailedScheduleView(flower: $flower, scheduleViewModel: scheduleViewModel)
+                    DetailedScheduleView(flower: flower)
                 } label: {
                     ZStack (alignment: .topLeading) {
                         HStack {
@@ -25,25 +29,30 @@ struct WateringScheduleView: View {
                                 Text(flower.name)
                                     .foregroundColor(Theme.textBrown)
                                     .bold()
-                                Text("Scheduled on \(flower.schedule_time)")
-                                    .foregroundColor(Theme.description)
+                                if let dateNow = flower.watering.filter({$0 > Date()}).first {
+                                    Text("Scheduled on \(DateTimeFormatter.shared.toString(date: dateNow))")
+                                        .foregroundColor(Theme.description)
+                                } else {
+                                    Text("Not planning date yet")
+                                        .foregroundColor(Theme.description)
+                                }
+                                
                                 Divider()
                             }
-                            
                         }
                     }
                     .tint(.primary)
                 }
                 .listRowSeparator(.hidden)
-                .swipeActions {
-                    Button(action: {
-                        if let ind = scheduleViewModel.historyArray.firstIndex(where: {$0.id == flower.id}) {
-                            scheduleViewModel.historyArray
-                                .remove(at: ind)
-                        }
-                    }){ Image(systemName: "trash.fill")}
-                        .tint(.red)
-                }
+//                .swipeActions {
+//                    Button(action: {
+//                        if let ind = plants.firstIndex(where: {$0.id == flower.id}) {
+//                            modelContext.delete(plants[ind])
+//        
+//                        }
+//                    }){ Image(systemName: "trash.fill")}
+//                        .tint(.red)
+//                }
             }
             .listRowBackground(Theme.backGround)
         }

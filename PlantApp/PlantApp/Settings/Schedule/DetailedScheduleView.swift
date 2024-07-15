@@ -9,8 +9,7 @@ import SwiftUI
 
 struct DetailedScheduleView: View {
     @Environment(\.dismiss) private var dismiss
-    @Binding var flower: ScheduleItemModel
-    @ObservedObject var scheduleViewModel: ScheduleViewModel
+    @Bindable var flower: Plant
     
     var body: some View {
         
@@ -24,24 +23,22 @@ struct DetailedScheduleView: View {
                 }
                 .frame(width: UIScreen.main.bounds.width, alignment: .leading)
                 .padding(.leading, 40)
-                ScrollViewReader { val in
-                    ScrollView(.horizontal, showsIndicators: false){
-                        HStack(spacing: 15) {
-                            ForEach($scheduleViewModel.pastDateArray) {$date in
-                                ZStack {
-                                    VStack (spacing: 0){
-                                        Text(date.day + date.month)
-                                            .font(.system(size: 15, weight: .bold))
-                                            .frame(width: 49, height: 30)
-                                            .foregroundStyle(.white)
-                                            .background(.blue)
-                                        Image(systemName: "drop.fill")
-                                            .resizable()
-                                            .frame(width: 17, height: 22)
-                                            .padding()
-                                            .background(.green)
-                                            .foregroundStyle(.white)
-                                    }
+                ScrollView(.horizontal, showsIndicators: false){
+                    HStack(spacing: 15) {
+                        ForEach(flower.watering.filter({$0 <= Date()}), id: \.self) {date in
+                            ZStack {
+                                VStack (spacing: 0){
+                                    Text(DateTimeFormatter.shared.toString(date: date))
+                                        .font(.system(size: 15, weight: .bold))
+                                        .frame(width: 49, height: 30)
+                                        .foregroundStyle(.white)
+                                        .background(.blue)
+                                    Image(systemName: "drop.fill")
+                                        .resizable()
+                                        .frame(width: 17, height: 22)
+                                        .padding()
+                                        .background(.green)
+                                        .foregroundStyle(.white)
                                 }
                             }
                         }
@@ -59,16 +56,16 @@ struct DetailedScheduleView: View {
                     .padding(.leading, 45)
                     .padding(.top, 5)
                     HStack{
-                        if flower.moistureInt < 20 {
-                            Text(flower.moisture)
+                        if Int(flower.humidity.prefix(2))!  < 20 {
+                            Text(flower.humidity)
                                 .font(.system(size: 28, weight: .bold))
                                 .foregroundColor(.red)
                             Text("Weak")
                                 .font(.system(size: 28, weight: .bold))
                                 .padding(.leading, 35)
                                 .foregroundColor(.red)
-                        } else if flower.moistureInt < 30 {
-                            Text(flower.moisture)
+                        } else if Int(flower.humidity.prefix(2))! < 30 {
+                            Text(flower.humidity)
                                 .font(.system(size: 28, weight: .bold))
                                 .foregroundColor(.blue)
                             Text("Normal")
@@ -76,7 +73,7 @@ struct DetailedScheduleView: View {
                                 .padding(.leading, 35)
                                 .foregroundColor(.blue)
                         } else {
-                            Text(flower.moisture)
+                            Text(flower.humidity)
                                 .font(.system(size: 28, weight: .bold))
                                 .foregroundColor(.green)
                             Text("Good")
@@ -100,9 +97,16 @@ struct DetailedScheduleView: View {
                     .padding(.leading, 40)
                     .padding(.top, 5)
                     HStack{
-                        Text(flower.schedule_time)
-                            .font(.system(size: 22, weight: .medium))
-                            .foregroundColor(.primary)
+                        if let date = flower.watering.filter({$0 > Date()}).first {
+                            Text(DateTimeFormatter.shared.toString(date: date))
+                                .font(.system(size: 22, weight: .medium))
+                                .foregroundColor(.primary)
+                        } else {
+                            Text("None")
+                                .font(.system(size: 22, weight: .medium))
+                                .foregroundColor(.primary)
+                        }
+                        
                     }
                     .frame(width: UIScreen.main.bounds.width, alignment: .leading)
                     .padding(.leading, 60)
@@ -117,12 +121,13 @@ struct DetailedScheduleView: View {
                 .frame(width: UIScreen.main.bounds.width, alignment: .leading)
                 .padding(.leading, 40)
                 .padding(.top, 5)
+                
                 ScrollView(.horizontal, showsIndicators: false){
                     HStack(spacing: 15) {
-                        ForEach($scheduleViewModel.futureDateArray) {$date in
+                        ForEach(flower.watering.filter({$0 > Date()}), id: \.self) {date in
                             ZStack {
                                 VStack (spacing: 0){
-                                    Text(date.day + date.month)
+                                    Text(DateTimeFormatter.shared.toString(date: date))
                                         .font(.system(size: 15, weight: .bold))
                                         .frame(width: 49, height: 30)
                                         .foregroundStyle(.white)
@@ -159,7 +164,7 @@ struct DetailedScheduleView: View {
                         .font(.system(size: 20))
                         .foregroundColor(Theme.icon)
                 }
-                    .onTapGesture {
+                .onTapGesture {
                     dismiss()
                 }
             }

@@ -35,6 +35,7 @@
 		D2A2B3702C40EE0900164139 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A2B36F2C40EE0900164139 /* Plant.swift */; };
 		D2C739C32C43F9AA0010B6C9 /* FlowerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C739C22C43F9AA0010B6C9 /* FlowerListView.swift */; };
 		D2FF28092C45091F0033A404 /* GreenTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF28082C45091F0033A404 /* GreenTextField.swift */; };
+		D2FF280B2C453AB10033A404 /* SickPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF280A2C453AB10033A404 /* SickPlantView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		D2A2B36F2C40EE0900164139 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		D2C739C22C43F9AA0010B6C9 /* FlowerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerListView.swift; sourceTree = "<group>"; };
 		D2FF28082C45091F0033A404 /* GreenTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenTextField.swift; sourceTree = "<group>"; };
+		D2FF280A2C453AB10033A404 /* SickPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SickPlantView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		D20682B92C3B9ED000C4A319 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				D2FF280C2C453AB50033A404 /* SickPlant */,
 				D2A2B36C2C40EB9200164139 /* Device */,
 				D20682C92C3BA27600C4A319 /* Schedule */,
 				D20682C82C3BA03D00C4A319 /* About */,
@@ -219,6 +222,14 @@
 			path = Device;
 			sourceTree = "<group>";
 		};
+		D2FF280C2C453AB50033A404 /* SickPlant */ = {
+			isa = PBXGroup;
+			children = (
+				D2FF280A2C453AB10033A404 /* SickPlantView.swift */,
+			);
+			path = SickPlant;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -305,6 +316,7 @@
 				D20682DD2C3BAF7300C4A319 /* PlantInfoField.swift in Sources */,
 				D2A2B3692C3FC1D100164139 /* ColorLightDark.swift in Sources */,
 				D20682C22C3B9FC300C4A319 /* AppInfoView.swift in Sources */,
+				D2FF280B2C453AB10033A404 /* SickPlantView.swift in Sources */,
 				D20682C02C3B9F9800C4A319 /* SettingsTileView.swift in Sources */,
 				D21D55122C3EC7D700B47123 /* EditCapturedPlantView.swift in Sources */,
 				D20682D62C3BAB6A00C4A319 /* PlantModel.swift in Sources */,

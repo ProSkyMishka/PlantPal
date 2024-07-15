@@ -20,7 +20,7 @@ struct ContentView: View {
             case 1:
                 AddPlantView(path: $path, index: $index, barHidden: $barHidden)
             case 2:
-                SettingsView(barHidden: $barHidden, path: $path)
+                SettingsView(barHidden: $barHidden, path: $path, index: $index)
             default:
                 Text("AAA")
             }

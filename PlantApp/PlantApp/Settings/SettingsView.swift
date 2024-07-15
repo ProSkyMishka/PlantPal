@@ -10,6 +10,7 @@ import SwiftUI
 struct SettingsView: View {
     @Binding var barHidden: Bool
     @Binding var path: NavigationPath
+    @Binding var index: Int
 
     var body: some View {
         
@@ -24,6 +25,15 @@ struct SettingsView: View {
                     
                     SettingsTileView(imageName: "info.circle.fill", text: "About App", path: $path, barHidden: $barHidden, index: 2)
                     
+                    
+                    SettingsTileView(imageName: "microbe.fill", text: "Find out if your plant is sick", path: $path, barHidden: $barHidden, index: 3)
+                    
+                    Spacer()
+                    
+                    Link(destination: URL(string: "https://www.youtube.com/watch?v=TrulJjLqBqM")!, label: {
+                        Text ("     ")
+                            .padding()
+                    })
                 }
             }
             .padding([.top, .bottom], 10)
@@ -44,6 +54,8 @@ struct SettingsView: View {
                     WateringScheduleView(barHidden: $barHidden)
                 case 2:
                     AppInfoView(barHidden: $barHidden)
+                case 3:
+                    SickPlantView(barHidden: $barHidden, index: $index)
                 default:
                     Text("AAA")
                 }

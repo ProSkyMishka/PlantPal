@@ -56,7 +56,7 @@ struct AppInfoView: View {
                     
                     Image("SiriusLogo")
                         .resizable()
-                        .frame(width: UIScreen.main.bounds.width - 50, height: 100)
+                        .frame(width: UIScreen.main.bounds.width - 50, height: 80)
                         .padding(.bottom)
                         .foregroundColor(Theme.textBrown)
                     

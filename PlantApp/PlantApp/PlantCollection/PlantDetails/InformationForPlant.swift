@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct InformationForPlant: View {
+    let numbers = Array(0...30)
     @Bindable var plant: Plant
     @State var notIsEdit = true
     @State var isPresented = false
@@ -97,17 +98,51 @@ struct InformationForPlant: View {
                 
                 HStack{
                     
-                    Menu(){
-                        Button("Every month", action: {textInRepeat = "Every month"})
-                        Button("Every week", action: {textInRepeat = "Every week"})
-                        Button("Every day", action: {textInRepeat = "Every day"})
-                        Button("Never", action: {textInRepeat = "Never"})
+//                    Menu(){
+//                        Button("Every month", action: {textInRepeat = "Every month"})
+//                        Button("Every week", action: {textInRepeat = "Every week"})
+//                        Button("Every day", action: {textInRepeat = "Every day"})
+//                        Button("Never", action: {textInRepeat = "Never"})
+//                        
+//                        // TODO: функция для обновления значения plant.replay
+//                    }label:{
+//                        Label(LocalizedStringKey(textInRepeat), systemImage: "timer")
+//                            .padding(.trailing, 10)
+//                            .foregroundColor(Theme.textBrown)
+//                    }
+                    
+                    Picker("Watering", selection: $plant.waterInterval) {
+                        ForEach(numbers, id: \.self) { number in
+                            Text("\(number)").tag(number)
+                        }
+
+                    }
+                    .onChange(of: plant.waterInterval) {
+                        print("DEBUG")
+                        let content = UNMutableNotificationContent()
+                        content.title = "Время полить ваше растение"
+                        content.subtitle = "Похоже, ему нужна вода"
+                        content.categoryIdentifier = "ACTION"
+                        content.sound = UNNotificationSound.default
+                        let filtered = plant.watering.filter({$0 > Date()})
+                        if !filtered.isEmpty {
+                            plant.watering.removeAll(where: {$0 > Date()})
+                        }
+                        for i in 1..<10 {
+                            plant.watering.append( Date(timeInterval: TimeInterval(86400 * i * plant.waterInterval), since: Date.now))
+                        }
+                        // show this notification five seconds from now
+                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(86400 * plant.waterInterval), repeats: false)
                         
-                        // TODO: функция для обновления значения plant.replay
-                    }label:{
-                        Label(LocalizedStringKey(textInRepeat), systemImage: "timer")
-                            .padding(.trailing, 10)
-                            .foregroundColor(Theme.textBrown)
+                        let waterAction = UNNotificationAction(identifier: "WATER", title: "Water", options: [])
+                        
+                        UNUserNotificationCenter.current().setNotificationCategories([UNNotificationCategory(identifier: "ACTION", actions: [waterAction], intentIdentifiers: [], options: [])])
+
+                        // choose a random identifier
+                        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+
+                        // add our notification request
+                        UNUserNotificationCenter.current().add(request)
                     }
                 }
             }

@@ -252,6 +252,7 @@
       }
     },
     "Every day" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -262,6 +263,7 @@
       }
     },
     "Every month" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -272,6 +274,7 @@
       }
     },
     "Every week" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -419,6 +422,7 @@
       }
     },
     "Never" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -641,6 +645,9 @@
           }
         }
       }
+    },
+    "Watering" : {
+
     },
     "Watering plants: %lld" : {
 

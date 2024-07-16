@@ -32,6 +32,7 @@
 		D2A2B36B2C3FC79800164139 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A2B36A2C3FC79800164139 /* ColorExtensions.swift */; };
 		D2A2B36E2C40EBA500164139 /* NewDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A2B36D2C40EBA500164139 /* NewDeviceView.swift */; };
 		D2A2B3702C40EE0900164139 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A2B36F2C40EE0900164139 /* Plant.swift */; };
+		D2A365DD2C469BE60054A5FC /* WaterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A365DC2C469BE60054A5FC /* WaterService.swift */; };
 		D2C739C32C43F9AA0010B6C9 /* FlowerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C739C22C43F9AA0010B6C9 /* FlowerListView.swift */; };
 		D2FF28092C45091F0033A404 /* GreenTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF28082C45091F0033A404 /* GreenTextField.swift */; };
 		D2FF280B2C453AB10033A404 /* SickPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF280A2C453AB10033A404 /* SickPlantView.swift */; };
@@ -70,6 +71,7 @@
 		D2A2B36A2C3FC79800164139 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		D2A2B36D2C40EBA500164139 /* NewDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeviceView.swift; sourceTree = "<group>"; };
 		D2A2B36F2C40EE0900164139 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
+		D2A365DC2C469BE60054A5FC /* WaterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterService.swift; sourceTree = "<group>"; };
 		D2C739C22C43F9AA0010B6C9 /* FlowerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerListView.swift; sourceTree = "<group>"; };
 		D2FF28082C45091F0033A404 /* GreenTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenTextField.swift; sourceTree = "<group>"; };
 		D2FF280A2C453AB10033A404 /* SickPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SickPlantView.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				D21D550F2C3EC0D700B47123 /* Localizable.xcstrings */,
+				D2A365DC2C469BE60054A5FC /* WaterService.swift */,
 				D20682A42C3B9E3C00C4A319 /* PlantApp */,
 				D20682A32C3B9E3C00C4A319 /* Products */,
 			);
@@ -326,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D20682D82C3BAEB000C4A319 /* DateTimeFormatter.swift in Sources */,
+				D2A365DD2C469BE60054A5FC /* WaterService.swift in Sources */,
 				D20682A82C3B9E3C00C4A319 /* ContentView.swift in Sources */,
 				D2FF28152C45521A0033A404 /* DeviceListView.swift in Sources */,
 				D20682B62C3B9EBD00C4A319 /* SettingsView.swift in Sources */,

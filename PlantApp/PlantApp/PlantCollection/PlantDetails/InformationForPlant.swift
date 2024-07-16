@@ -54,7 +54,7 @@ struct InformationForPlant: View {
                     
                     Button(action:{
                         //plant.lastWatered = Date.now
-                        
+                        WaterService.shared.water(ip: plant.device!.ip, time: plant.seconds)
                         // TODO: Call server with new date
                         
                     }){
@@ -153,6 +153,7 @@ struct InformationForPlant: View {
             barHidden = true
         }
         .navigationBarBackButtonHidden()
+        .toolbarBackground(Theme.backGround, for: .automatic)
         .toolbar(content: {
             ToolbarItem(placement: .automatic) {
                 Text("\(plant.name) Info")

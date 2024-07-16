@@ -48,7 +48,7 @@ struct NewDeviceView: View {
             .padding(.bottom, 20)
             Button(action: {
                 if !(password.isEmpty || ssid.isEmpty) {
-                    let device = Device(ssid: ssid, password: password)
+                    let device = Device(ssid: "ssid", password: "password", ip: ssid)
                     modelContext.insert(device)
                     dismiss()
                 }

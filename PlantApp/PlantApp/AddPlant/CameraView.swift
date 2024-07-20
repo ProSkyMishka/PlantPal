@@ -13,6 +13,7 @@ struct CameraView: UIViewControllerRepresentable {
     
     @Binding var image: UIImage?
     @Binding var barHidden: Bool
+    @Environment(\.dismiss) private var dismiss
     
     typealias UIViewControllerType = UIImagePickerController
     
@@ -40,6 +41,7 @@ extension CameraView {
     class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         var parent: CameraView
         
+        
         init(parent: CameraView) {
             self.parent = parent
         }
@@ -47,6 +49,7 @@ extension CameraView {
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
             //self.parent.image = nil
             self.parent.barHidden = false
+            parent.dismiss()
         }
 
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

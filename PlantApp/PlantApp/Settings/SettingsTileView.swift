@@ -18,14 +18,21 @@ struct SettingsTileView: View {
         
         VStack {
             Button(action: {
-                barHidden.toggle()
+                barHidden = true
                 path.append(index)
             }) {
                 HStack {
-                    Image(systemName: imageName)
-                        .resizable()
-                        .frame(width: 28, height: 28)
-                        .foregroundColor(Theme.icon)
+                    if (imageName == "yandex") {
+                        Image(imageName)
+                            .resizable()
+                            .frame(width: 28, height: 28)
+                            .foregroundColor(Theme.icon)
+                    } else {
+                        Image(systemName: imageName)
+                            .resizable()
+                            .frame(width: 28, height: 28)
+                            .foregroundColor(Theme.icon)
+                    }
                     
                     Text(LocalizedStringKey(text))
                         .foregroundColor(Theme.textBrown)

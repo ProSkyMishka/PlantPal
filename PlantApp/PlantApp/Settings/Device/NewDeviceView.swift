@@ -11,8 +11,8 @@ import SwiftData
 struct NewDeviceView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) var modelContext: ModelContext
-    @State var ssid: String = ""
-    @State var password: String = ""
+    @State var ssid: String = " Plants_smart"
+    @State var password: String = "SmartPla9t6"
     
     var body: some View {
         ScrollView {
@@ -48,8 +48,7 @@ struct NewDeviceView: View {
             .padding(.bottom, 20)
             Button(action: {
                 if !(password.isEmpty || ssid.isEmpty) {
-                    let device = Device(ssid: "ssid", password: "password", ip: ssid)
-                    modelContext.insert(device)
+                    ConnectDeviceService.shared.connect(ssid: ssid, password: password, context: modelContext)
                     dismiss()
                 }
             }, label: {

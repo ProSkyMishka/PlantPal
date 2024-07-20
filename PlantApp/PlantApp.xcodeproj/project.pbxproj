@@ -7,6 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E522BDE2C4ACC0D00FFA145 /* DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E522BDD2C4ACC0D00FFA145 /* DevicesView.swift */; };
+		2E522BE02C4ACC1900FFA145 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E522BDF2C4ACC1900FFA145 /* Profile.swift */; };
+		2E522BE22C4ACC2000FFA145 /* SingleDigitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E522BE12C4ACC2000FFA145 /* SingleDigitTextField.swift */; };
+		2E522BE42C4ACC2700FFA145 /* YandexAuthField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E522BE32C4ACC2700FFA145 /* YandexAuthField.swift */; };
+		2E522BE62C4AE46C00FFA145 /* DTOs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E522BE52C4AE46C00FFA145 /* DTOs.swift */; };
+		2E522BE92C4AF79600FFA145 /* ConnectDeviceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E522BE82C4AF79600FFA145 /* ConnectDeviceService.swift */; };
+		2E522BEB2C4AF7F600FFA145 /* DateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E522BEA2C4AF7F600FFA145 /* DateModel.swift */; };
+		2E522BED2C4AF84700FFA145 /* MyStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E522BEC2C4AF84700FFA145 /* MyStepper.swift */; };
+		2E97F6BE2C4B4F4B00C7AE66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E97F6BD2C4B4F4B00C7AE66 /* Constants.swift */; };
+		C3DCB3C62C4AA94300359B46 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DCB3C52C4AA94300359B46 /* WidgetKit.framework */; };
+		C3DCB3C82C4AA94300359B46 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DCB3C72C4AA94300359B46 /* SwiftUI.framework */; };
+		C3DCB3CB2C4AA94400359B46 /* WaterWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCB3CA2C4AA94400359B46 /* WaterWidgetBundle.swift */; };
+		C3DCB3CD2C4AA94400359B46 /* WaterWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCB3CC2C4AA94400359B46 /* WaterWidget.swift */; };
+		C3DCB3CF2C4AA94500359B46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3DCB3CE2C4AA94500359B46 /* Assets.xcassets */; };
+		C3DCB3D32C4AA94500359B46 /* WaterWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C3DCB3C32C4AA94300359B46 /* WaterWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C3DCB3DE2C4AA96C00359B46 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DCB3DD2C4AA96C00359B46 /* Intents.framework */; };
+		C3DCB3E12C4AA96C00359B46 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCB3E02C4AA96C00359B46 /* IntentHandler.swift */; };
+		C3DCB3E52C4AA96C00359B46 /* ConfigurationIntent.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C3DCB3DC2C4AA96C00359B46 /* ConfigurationIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C3DCB3EA2C4AA9BA00359B46 /* ConfigurationIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = C3DCB3E92C4AA9BA00359B46 /* ConfigurationIntent.intentdefinition */; };
+		C3DCB3EB2C4AA9BA00359B46 /* ConfigurationIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = C3DCB3E92C4AA9BA00359B46 /* ConfigurationIntent.intentdefinition */; };
+		C3DCB3EC2C4AA9BA00359B46 /* ConfigurationIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = C3DCB3E92C4AA9BA00359B46 /* ConfigurationIntent.intentdefinition */; };
+		C3DCB3EF2C4AAAEA00359B46 /* EventItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCB3EE2C4AAAEA00359B46 /* EventItem.swift */; };
+		C3DCB3F02C4AAAEA00359B46 /* EventItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCB3EE2C4AAAEA00359B46 /* EventItem.swift */; };
+		C3DCB3F32C4AAB0A00359B46 /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCB3F22C4AAB0A00359B46 /* EventStore.swift */; };
+		C3DCB3F42C4AAB0A00359B46 /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCB3F22C4AAB0A00359B46 /* EventStore.swift */; };
+		C3DCB3F52C4AAB0A00359B46 /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCB3F22C4AAB0A00359B46 /* EventStore.swift */; };
 		D20682A62C3B9E3C00C4A319 /* PlantAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20682A52C3B9E3C00C4A319 /* PlantAppApp.swift */; };
 		D20682A82C3B9E3C00C4A319 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20682A72C3B9E3C00C4A319 /* ContentView.swift */; };
 		D20682AA2C3B9E3E00C4A319 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D20682A92C3B9E3E00C4A319 /* Assets.xcassets */; };
@@ -45,7 +71,64 @@
 		D2FF281B2C4552980033A404 /* SettingsDeviceTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF281A2C4552980033A404 /* SettingsDeviceTileView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C3DCB3D12C4AA94500359B46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D206829A2C3B9E3C00C4A319 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C3DCB3C22C4AA94300359B46;
+			remoteInfo = WaterWidgetExtension;
+		};
+		C3DCB3E32C4AA96C00359B46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D206829A2C3B9E3C00C4A319 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C3DCB3DB2C4AA96C00359B46;
+			remoteInfo = ConfigurationIntent;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C3DCB3D42C4AA94500359B46 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C3DCB3D32C4AA94500359B46 /* WaterWidgetExtension.appex in Embed Foundation Extensions */,
+				C3DCB3E52C4AA96C00359B46 /* ConfigurationIntent.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		2E522BDD2C4ACC0D00FFA145 /* DevicesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicesView.swift; sourceTree = "<group>"; };
+		2E522BDF2C4ACC1900FFA145 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		2E522BE12C4ACC2000FFA145 /* SingleDigitTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleDigitTextField.swift; sourceTree = "<group>"; };
+		2E522BE32C4ACC2700FFA145 /* YandexAuthField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YandexAuthField.swift; sourceTree = "<group>"; };
+		2E522BE52C4AE46C00FFA145 /* DTOs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTOs.swift; sourceTree = "<group>"; };
+		2E522BE82C4AF79600FFA145 /* ConnectDeviceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectDeviceService.swift; sourceTree = "<group>"; };
+		2E522BEA2C4AF7F600FFA145 /* DateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateModel.swift; sourceTree = "<group>"; };
+		2E522BEC2C4AF84700FFA145 /* MyStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStepper.swift; sourceTree = "<group>"; };
+		2E97F6BD2C4B4F4B00C7AE66 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C3DCB3C32C4AA94300359B46 /* WaterWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WaterWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3DCB3C52C4AA94300359B46 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		C3DCB3C72C4AA94300359B46 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		C3DCB3CA2C4AA94400359B46 /* WaterWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterWidgetBundle.swift; sourceTree = "<group>"; };
+		C3DCB3CC2C4AA94400359B46 /* WaterWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterWidget.swift; sourceTree = "<group>"; };
+		C3DCB3CE2C4AA94500359B46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C3DCB3D02C4AA94500359B46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3DCB3DC2C4AA96C00359B46 /* ConfigurationIntent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ConfigurationIntent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3DCB3DD2C4AA96C00359B46 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		C3DCB3E02C4AA96C00359B46 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		C3DCB3E22C4AA96C00359B46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3DCB3E92C4AA9BA00359B46 /* ConfigurationIntent.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = ConfigurationIntent.intentdefinition; sourceTree = "<group>"; };
+		C3DCB3ED2C4AAA1700359B46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C3DCB3EE2C4AAAEA00359B46 /* EventItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItem.swift; sourceTree = "<group>"; };
+		C3DCB3F22C4AAB0A00359B46 /* EventStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventStore.swift; sourceTree = "<group>"; };
+		C3DCB3F62C4AAB7100359B46 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D20682A22C3B9E3C00C4A319 /* PlantApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20682A52C3B9E3C00C4A319 /* PlantAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantAppApp.swift; sourceTree = "<group>"; };
 		D20682A72C3B9E3C00C4A319 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,6 +169,23 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C3DCB3C02C4AA94300359B46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3DCB3C82C4AA94300359B46 /* SwiftUI.framework in Frameworks */,
+				C3DCB3C62C4AA94300359B46 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3DCB3D92C4AA96C00359B46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3DCB3DE2C4AA96C00359B46 /* Intents.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D206829F2C3B9E3C00C4A319 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -96,12 +196,77 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E522BDC2C4ACBC800FFA145 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				2E522BDD2C4ACC0D00FFA145 /* DevicesView.swift */,
+				2E522BE52C4AE46C00FFA145 /* DTOs.swift */,
+				2E522BE32C4ACC2700FFA145 /* YandexAuthField.swift */,
+				2E522BE12C4ACC2000FFA145 /* SingleDigitTextField.swift */,
+				2E522BDF2C4ACC1900FFA145 /* Profile.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		2E522BE72C4AF76900FFA145 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D2A365DC2C469BE60054A5FC /* WaterService.swift */,
+				2E522BE82C4AF79600FFA145 /* ConnectDeviceService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C3DCB3C42C4AA94300359B46 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3DCB3C52C4AA94300359B46 /* WidgetKit.framework */,
+				C3DCB3C72C4AA94300359B46 /* SwiftUI.framework */,
+				C3DCB3DD2C4AA96C00359B46 /* Intents.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C3DCB3C92C4AA94400359B46 /* WaterWidget */ = {
+			isa = PBXGroup;
+			children = (
+				C3DCB3CA2C4AA94400359B46 /* WaterWidgetBundle.swift */,
+				C3DCB3CC2C4AA94400359B46 /* WaterWidget.swift */,
+				C3DCB3E92C4AA9BA00359B46 /* ConfigurationIntent.intentdefinition */,
+				C3DCB3CE2C4AA94500359B46 /* Assets.xcassets */,
+				C3DCB3D02C4AA94500359B46 /* Info.plist */,
+			);
+			path = WaterWidget;
+			sourceTree = "<group>";
+		};
+		C3DCB3DF2C4AA96C00359B46 /* ConfigurationIntent */ = {
+			isa = PBXGroup;
+			children = (
+				C3DCB3E02C4AA96C00359B46 /* IntentHandler.swift */,
+				C3DCB3E22C4AA96C00359B46 /* Info.plist */,
+			);
+			path = ConfigurationIntent;
+			sourceTree = "<group>";
+		};
+		C3DCB3F72C4AAB7100359B46 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				C3DCB3F62C4AAB7100359B46 /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
 		D20682992C3B9E3C00C4A319 = {
 			isa = PBXGroup;
 			children = (
+				C3DCB3F72C4AAB7100359B46 /* iOS */,
+				C3DCB3F22C4AAB0A00359B46 /* EventStore.swift */,
+				C3DCB3EE2C4AAAEA00359B46 /* EventItem.swift */,
 				D21D550F2C3EC0D700B47123 /* Localizable.xcstrings */,
-				D2A365DC2C469BE60054A5FC /* WaterService.swift */,
 				D20682A42C3B9E3C00C4A319 /* PlantApp */,
+				C3DCB3C92C4AA94400359B46 /* WaterWidget */,
+				C3DCB3DF2C4AA96C00359B46 /* ConfigurationIntent */,
+				C3DCB3C42C4AA94300359B46 /* Frameworks */,
 				D20682A32C3B9E3C00C4A319 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -110,6 +275,8 @@
 			isa = PBXGroup;
 			children = (
 				D20682A22C3B9E3C00C4A319 /* PlantApp.app */,
+				C3DCB3C32C4AA94300359B46 /* WaterWidgetExtension.appex */,
+				C3DCB3DC2C4AA96C00359B46 /* ConfigurationIntent.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,6 +284,8 @@
 		D20682A42C3B9E3C00C4A319 /* PlantApp */ = {
 			isa = PBXGroup;
 			children = (
+				C3DCB3ED2C4AAA1700359B46 /* Info.plist */,
+				2E522BE72C4AF76900FFA145 /* Services */,
 				D2FF280D2C454FC80033A404 /* Models */,
 				D20682D22C3BAAD700C4A319 /* Utils */,
 				D20682BC2C3B9F2F00C4A319 /* Components */,
@@ -124,6 +293,7 @@
 				D20682BA2C3B9EE800C4A319 /* AddPlant */,
 				D20682B92C3B9ED000C4A319 /* Settings */,
 				D20682A52C3B9E3C00C4A319 /* PlantAppApp.swift */,
+				2E97F6BD2C4B4F4B00C7AE66 /* Constants.swift */,
 				D20682A72C3B9E3C00C4A319 /* ContentView.swift */,
 				D20682A92C3B9E3E00C4A319 /* Assets.xcassets */,
 				D20682AB2C3B9E3E00C4A319 /* Preview Content */,
@@ -143,6 +313,7 @@
 		D20682B92C3B9ED000C4A319 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				2E522BDC2C4ACBC800FFA145 /* Profile */,
 				D2FF280C2C453AB50033A404 /* SickPlant */,
 				D2A2B36C2C40EB9200164139 /* Device */,
 				D20682C92C3BA27600C4A319 /* Schedule */,
@@ -178,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				D20682BD2C3B9F4600C4A319 /* TabBar.swift */,
+				2E522BEC2C4AF84700FFA145 /* MyStepper.swift */,
 				D2FF28082C45091F0033A404 /* GreenTextField.swift */,
 			);
 			path = Components;
@@ -255,6 +427,7 @@
 				D2A2B36F2C40EE0900164139 /* Plant.swift */,
 				D2FF280E2C454FED0033A404 /* RepeatWatering.swift */,
 				D2FF28102C4550DF0033A404 /* DeviceModel.swift */,
+				2E522BEA2C4AF7F600FFA145 /* DateModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -262,6 +435,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C3DCB3C22C4AA94300359B46 /* WaterWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3DCB3D72C4AA94500359B46 /* Build configuration list for PBXNativeTarget "WaterWidgetExtension" */;
+			buildPhases = (
+				C3DCB3BF2C4AA94300359B46 /* Sources */,
+				C3DCB3C02C4AA94300359B46 /* Frameworks */,
+				C3DCB3C12C4AA94300359B46 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WaterWidgetExtension;
+			productName = WaterWidgetExtension;
+			productReference = C3DCB3C32C4AA94300359B46 /* WaterWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		C3DCB3DB2C4AA96C00359B46 /* ConfigurationIntent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3DCB3E62C4AA96C00359B46 /* Build configuration list for PBXNativeTarget "ConfigurationIntent" */;
+			buildPhases = (
+				C3DCB3D82C4AA96C00359B46 /* Sources */,
+				C3DCB3D92C4AA96C00359B46 /* Frameworks */,
+				C3DCB3DA2C4AA96C00359B46 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ConfigurationIntent;
+			productName = ConfigurationIntent;
+			productReference = C3DCB3DC2C4AA96C00359B46 /* ConfigurationIntent.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		D20682A12C3B9E3C00C4A319 /* PlantApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D20682B02C3B9E3E00C4A319 /* Build configuration list for PBXNativeTarget "PlantApp" */;
@@ -269,10 +476,13 @@
 				D206829E2C3B9E3C00C4A319 /* Sources */,
 				D206829F2C3B9E3C00C4A319 /* Frameworks */,
 				D20682A02C3B9E3C00C4A319 /* Resources */,
+				C3DCB3D42C4AA94500359B46 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C3DCB3D22C4AA94500359B46 /* PBXTargetDependency */,
+				C3DCB3E42C4AA96C00359B46 /* PBXTargetDependency */,
 			);
 			name = PlantApp;
 			productName = PlantApp;
@@ -286,9 +496,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					C3DCB3C22C4AA94300359B46 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					C3DCB3DB2C4AA96C00359B46 = {
+						CreatedOnToolsVersion = 15.4;
+					};
 					D20682A12C3B9E3C00C4A319 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
@@ -309,11 +525,28 @@
 			projectRoot = "";
 			targets = (
 				D20682A12C3B9E3C00C4A319 /* PlantApp */,
+				C3DCB3C22C4AA94300359B46 /* WaterWidgetExtension */,
+				C3DCB3DB2C4AA96C00359B46 /* ConfigurationIntent */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C3DCB3C12C4AA94300359B46 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3DCB3CF2C4AA94500359B46 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3DCB3DA2C4AA96C00359B46 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D20682A02C3B9E3C00C4A319 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -327,41 +560,75 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C3DCB3BF2C4AA94300359B46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3DCB3F42C4AAB0A00359B46 /* EventStore.swift in Sources */,
+				C3DCB3CB2C4AA94400359B46 /* WaterWidgetBundle.swift in Sources */,
+				C3DCB3CD2C4AA94400359B46 /* WaterWidget.swift in Sources */,
+				C3DCB3EB2C4AA9BA00359B46 /* ConfigurationIntent.intentdefinition in Sources */,
+				C3DCB3F02C4AAAEA00359B46 /* EventItem.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3DCB3D82C4AA96C00359B46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3DCB3E12C4AA96C00359B46 /* IntentHandler.swift in Sources */,
+				C3DCB3EC2C4AA9BA00359B46 /* ConfigurationIntent.intentdefinition in Sources */,
+				C3DCB3F52C4AAB0A00359B46 /* EventStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D206829E2C3B9E3C00C4A319 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E522BEB2C4AF7F600FFA145 /* DateModel.swift in Sources */,
 				D20682D82C3BAEB000C4A319 /* DateTimeFormatter.swift in Sources */,
 				D2A365DD2C469BE60054A5FC /* WaterService.swift in Sources */,
+				C3DCB3F32C4AAB0A00359B46 /* EventStore.swift in Sources */,
 				D20682A82C3B9E3C00C4A319 /* ContentView.swift in Sources */,
 				D2FF28152C45521A0033A404 /* DeviceListView.swift in Sources */,
 				D20682B62C3B9EBD00C4A319 /* SettingsView.swift in Sources */,
 				D2FF28092C45091F0033A404 /* GreenTextField.swift in Sources */,
 				D29F7C9E2C3E616A00BBE0DE /* CameraView.swift in Sources */,
 				D2C739C32C43F9AA0010B6C9 /* FlowerListView.swift in Sources */,
+				2E522BE62C4AE46C00FFA145 /* DTOs.swift in Sources */,
 				D20682D42C3BAB2100C4A319 /* StringExtension.swift in Sources */,
 				D2FF28192C4552690033A404 /* DeviceTileView.swift in Sources */,
 				D20682A62C3B9E3C00C4A319 /* PlantAppApp.swift in Sources */,
 				D20682BE2C3B9F4600C4A319 /* TabBar.swift in Sources */,
 				D20682CB2C3BA28B00C4A319 /* WateringScheduleView.swift in Sources */,
 				D2FF28172C45524B0033A404 /* SettingsDeviceListView.swift in Sources */,
+				2E522BE42C4ACC2700FFA145 /* YandexAuthField.swift in Sources */,
 				D2FF281B2C4552980033A404 /* SettingsDeviceTileView.swift in Sources */,
+				2E522BE22C4ACC2000FFA145 /* SingleDigitTextField.swift in Sources */,
 				D20682C42C3B9FF300C4A319 /* AppearanceView.swift in Sources */,
 				D2A365DF2C46B5150054A5FC /* NotificationDelegate.swift in Sources */,
+				C3DCB3EA2C4AA9BA00359B46 /* ConfigurationIntent.intentdefinition in Sources */,
 				D20682DD2C3BAF7300C4A319 /* PlantInfoField.swift in Sources */,
 				D2A2B3692C3FC1D100164139 /* ColorLightDark.swift in Sources */,
 				D20682C22C3B9FC300C4A319 /* AppInfoView.swift in Sources */,
 				D2FF280B2C453AB10033A404 /* SickPlantView.swift in Sources */,
+				2E522BDE2C4ACC0D00FFA145 /* DevicesView.swift in Sources */,
 				D20682C02C3B9F9800C4A319 /* SettingsTileView.swift in Sources */,
+				2E522BE92C4AF79600FFA145 /* ConnectDeviceService.swift in Sources */,
 				D21D55122C3EC7D700B47123 /* EditCapturedPlantView.swift in Sources */,
 				D2FF280F2C454FED0033A404 /* RepeatWatering.swift in Sources */,
 				D2A2B36E2C40EBA500164139 /* NewDeviceView.swift in Sources */,
 				D2A2B3702C40EE0900164139 /* Plant.swift in Sources */,
+				C3DCB3EF2C4AAAEA00359B46 /* EventItem.swift in Sources */,
+				2E97F6BE2C4B4F4B00C7AE66 /* Constants.swift in Sources */,
 				D20682C62C3BA01500C4A319 /* DeveloperInfoView.swift in Sources */,
 				D20682DB2C3BAF4D00C4A319 /* InformationForPlant.swift in Sources */,
 				D20682D12C3BA3B500C4A319 /* DetailedScheduleView.swift in Sources */,
 				D2FF28112C4550DF0033A404 /* DeviceModel.swift in Sources */,
+				2E522BED2C4AF84700FFA145 /* MyStepper.swift in Sources */,
 				D20682B42C3B9EAA00C4A319 /* PlantCollectionView.swift in Sources */,
+				2E522BE02C4ACC1900FFA145 /* Profile.swift in Sources */,
 				D20682B82C3B9ECC00C4A319 /* AddPlantView.swift in Sources */,
 				D2A2B36B2C3FC79800164139 /* ColorExtensions.swift in Sources */,
 			);
@@ -369,7 +636,146 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		C3DCB3D22C4AA94500359B46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C3DCB3C22C4AA94300359B46 /* WaterWidgetExtension */;
+			targetProxy = C3DCB3D12C4AA94500359B46 /* PBXContainerItemProxy */;
+		};
+		C3DCB3E42C4AA96C00359B46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C3DCB3DB2C4AA96C00359B46 /* ConfigurationIntent */;
+			targetProxy = C3DCB3E32C4AA96C00359B46 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		C3DCB3D52C4AA94500359B46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FUD5CPHJR9;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WaterWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WaterWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = su.brf.apps.PlantPal.WaterWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C3DCB3D62C4AA94500359B46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FUD5CPHJR9;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WaterWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WaterWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = su.brf.apps.PlantPal.WaterWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C3DCB3E72C4AA96C00359B46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FUD5CPHJR9;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ConfigurationIntent/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ConfigurationIntent;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = su.brf.apps.PlantPal.ConfigurationIntent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C3DCB3E82C4AA96C00359B46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FUD5CPHJR9;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ConfigurationIntent/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ConfigurationIntent;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = su.brf.apps.PlantPal.ConfigurationIntent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		D20682AE2C3B9E3E00C4A319 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -487,15 +893,17 @@
 		D20682B12C3B9E3E00C4A319 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PlantApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 57N35P6574;
+				DEVELOPMENT_TEAM = FUD5CPHJR9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "$(MARKETING_VERSION)";
+				INFOPLIST_FILE = iOS/info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = 1.0;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -508,7 +916,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cs.hse.PlantApp;
+				PRODUCT_BUNDLE_IDENTIFIER = su.brf.apps.PlantPal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -519,15 +927,17 @@
 		D20682B22C3B9E3E00C4A319 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PlantApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 57N35P6574;
+				DEVELOPMENT_TEAM = FUD5CPHJR9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "$(MARKETING_VERSION)";
+				INFOPLIST_FILE = iOS/info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = 1.0;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -540,7 +950,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cs.hse.PlantApp;
+				PRODUCT_BUNDLE_IDENTIFIER = su.brf.apps.PlantPal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -551,6 +961,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C3DCB3D72C4AA94500359B46 /* Build configuration list for PBXNativeTarget "WaterWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3DCB3D52C4AA94500359B46 /* Debug */,
+				C3DCB3D62C4AA94500359B46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3DCB3E62C4AA96C00359B46 /* Build configuration list for PBXNativeTarget "ConfigurationIntent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3DCB3E72C4AA96C00359B46 /* Debug */,
+				C3DCB3E82C4AA96C00359B46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D206829D2C3B9E3C00C4A319 /* Build configuration list for PBXProject "PlantApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

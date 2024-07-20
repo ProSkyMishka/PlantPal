@@ -8,11 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(EventStore.self) private var eventStore
     @State var index = 0
     @State var barHidden = false
     @State var path = NavigationPath()
     
     var body: some View {
+        if !eventStore.canAccessEvents {
+            ContentUnavailableView {
+                Button("Request Access") {
+                    Task {
+                        await eventStore.requestAccess()
+                    }
+                }
+                .buttonStyle(.borderedProminent)
+            }
+        }
         VStack {
             switch index {
             case 0:

@@ -18,7 +18,7 @@ struct SettingsDeviceTileView: View {
             
             VStack(alignment: .leading) {
                 
-                Text(device.ssid)
+                Text(device.deviceId)
                     .bold()
                     .font(.system(size: 22))
                     .foregroundColor(Theme.textBlue)

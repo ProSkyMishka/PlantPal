@@ -10,7 +10,7 @@ import SwiftData
 
 struct EditCapturedPlantView: View {
     @Environment(\.modelContext) var modelContext: ModelContext
-    
+    @Environment(\.dismiss) private var dismiss
     @Binding var index: Int
     @Binding var isPresented: Bool
     @State var capturedPlant: ResultPlant
@@ -23,11 +23,24 @@ struct EditCapturedPlantView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
-                Text("Edit plant")
-                    .foregroundStyle(Theme.textGreen)
-                    .font(.system(size: 28))
-                    .padding(.vertical, 15)
-                    .bold()
+                HStack {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(Theme.icon)
+                        Text("Back")
+                            .font(.system(size: 20))
+                            .foregroundColor(Theme.icon)
+                    }
+                        .onTapGesture {
+                        isPresented = false
+                    }
+                    Spacer()
+                    Text("Edit plant")
+                        .foregroundStyle(Theme.textGreen)
+                        .font(.system(size: 28))
+                        .padding(.vertical, 15)
+                        .bold()
+                }
                 
                 if let image = image {
                     Image(uiImage: image)
@@ -123,6 +136,5 @@ struct EditCapturedPlantView: View {
 //            .navigationTitle("Edit Plant")
 //            .navigationBarTitleDisplayMode(.inline)
         }
-
     }
 }

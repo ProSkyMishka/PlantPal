@@ -4,9 +4,6 @@
     "" : {
 
     },
-    "     " : {
-
-    },
     "      This application was created as part of the All-Russian competition of scientific and technological projects \"Great Challenges\". The project partner is the National Research University Higher School of Economics. The application allows you to maintain a collection of your own plants and water them remotely." : {
       "localizations" : {
         "ru" : {
@@ -46,6 +43,9 @@
     "%lld°C" : {
 
     },
+    "+" : {
+
+    },
     "AAA" : {
       "localizations" : {
         "ru" : {
@@ -67,7 +67,7 @@
         }
       }
     },
-    "Add this disease to the plant profile?" : {
+    "AI thinks it is:" : {
 
     },
     "App Info" : {
@@ -198,9 +198,6 @@
         }
       }
     },
-    "Definition of the disease" : {
-
-    },
     "Description" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -238,7 +235,10 @@
     "Device:" : {
 
     },
-    "Disease" : {
+    "Devices" : {
+
+    },
+    "Diagnose" : {
 
     },
     "Edit plant" : {
@@ -314,6 +314,9 @@
         }
       }
     },
+    "I should login, because... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." : {
+
+    },
     "Is this really your plant?" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -388,6 +391,9 @@
         }
       }
     },
+    "Log in" : {
+
+    },
     "Loskutov Alexsandr" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -432,7 +438,11 @@
         }
       }
     },
+    "Next" : {
+
+    },
     "Next watering" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -468,6 +478,12 @@
     "Not planning date yet" : {
 
     },
+    "Number of repeats" : {
+
+    },
+    "Nurture your plants with ease" : {
+
+    },
     "Partner:" : {
       "localizations" : {
         "ru" : {
@@ -497,6 +513,9 @@
           }
         }
       }
+    },
+    "PlantPal © 2024" : {
+
     },
     "Prozorskiy Mikhail" : {
       "extractionState" : "manual",
@@ -540,6 +559,12 @@
           }
         }
       }
+    },
+    "Repeat (days)" : {
+
+    },
+    "Request Access" : {
+
     },
     "Rezunik Lyudmila" : {
       "extractionState" : "manual",
@@ -602,6 +627,15 @@
         }
       }
     },
+    "Sign in with Yandex" : {
+
+    },
+    "Sign out" : {
+
+    },
+    "Submit" : {
+
+    },
     "The device and the phone should be\n connected to the same wifi network" : {
       "localizations" : {
         "ru" : {
@@ -646,9 +680,6 @@
         }
       }
     },
-    "Watering" : {
-
-    },
     "Watering plants: %lld" : {
 
     },
@@ -671,6 +702,12 @@
           }
         }
       }
+    },
+    "Welcome to PlantPal" : {
+
+    },
+    "Why should I login?" : {
+
     },
     "Wi-Fi SSID" : {
 

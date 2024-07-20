@@ -10,6 +10,9 @@ import SwiftData
 
 
 struct PlantCollectionView: View {    
+    @State var selectId = UserDefaults.standard.string(forKey: "SelectDeviceId")
+    @State var select: SensorDevice?
+    @Environment(EventStore.self) private var eventStore
     @Environment(\.modelContext) private var modelContext: ModelContext
     @State var sortAlphabet: Bool = false
     @State var sorted_enabled: [Plant] = []
@@ -78,6 +81,19 @@ struct PlantCollectionView: View {
                     }
                 }
                 .transition(.slide)
+                
+                HStack(alignment: .center) {
+                    Text("Temp: " + String(select?.temp ?? 0.0) + " ºC")
+                        .font(.subheadline)
+                    
+                    Spacer()
+                    
+                    Text("Humidity: " + String(select?.humidity ?? 0.0) + " %")
+                        .font(.subheadline)
+//                    Text("Name device: " + String(select?.name ?? "Nope"))
+//                        .font(.subheadline)
+                }
+                .padding()
 
                 ScrollView {
                     ZStack {
@@ -86,17 +102,97 @@ struct PlantCollectionView: View {
                 }
             }
 //            .onAppear {
-//                let plant = Plant(serverId: "1003", desc: "Description", humidity: "45-56", temp: "45", MLID: "038", imageURL: "", seconds: 56, name: "Test")
-//                plant.image = UIImage(systemName: "star.fill")?.jpegData(compressionQuality: 1.0)!
-//                plant.watering = [Date(), Date(timeInterval: 60, since: Date()), Date(timeInterval: -60, since: Date()), Date(timeInterval: 3600, since: Date())]
-//                modelContext.insert(plant)
+////                eventStore.addEvent()
+////                let plant = Plant(serverId: "1003", desc: "Description", humidity: "45-56", temp: "45", MLID: "038", imageURL: "", seconds: 56, name: "Test")
+////                plant.image = UIImage(systemName: "star.fill")?.jpegData(compressionQuality: 1.0)!
+////                plant.watering = [Date(), Date(timeInterval: 60, since: Date()), Date(timeInterval: -60, since: Date()), Date(timeInterval: 3600, since: Date())]
+////                modelContext.insert(plant)
 //            }
             .transition(.slide)
             .padding(.horizontal)
             .background(Theme.backGround)
             .foregroundColor(Theme.textBrown)
         }
+        .onAppear {
+            Task {
+                try await getSensor()
+            }
+        }
     }
 
-    
+    func getSensor() async throws {
+        let accessToken = UserDefaults.standard.string(forKey: "AccessToken")
+        guard let url = URL(string: "https://api.iot.yandex.net/v1.0/devices/\(selectId ?? "")") else {
+            throw Errors.badUrl
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        guard let access = accessToken else {
+            throw Errors.notAuth
+        }
+        
+        request.setValue("Bearer \(access)", forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print(Errors.someRequestError)
+                return
+            }
+            
+            guard let data = data else {
+                print(Errors.noDataReceived)
+                return
+            }
+            
+            do {
+                if let httpResponse = response as? HTTPURLResponse {
+                    print("HTTP Status Code: \(httpResponse.statusCode)")
+                    if httpResponse.statusCode == 401 {
+                        print(Errors.notAuth)
+                        return
+                    }
+                }
+                
+                let responseString = String(data: data, encoding: .utf8) ?? "No response string"
+//                print("Response String: \(responseString)")
+                
+                let ourDevice = try JSONDecoder().decode(IoTDevice.self, from: data)
+                var tempDevices: [SensorDevice] = []
+                var device = SensorDevice(id: ourDevice.id, name: ourDevice.name, temp: 0.0, humidity: 0.0)
+                if let properties = ourDevice.properties {
+                    for j in properties {
+                        if let state = j?.state {
+                            if state.instance == "temperature" {
+                                if case .double(let value) = state.value {
+                                    device.temp = value
+                                }
+                            } else if state.instance == "humidity" {
+                                if case .double(let value) = state.value {
+                                    device.humidity = value
+                                }
+                            }
+                        }
+                    }
+                    if device.temp != 0.0 || device.humidity != 0.0 {
+                        tempDevices.append(device)
+                    }
+                }
+                let deviceCopy = device
+                DispatchQueue.main.async {
+                    self.select = deviceCopy
+                }
+            } catch {
+                print("Failed to parse JSON: \(error)")
+            }
+        }
+        task.resume()
+    }
+}
+
+enum Errors: Error {
+    case badUrl
+    case notAuth
+    case someRequestError
+    case noDataReceived
 }

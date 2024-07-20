@@ -52,7 +52,7 @@ struct DeviceListView: View {
                         .font(.system(size: 20))
                         .foregroundColor(Theme.icon)
                 }
-                    .onTapGesture {
+                .onTapGesture {
                     dismiss()
                 }
             }

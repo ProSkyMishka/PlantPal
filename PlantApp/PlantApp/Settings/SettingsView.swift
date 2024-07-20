@@ -17,6 +17,10 @@ struct SettingsView: View {
         NavigationStack(path: $path) {
             ScrollView {
                 VStack {
+                    SettingsTileView(imageName: "person.crop.circle", text: "Profile", path: $path, barHidden: $barHidden, index: 5)
+
+                    SettingsTileView(imageName: "yandex", text: "Yandex devices", path: $path, barHidden: $barHidden, index: 6)
+                    
                     SettingsTileView(imageName: "star.fill", text: "Appearance", path: $path, barHidden: $barHidden, index: 0)
                     
                     SettingsTileView(imageName: "app.connected.to.app.below.fill", text: "Device Settings", path: $path, barHidden: $barHidden, index: 1)
@@ -25,17 +29,18 @@ struct SettingsView: View {
                     SettingsTileView(imageName: "clock.fill", text: "Watering Schedule", path: $path, barHidden: $barHidden, index: 2)
                     
                     
-                    SettingsTileView(imageName: "info.circle.fill", text: "About App", path: $path, barHidden: $barHidden, index: 2)
-                    
-                    
                     SettingsTileView(imageName: "microbe.fill", text: "Find out if your plant is sick", path: $path, barHidden: $barHidden, index: 4)
+                    
+                    
+                    SettingsTileView(imageName: "info.circle.fill", text: "About App", path: $path, barHidden: $barHidden, index: 3)
+
                     
                     Spacer()
                     
-                    Link(destination: URL(string: "https://www.youtube.com/watch?v=TrulJjLqBqM")!, label: {
-                        Text ("     ")
-                            .padding()
-                    })
+//                    Link(destination: URL(string: "https://www.youtube.com/watch?v=TrulJjLqBqM")!, label: {
+//                        Text ("     ")
+//                            .padding()
+//                    })
                 }
             }
             .padding([.top, .bottom], 10)
@@ -59,7 +64,11 @@ struct SettingsView: View {
                 case 3:
                     AppInfoView(barHidden: $barHidden)
                 case 4:
-                    SickPlantView(barHidden: $barHidden, index: $index)
+                    SickPlantView(barHidden: $barHidden)
+                case 5:
+                    Profile(barHidden: $barHidden, isLogged: .constant(false))
+                case 6:
+                    DevicesView(barHidden: $barHidden)
                 default:
                     Text("AAA")
                 }

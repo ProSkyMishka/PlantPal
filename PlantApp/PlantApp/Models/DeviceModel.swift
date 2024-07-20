@@ -14,23 +14,11 @@ class Device: Comparable {
         return lhs.plants.count < rhs.plants.count
     }
     
-    var ssid: String = ""
-    var hashedPassword: String = ""
-    var ip: String = ""
+    var deviceId: String = ""
     var plants: [Plant] = [Plant]()
     
-    init(ssid: String, password: String, ip: String = "") {
-        self.ssid = ssid
-        self.hashedPassword = hashPassword(password)
-        self.ip = ip
-    }
-    
-    private func hashPassword(_ password: String) -> String{
-        return password
-    }
-    
-    func getPassword() -> String{
-        return hashedPassword
+    init(deviceId: String) {
+        self.deviceId = deviceId
     }
     
 }

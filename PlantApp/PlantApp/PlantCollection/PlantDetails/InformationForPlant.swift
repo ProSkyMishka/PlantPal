@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct InformationForPlant: View {
-    let numbers = Array(0...30)
     @Bindable var plant: Plant
     @State var notIsEdit = true
     @State var isPresented = false
@@ -19,7 +18,6 @@ struct InformationForPlant: View {
     @State var nextWatering: Date = Date()
     // @State var replay: RepeatWatering
 
-    
     var body: some View {
         ScrollView{
             Image(uiImage: UIImage(data: plant.image ?? Data()) ?? UIImage())
@@ -54,9 +52,9 @@ struct InformationForPlant: View {
                     Spacer()
                     
                     Button(action:{
+                        addEventNow()
                         //plant.lastWatered = Date.now
-                        WaterService.shared.water(ip: plant.device!.ip, time: plant.seconds)
-                        // TODO: Call server with new date
+//                        WaterService.shared.water(ip: plant.device!.ip, time: plant.seconds)
                         
                     }){
                         HStack{
@@ -77,7 +75,7 @@ struct InformationForPlant: View {
             }
             ZStack{
                 HStack{
-                    Text("Next watering")
+                    Text("Next")
                         .font(.system(size: 20, weight: .bold))
                         .padding(.all, 15)
                         .foregroundColor(Theme.textBrown)
@@ -89,34 +87,14 @@ struct InformationForPlant: View {
                 }
             }
             HStack{
-                Text("Repeat")
+                VStack {
+                    
+                Text("Repeat (days)")
                     .font(.system(size: 20, weight: .bold))
                     .padding(.leading, 15)
                     .foregroundColor(Theme.textBrown)
-                
-                Spacer()
-                
-                HStack{
-                    
-//                    Menu(){
-//                        Button("Every month", action: {textInRepeat = "Every month"})
-//                        Button("Every week", action: {textInRepeat = "Every week"})
-//                        Button("Every day", action: {textInRepeat = "Every day"})
-//                        Button("Never", action: {textInRepeat = "Never"})
-//                        
-//                        // TODO: функция для обновления значения plant.replay
-//                    }label:{
-//                        Label(LocalizedStringKey(textInRepeat), systemImage: "timer")
-//                            .padding(.trailing, 10)
-//                            .foregroundColor(Theme.textBrown)
-//                    }
-                    
-                    Picker("Watering", selection: $plant.waterInterval) {
-                        ForEach(numbers, id: \.self) { number in
-                            Text("\(number)").tag(number)
-                        }
-
-                    }
+                                    
+                    MyStepper(value: $plant.waterInterval, onChange: updateEventList, minValue: 1)
                     .onChange(of: plant.waterInterval) {
                         print("DEBUG")
                         let content = UNMutableNotificationContent()
@@ -145,6 +123,17 @@ struct InformationForPlant: View {
                         UNUserNotificationCenter.current().add(request)
                     }
                 }
+                
+                Spacer()
+                
+                VStack {
+                    Text("Number of repeats")
+                        .font(.system(size: 20, weight: .bold))
+                        .padding(.leading, 15)
+                        .foregroundColor(Theme.textBrown)
+                    
+                    MyStepper(value: $plant.numberOfRepeats, onChange: updateEventList)
+                }
             }
             
             
@@ -156,7 +145,7 @@ struct InformationForPlant: View {
                 Spacer()
                 
                 if (plant.device != nil) {
-                    Text(plant.device!.ssid)
+                    Text(plant.device!.deviceId)
                         .font(.system(size: 20, weight: .bold))
                         .padding(.all, 15)
                         .foregroundColor(Theme.textBrown)
@@ -183,6 +172,7 @@ struct InformationForPlant: View {
             .foregroundColor(Theme.buttonColor)
             
         }
+        .padding()
         .background(Theme.backGround)
         .onAppear {
             barHidden = true
@@ -210,6 +200,57 @@ struct InformationForPlant: View {
                 }
             }
         })
+//        .padding([.horizontal])
+    }
+    
+    func updateEventList() {
+        guard let _ = plant.device else {return}
+        let session = URLSession.shared
+        var urlRequest = URLRequest(url: URL(string: "\(Constants.ngrokServer)/dates")!)
+//        var urlRequest = URLRequest(url: URL(string: "http://\(Constants.ip):8080/dates")!)
         
+        urlRequest.httpMethod = "POST"
+        
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let body = ["startDate": ServerDateTimeFormatter.shared.toString(date: nextWatering), "interval": plant.waterInterval, "repeats": plant.numberOfRepeats, "seconds": plant.seconds, "device_id": plant.device!.deviceId] as [String : Any]
+        
+        urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: body)
+        session.dataTask(with: urlRequest) { data, response, error in
+            if response is HTTPURLResponse {
+                do {
+                    let m = try JSONDecoder().decode([DateModel].self, from: data!)
+                    print(m)
+                } catch {
+                    print(error)
+                }
+            }
+            
+        }.resume()
+    }
+    
+    func addEventNow() {
+        let session = URLSession.shared
+        var urlRequest = URLRequest(url: URL(string: "\(Constants.ngrokServer)/water")!)
+//        var urlRequest = URLRequest(url: URL(string: "http://\(Constants.ip):8080/water")!)
+        
+        urlRequest.httpMethod = "POST"
+        
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let body = ["seconds": plant.seconds, "device_id": plant.device!.deviceId] as [String : Any]
+        
+        urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: body)
+        session.dataTask(with: urlRequest) { data, response, error in
+            if response is HTTPURLResponse {
+                do {
+                    let m = try JSONDecoder().decode([DateModel].self, from: data!)
+                    print(m)
+                } catch {
+                    print(error)
+                }
+            }
+            
+        }.resume()
     }
 }

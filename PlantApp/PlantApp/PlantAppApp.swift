@@ -31,6 +31,7 @@ struct PlantAppApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(EventStore.shared)
                 .environment(languageSettings)
                 .environment(\.locale, languageSettings.locale)
                 .onAppear {

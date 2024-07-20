@@ -39,12 +39,13 @@ struct PlantInfoField: View {
                             notIsEdit = true
                         }
                         .foregroundColor(Theme.textColor)
-                        .lineLimit(3)
+//                        .lineLimit(3)
                         .focused($focused)
                     
                 }
             }
-            Spacer()        }
+            Spacer()
+        }
     }
 }
 

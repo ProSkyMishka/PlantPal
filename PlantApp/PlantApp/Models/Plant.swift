@@ -26,6 +26,7 @@ class Plant: Comparable {
     var watering: [Date] = []
     var waterInterval: Int = 0 // Один полив в n дней
     var device: Device?
+    var numberOfRepeats: Int = 0
     @Attribute(.externalStorage) var image: Data?
     
     init(serverId: String, desc: String, humidity: String, temp: String, MLID: String, imageURL: String, seconds: Int, name: String) {

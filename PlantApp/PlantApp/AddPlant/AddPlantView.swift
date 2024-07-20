@@ -143,7 +143,7 @@ struct AddPlantView: View {
                 }
                 
             }
-                .frame(height: UIScreen.main.bounds.height)
+            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                 .background(Theme.backGround)
         }
         .onAppear{
@@ -157,7 +157,8 @@ struct AddPlantView: View {
         let boundary = UUID().uuidString
         
         let session = URLSession.shared
-        var urlRequest = URLRequest(url: URL(string: "http://10.29.91.25:8000/predict/plant")!)
+        var urlRequest = URLRequest(url: URL(string: "\(Constants.ngrokModels)/predict/plant")!)
+        print(urlRequest)
         
         urlRequest.httpMethod = "POST"
         
@@ -190,7 +191,8 @@ struct AddPlantView: View {
     }
     
     func loadData() async {
-        guard let url = URL(string: "https://5ca7-188-170-214-41.ngrok-free.app/plants/\(resultsML.classML)") else {
+        guard let url = URL(string: "\(Constants.ngrokServer)/plants/\(resultsML.classML)") else {
+//        guard let url = URL(string: "http://\(Constants.ip):8080/plants/\(resultsML.classML)") else {
             print("Invalid URL")
             return
         }

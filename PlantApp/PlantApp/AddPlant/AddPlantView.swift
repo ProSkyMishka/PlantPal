@@ -191,7 +191,7 @@ struct AddPlantView: View {
     }
     
     func loadData() async {
-        guard let url = URL(string: "\(Constants.ngrokServer)/plants/\(resultsML.classML)") else {
+        guard let url = URL(string: "\(Constants.urlServer)/plants/\(resultsML.classML)") else {
 //        guard let url = URL(string: "http://\(Constants.ip):8080/plants/\(resultsML.classML)") else {
             print("Invalid URL")
             return

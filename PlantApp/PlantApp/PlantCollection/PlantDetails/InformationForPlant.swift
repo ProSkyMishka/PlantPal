@@ -206,7 +206,7 @@ struct InformationForPlant: View {
     func updateEventList() {
         guard let _ = plant.device else {return}
         let session = URLSession.shared
-        var urlRequest = URLRequest(url: URL(string: "\(Constants.ngrokServer)/dates")!)
+        var urlRequest = URLRequest(url: URL(string: "\(Constants.urlServer)/dates")!)
 //        var urlRequest = URLRequest(url: URL(string: "http://\(Constants.ip):8080/dates")!)
         
         urlRequest.httpMethod = "POST"
@@ -231,7 +231,7 @@ struct InformationForPlant: View {
     
     func addEventNow() {
         let session = URLSession.shared
-        var urlRequest = URLRequest(url: URL(string: "\(Constants.ngrokServer)/water")!)
+        var urlRequest = URLRequest(url: URL(string: "\(Constants.urlServer)/water")!)
 //        var urlRequest = URLRequest(url: URL(string: "http://\(Constants.ip):8080/water")!)
         
         urlRequest.httpMethod = "POST"

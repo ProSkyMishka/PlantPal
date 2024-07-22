@@ -68,6 +68,7 @@ struct FlowerListView: View {
                                 
                                     .font(.system(size: 20, weight: .bold))
                                     .foregroundColor(Theme.textGreen)
+                                    .frame(width: 130)
                                
                             }
                             .tint(.black)

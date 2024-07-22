@@ -1,17 +1,20 @@
 //
-//  ContentView.swift
+//  ContentViewAfterOB.swift
 //  PlantApp
 //
-//  Created by Lucy Rez on 08.07.2024.
+//  Created by ProSkyMishka on 08.07.2024.
 //
 
 import SwiftUI
+import SwiftData
 
-struct ContentView: View {
+struct ContentViewAfterOB: View {
     @Environment(EventStore.self) private var eventStore
+    @Environment(\.modelContext) var modelContext: ModelContext
     @State var index = 0
     @State var barHidden = false
     @State var path = NavigationPath()
+    @Query() var devices: [Device]
     
     var body: some View {
         if !eventStore.canAccessEvents {
@@ -45,11 +48,17 @@ struct ContentView: View {
         .animation(.spring, value: barHidden)
         .padding([.bottom])
         .edgesIgnoringSafeArea(.bottom)
+        .onAppear {
+            if !devices.contains(where: { $0 != Device(deviceId: "default")}) {
+                let device: Device = Device(deviceId: "default")
+                modelContext.insert(device)
+            }
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentViewAfterOB()
     }
 }

@@ -11,6 +11,7 @@ import SwiftData
 struct ResponseML: Codable {
     var classML: String
     var real_name: String
+    var accuracy: String
 }
 
 struct ResultPlant: Codable {
@@ -29,11 +30,13 @@ struct AddPlantView: View {
     @Binding var path: NavigationPath
     @Binding var index: Int
     @State private var image: UIImage?
-    @State public var resultsML: ResponseML = ResponseML(classML: "", real_name: "")
+    @State public var resultsML: ResponseML = ResponseML(classML: "", real_name: "", accuracy: "")
     @State public var resultsServer:  ResultPlant = ResultPlant(id: "", description: "", humidity: "", temp: "", MLID: "", imageURL: "", seconds: 0, name: "")
     @State private var isInfoLoading = true
     @Binding var barHidden: Bool
     @State var isEditViewPresented = false
+    @State var notRecognisable = false
+    @State var clientText = "Is this really your plant?"
     
     
     var body: some View {
@@ -44,10 +47,11 @@ struct AddPlantView: View {
                 } else {
                     VStack {
                         
-                        Text("Is this really your plant?")
+                        Text(clientText)
                             .foregroundColor(Theme.textBlue)
                             .font(.system(size: 28))
                             .padding(8)
+                            .frame(width: UIScreen.main.bounds.width * 0.9)
                         
                         Image(uiImage: image!)
                             .resizable()
@@ -56,7 +60,7 @@ struct AddPlantView: View {
                         
                         if (isInfoLoading) {
                             ProgressView()
-                        } else {
+                        } else if !notRecognisable {
                             Text(resultsServer.name)
                                 .font(.title)
                                 .foregroundColor(Theme.textBrown)
@@ -114,27 +118,22 @@ struct AddPlantView: View {
                             .frame(maxWidth: .infinity)
                             .cornerRadius(10)
                             .padding(.horizontal)
+                        } else {
+                            HStack {
+                                Text("Repeat")
+                                    .font(.system(size: 20))
+                                    .foregroundColor(Theme.textBlue)
+                                Image(systemName: "arrow.clockwise")
+                                    .foregroundColor(Theme.textBlue)
+                            }
+                            .onTapGesture {
+                                image = nil
+                                notRecognisable = false
+                                clientText = "Is this really your plant?"
+                                barHidden.toggle()
+                                isInfoLoading = true
+                            }
                         }
-//                        Text(" ")
-//                        HStack{
-//                            NavigationLink {
-//                                NewDeviceView(barHidden: $barHidden)
-//                                    .onAppear(){
-//                                        barHidden = true
-//                                    }
-//                            } label: {
-//                                
-//                                Text("Connect the device")
-//                                    .bold()
-//                                    .font(.title2)
-//                                    .foregroundColor(.white)
-//                                    .padding()
-//                                    .padding(.horizontal)
-//                                    .background(Theme.buttonColor)
-//                                    .cornerRadius(10)
-//                            }
-//                            
-//                        }
                     }
                         .onAppear {
                             barHidden = false
@@ -177,9 +176,14 @@ struct AddPlantView: View {
                 let jsonData = try? JSONSerialization.jsonObject(with: responseData!, options: .allowFragments)
                 if let json = jsonData as? [String: String] {
                     print(json)
-                    resultsML = ResponseML(classML: json["classML"]!, real_name: json["real_name"]!)
-                    Task {
-                        await loadData()
+                    resultsML = ResponseML(classML: json["classML"]!, real_name: json["real_name"]!, accuracy: json["accuracy"]!)
+                    if Double(resultsML.accuracy) ?? -5 >= -3.5 {
+                        Task {
+                            await loadData()
+                        }
+                    } else {
+                        clientText = "We cannot recognize your flower"
+                        notRecognisable = true
                     }
                 }
                 

@@ -20,5 +20,5 @@ class Device: Comparable {
     init(deviceId: String) {
         self.deviceId = deviceId
     }
-    
+
 }

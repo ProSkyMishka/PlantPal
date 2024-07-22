@@ -2,12 +2,14 @@
 //  InformationForPlant.swift
 //  PlantApp
 //
-//  Created by Lucy Rez on 08.07.2024.
+//  Created by ProSkyMishka on 08.07.2024.
 //
 
 import SwiftUI
 
 struct InformationForPlant: View {
+    @State private var isDisabled = false
+    @State private var buttonColor = Theme.buttonColor
     @Bindable var plant: Plant
     @State var notIsEdit = true
     @State var isPresented = false
@@ -16,14 +18,22 @@ struct InformationForPlant: View {
     @Environment(\.dismiss) private var dismiss
     @State var textInRepeat = "Never"
     @State var nextWatering: Date = Date()
-    // @State var replay: RepeatWatering
+    @StateObject var viewModel: PlantModel = PlantModel(imageState: .empty)
+    
+    init(plant: Plant, barHidden: Binding<Bool>) {
+        self.plant = plant
+        self._barHidden = barHidden
+    }
 
     var body: some View {
         ScrollView{
-            Image(uiImage: UIImage(data: plant.image ?? Data()) ?? UIImage())
-                .resizable()
-                .frame(width: 180, height: 180)
-                .cornerRadius(8)
+            ChangableAvatarView(viewModel: viewModel, plant: plant)
+            .cornerRadius(30)
+            .background(.white)
+            .padding(5)
+            .onAppear {
+                restore(viewModel: viewModel)
+            }
             
             PlantInfoField(textTitle: "Name", text: $plant.name, notIsEdit: notIsEdit)
             PlantInfoField(textTitle: "Description", text: $plant.desc, notIsEdit: notIsEdit)
@@ -33,7 +43,7 @@ struct InformationForPlant: View {
             
             ZStack{
                 HStack{
-                    VStack(alignment: .leading){
+                    VStack(alignment: .leading) {
                         Text("Last watered")
                             .font(.system(size: 20, weight: .bold))
                             .foregroundColor(Theme.textBrown)
@@ -42,20 +52,20 @@ struct InformationForPlant: View {
                         if let dateNow = plant.watering.filter({$0 <= Date()}).last  {
                             Text(DateTimeFormatter.shared.toString(date: dateNow))
                                 .font(.system(size: 20))
+                                .foregroundColor(Theme.textColor)
                         } else {
                             Text("None")
                                 .font(.system(size: 20))
                                 .foregroundColor(Theme.textColor)
                         }
-                    }.padding(.leading, 20)
+                    }
+                    .padding(.all, 15)
                     
                     Spacer()
                     
                     Button(action:{
+                        disableButton()
                         addEventNow()
-                        //plant.lastWatered = Date.now
-//                        WaterService.shared.water(ip: plant.device!.ip, time: plant.seconds)
-                        
                     }){
                         HStack{
                             Image(systemName: "drop.fill")
@@ -66,9 +76,10 @@ struct InformationForPlant: View {
                         }
                         .padding(.horizontal, 29)
                         .padding(.vertical,8)
-                        .background(Theme.buttonColor)
+                        .background(buttonColor)
                         .cornerRadius(18)
                     }
+                    .disabled(isDisabled)
                     .padding(.all, 10)
                     .disabled(plant.device == nil)
                 }
@@ -203,6 +214,16 @@ struct InformationForPlant: View {
 //        .padding([.horizontal])
     }
     
+    func disableButton() {
+        isDisabled = true
+        buttonColor = Color.gray
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
+            isDisabled = false
+            buttonColor = Theme.buttonColor
+        }
+    }
+    
     func updateEventList() {
         guard let _ = plant.device else {return}
         let session = URLSession.shared
@@ -246,11 +267,23 @@ struct InformationForPlant: View {
                 do {
                     let m = try JSONDecoder().decode([DateModel].self, from: data!)
                     print(m)
+                    DispatchQueue.main.async {
+                        plant.watering.append(Date())
+                    }
                 } catch {
                     print(error)
                 }
             }
             
         }.resume()
+    }
+    
+    @MainActor
+    func restore(viewModel: PlantModel) {
+        // print("restore")
+        let data = plant.image ?? UIImage(systemName: "tree.fill")!.jpegData(compressionQuality: 1)!
+        
+        let image = UIImage(data: data)!
+        viewModel.setImageStateSuccess(image: Image(uiImage: image))
     }
 }

@@ -27,10 +27,17 @@ class LanguageSetting {
 struct PlantAppApp: App {
     @State var languageSettings = LanguageSetting()
     @StateObject var delegate =  NotificationDelegate()
+    @State private var onboardingDone = UserDefaults.standard.bool(forKey: "onboardingDone")
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Group{
+                if !onboardingDone{
+                    ContentView(onboardingDone: $onboardingDone)
+                } else {
+                    ContentViewAfterOB()
+                }
+            }
                 .environment(EventStore.shared)
                 .environment(languageSettings)
                 .environment(\.locale, languageSettings.locale)

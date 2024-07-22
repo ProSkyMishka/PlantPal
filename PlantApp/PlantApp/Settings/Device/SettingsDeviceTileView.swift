@@ -46,12 +46,15 @@ struct SettingsDeviceTileView: View {
                     .foregroundColor(Theme.textAzure)
             }
             
+//            if device.id !=
             Image(systemName: "trash.fill")
                 .resizable()
                 .frame(width: 30, height: 30)
-                .foregroundColor(.red)
+                .foregroundColor(device.deviceId == "default" ? .gray : .red)
                 .onTapGesture {
-                    modelContext.delete(device)
+                    if device.deviceId != "default" {
+                        modelContext.delete(device)
+                    }
                 }
             
         }

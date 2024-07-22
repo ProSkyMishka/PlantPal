@@ -633,6 +633,9 @@
     "Sign out" : {
 
     },
+    "Start working!" : {
+
+    },
     "Submit" : {
 
     },
@@ -692,6 +695,9 @@
           }
         }
       }
+    },
+    "We cannot recognize any diseases" : {
+
     },
     "Weak" : {
       "localizations" : {

@@ -22,12 +22,12 @@ struct ResponseDisease: Identifiable {
 }
 
 struct SickPlantView: View {
-    //    @Environment(\.modelContext) var modelContext: ModelContext
     @State private var image: UIImage?
     @State public var resultsML: [ResponseDisease] = []
     @State private var isInfoLoading = true
     @Binding var barHidden: Bool
     @Environment(\.dismiss) private var dismiss
+    @State var countDiseases: Int = 6
     
     let disease_names = ["leaf spot",
                          "calcium deficiency",
@@ -61,19 +61,27 @@ struct SickPlantView: View {
                             .padding(8)
                         ScrollView {
                             VStack {
-                                ForEach(resultsML) { result in
-                                    HStack {
-                                        Text(result.name)
-                                            .font(.title)
-                                            .foregroundColor(Theme.textBrown)
-                                        Spacer()
-                                        Text(String(result.acc) + " %")
-                                            .font(.title)
-                                            .foregroundColor(Theme.textBrown)
+                                if countDiseases != 0 {
+                                    ForEach(resultsML) { result in
+                                        HStack {
+                                            if result.acc != 0 {
+                                                Text(result.name)
+                                                    .font(.title)
+                                                    .foregroundColor(Theme.textBrown)
+                                                Spacer()
+                                                Text(String(result.acc) + " %")
+                                                    .font(.title)
+                                                    .foregroundColor(Theme.textBrown)
+                                            }
+                                        }
                                     }
+                                    .background(Theme.backGround)
+                                    .padding([.horizontal])
+                                } else {
+                                    Text("We cannot recognize any diseases")
+                                        .font(.title)
+                                        .foregroundColor(Theme.textBrown)
                                 }
-                                .background(Theme.backGround)
-                                .padding([.horizontal])
                             }
                         }
                         .frame(height: UIScreen.main.bounds.height * 0.35)
@@ -118,6 +126,7 @@ struct SickPlantView: View {
                             .foregroundColor(Theme.icon)
                     }
                     .onTapGesture {
+                        countDiseases = 6
                         image = nil
                     }
                 }
@@ -155,7 +164,11 @@ struct SickPlantView: View {
                         let array = strCopy.split(separator: ",")
                         for i in 0..<array.count {
                             let acc = Double(array[i]) ?? 0.0
-                            let result = ResponseDisease(id: i, name: disease_names[i], acc: (acc > 0) ? Int((acc + 5) * 10) % 100 : (acc > -5) ? Int((5 + acc) * 10) : 0)
+                            let resultAcc: Int = (acc > 0) ? Int((acc + 5) * 10) % 100 : (acc > -5) ? Int((5 + acc) * 10) : 0
+                            if resultAcc < 60 {
+                                countDiseases -= 1
+                            }
+                            let result = ResponseDisease(id: i, name: disease_names[i], acc: resultAcc)
                             
                             results.append(result)
                         }

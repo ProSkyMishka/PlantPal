@@ -2,7 +2,7 @@
 //  EventStore.swift
 //  EventsWidget
 //
-//  Created by Gregor Hermanowski on 22. March 2022.
+//  Created by ProSkyMishka on 08.07.2024.
 //
 
 import Combine
@@ -59,11 +59,11 @@ final class EventStore {
     }
     
     /// Adds a test event in the default calendar.
-    func addEvent() {
+    func addEvent(startDate: Date, seconds: Int, plants: String) {
         let event = EKEvent(eventStore: ekEventStore)
-        event.title = "Event"
-        event.startDate = .now
-        event.endDate = .now.advanced(by: 3600)
+        event.title = "Watering \(plants)"
+        event.startDate = startDate
+        event.endDate = startDate.advanced(by: TimeInterval(seconds))
         event.calendar = ekEventStore.defaultCalendarForNewEvents
         
         do {
@@ -71,6 +71,27 @@ final class EventStore {
             try ekEventStore.commit()
         } catch {
             print(error)
+        }
+    }
+
+    func clearCalendar() {
+        let startOfDay = Calendar.current.startOfDay(for: .now)
+        let predicate = ekEventStore.predicateForEvents(
+            withStart: startOfDay,
+            end: startOfDay.advanced(by: 31104000),
+            calendars: nil
+        )
+        let ev = ekEventStore.events(matching: predicate) as [EKEvent]?
+        if ev != nil {
+            for i in ev! {
+                do{
+                    (try ekEventStore.remove(i, span: EKSpan.thisEvent, commit: true))
+                }
+                catch let error {
+                    print("Error removing events: ", error)
+                }
+
+            }
         }
     }
     

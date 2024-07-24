@@ -37,6 +37,7 @@ struct SettingsTileView: View {
                     Text(LocalizedStringKey(text))
                         .foregroundColor(Theme.textBrown)
                         .font(.system(size: 20))
+                        .frame(alignment: .leading)
                     
                     
                     Spacer()

@@ -36,6 +36,7 @@ struct PlantAppApp: App {
                     ContentView(onboardingDone: $onboardingDone)
                 } else {
                     ContentViewAfterOB()
+                        .defaultAppStorage(UserDefaults(suiteName: "group.su.brf.apps.PlantPal")!)
                 }
             }
                 .environment(EventStore.shared)

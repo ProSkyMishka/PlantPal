@@ -34,6 +34,9 @@ class Theme {
     static var description = theme == 0 ? ColorLight.description: ColorDark.description
     static var icon = theme == 0 ? ColorLight.icon: ColorDark.icon
     
+    static var fonYandexUp = theme == 0 ? ColorLight.fonYandexUp: ColorDark.fonYandexUp
+    static var fonYandexDown = theme == 0 ? ColorLight.fonYandexDown: ColorDark.fonYandexDown
+    
 
     static func changeTheme(colorTheme: Int) {
         theme = colorTheme
@@ -53,6 +56,10 @@ class Theme {
             description = ColorDark.description
             icon = ColorDark.icon
             
+            
+            fonYandexUp = ColorDark.fonYandexUp
+            fonYandexDown = ColorDark.fonYandexDown
+            
         default:
             pink = ColorLight.pink
             backGround = ColorLight.backGround
@@ -66,6 +73,9 @@ class Theme {
             search = ColorLight.search
             description = ColorLight.description
             icon = ColorLight.icon
+            
+            fonYandexUp = ColorLight.fonYandexUp
+            fonYandexDown = ColorLight.fonYandexDown
         }
     }
 }
@@ -83,6 +93,10 @@ class ColorLight {
     static var search = Color(uiColor: UIColor(hex: "DFDDDD"))
     static var icon = Color(uiColor: UIColor(hex: "17980C"))
     static var description = Color(uiColor: UIColor(hex: "7C947E"))
+    
+    
+    static var fonYandexUp = Color(uiColor: UIColor(hex: "ADFF2F"))
+    static var fonYandexDown = Color(uiColor: UIColor(hex: "7FFFD4"))
 }
 
 class ColorDark {
@@ -98,4 +112,8 @@ class ColorDark {
     static var icon = Color(uiColor: UIColor(hex: "0ACD87"))
     static var description = Color(uiColor: UIColor(hex: "E8EFE2"))
     static var search = Color(uiColor: UIColor(hex: "86B371"))
+    
+    
+    static var fonYandexUp = Color(uiColor: UIColor(hex: "148014"))
+    static var fonYandexDown = Color(uiColor: UIColor(hex: "005252"))
 }

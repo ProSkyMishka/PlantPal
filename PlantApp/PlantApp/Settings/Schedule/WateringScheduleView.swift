@@ -2,7 +2,7 @@
 //  WateringHistoryView.swift
 //  PlantApp
 //
-//  Created by Lucy Rez on 08.07.2024.
+//  Created by ProSkyMishka on 08.07.2024.
 //
 
 import SwiftUI
@@ -30,7 +30,7 @@ struct WateringScheduleView: View {
                                     .foregroundColor(Theme.textBrown)
                                     .bold()
                                 if let dateNow = flower.watering.filter({$0 > Date()}).first {
-                                    Text("Scheduled on \(DateTimeFormatter.shared.toString(date: dateNow))")
+                                    Text("Scheduled on \(DateTimeFormatter.shared.toString(date: flower.nextWatering))")
                                         .foregroundColor(Theme.description)
                                 } else {
                                     Text("Not planning date yet")

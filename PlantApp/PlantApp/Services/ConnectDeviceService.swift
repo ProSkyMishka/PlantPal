@@ -2,7 +2,7 @@
 //  ConnectDeviceService.swift
 //  PlantApp
 //
-//  Created by Administrator on 17.07.2024.
+//  Created by ProSkyMishka on 17.07.2024.
 //
 
 import Foundation

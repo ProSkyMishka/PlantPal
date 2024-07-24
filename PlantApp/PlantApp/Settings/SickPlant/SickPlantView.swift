@@ -2,14 +2,7 @@
 //  SickPlantView.swift
 //  PlantApp
 //
-//  Created by Lucy Rez on 15.07.2024.
-//
-
-//
-//  AddPlantView.swift
-//  PlantApp
-//
-//  Created by Lucy Rez on 08.07.2024.
+//  Created by ProSkyMishka on 15.07.2024.
 //
 
 import SwiftUI
@@ -138,7 +131,7 @@ struct SickPlantView: View {
         let boundary = UUID().uuidString
         
         let session = URLSession.shared
-        var urlRequest = URLRequest(url: URL(string: "\(Constants.ngrokModels)/predict/disease")!)
+        var urlRequest = URLRequest(url: URL(string: "\(Constants.urlModelsServer)/predict/disease")!)
         
         urlRequest.httpMethod = "POST"
         

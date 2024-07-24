@@ -2,7 +2,7 @@
 //  Stepper.swift
 //  PlantApp
 //
-//  Created by Administrator on 19.07.2024.
+//  Created by ProSkyMishka on 19.07.2024.
 //
 
 import SwiftUI

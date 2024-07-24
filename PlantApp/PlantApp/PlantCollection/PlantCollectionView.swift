@@ -83,12 +83,12 @@ struct PlantCollectionView: View {
                 .transition(.slide)
                 
                 HStack(alignment: .center) {
-                    Text("Temp: " + String(select?.temp ?? 0.0) + " ºC")
+                    Text("Temp: \(String(select?.temp ?? 0.0)) ºC")
                         .font(.subheadline)
                     
                     Spacer()
                     
-                    Text("Humidity: " + String(select?.humidity ?? 0.0) + " %")
+                    Text("Humidity: \(String(select?.humidity ?? 0.0))%")
                         .font(.subheadline)
 //                    Text("Name device: " + String(select?.name ?? "Nope"))
 //                        .font(.subheadline)
@@ -101,13 +101,6 @@ struct PlantCollectionView: View {
                     }
                 }
             }
-//            .onAppear {
-////                eventStore.addEvent()
-////                let plant = Plant(serverId: "1003", desc: "Description", humidity: "45-56", temp: "45", MLID: "038", imageURL: "", seconds: 56, name: "Test")
-////                plant.image = UIImage(systemName: "star.fill")?.jpegData(compressionQuality: 1.0)!
-////                plant.watering = [Date(), Date(timeInterval: 60, since: Date()), Date(timeInterval: -60, since: Date()), Date(timeInterval: 3600, since: Date())]
-////                modelContext.insert(plant)
-//            }
             .transition(.slide)
             .padding(.horizontal)
             .background(Theme.backGround)

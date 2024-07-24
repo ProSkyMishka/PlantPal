@@ -8,7 +8,7 @@
 import Foundation
 
 enum Constants {
-    static let ip: String = "89.169.161.205"
-    static let ngrokModels: String = "https://636f-89-169-48-226.ngrok-free.app"
-    static let urlServer: String = "http://89.169.161.205:8080"
+    static let ip: String = "http://89.169.161.205"
+    static let urlModelsServer: String = "\(ip):8000"
+    static let urlServer: String = "\(ip):8080"
 }

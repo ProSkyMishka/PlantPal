@@ -2,7 +2,7 @@
 //  NewDeviceView.swift
 //  PlantApp
 //
-//  Created by Lucy Rez on 12.07.2024.
+//  Created by ProSkyMishka on 12.07.2024.
 //
 
 import SwiftUI
@@ -11,8 +11,8 @@ import SwiftData
 struct NewDeviceView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) var modelContext: ModelContext
-    @State var ssid: String = " Plants_smart"
-    @State var password: String = "SmartPla9t6"
+    @State var ssid: String = ""
+    @State var password: String = ""
     
     var body: some View {
         ScrollView {

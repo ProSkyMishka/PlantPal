@@ -17,16 +17,6 @@ struct ContentViewAfterOB: View {
     @Query() var devices: [Device]
     
     var body: some View {
-        if !eventStore.canAccessEvents {
-            ContentUnavailableView {
-                Button("Request Access") {
-                    Task {
-                        await eventStore.requestAccess()
-                    }
-                }
-                .buttonStyle(.borderedProminent)
-            }
-        }
         VStack {
             switch index {
             case 0:
@@ -42,6 +32,13 @@ struct ContentViewAfterOB: View {
             
             if !barHidden {
                 TabBar(index: $index)
+            }
+        }
+        .onAppear {
+            if !eventStore.canAccessEvents {
+                        Task {
+                            await eventStore.requestAccess()
+                        }
             }
         }
         .background(Theme.backGround)

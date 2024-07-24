@@ -2,7 +2,7 @@
 //  EventItem.swift
 //  EventsWidget
 //
-//  Created by Gregor Hermanowski on 29. March 2022.
+//  Created by ProSkyMishka on 08.07.2024.
 //
 
 import EventKit

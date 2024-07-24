@@ -38,6 +38,8 @@
 		C3DCB3F32C4AAB0A00359B46 /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCB3F22C4AAB0A00359B46 /* EventStore.swift */; };
 		C3DCB3F42C4AAB0A00359B46 /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCB3F22C4AAB0A00359B46 /* EventStore.swift */; };
 		C3DCB3F52C4AAB0A00359B46 /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCB3F22C4AAB0A00359B46 /* EventStore.swift */; };
+		C3DCB4042C4E4B3700359B46 /* DTOs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E522BE52C4AE46C00FFA145 /* DTOs.swift */; };
+		C3DCB4062C4E813E00359B46 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = C3DCB4052C4E813D00359B46 /* Localizable.xcstrings */; };
 		D20682A62C3B9E3C00C4A319 /* PlantAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20682A52C3B9E3C00C4A319 /* PlantAppApp.swift */; };
 		D20682A82C3B9E3C00C4A319 /* ContentViewAfterOB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20682A72C3B9E3C00C4A319 /* ContentViewAfterOB.swift */; };
 		D20682AA2C3B9E3E00C4A319 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D20682A92C3B9E3E00C4A319 /* Assets.xcassets */; };
@@ -56,7 +58,6 @@
 		D20682D82C3BAEB000C4A319 /* DateTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20682D72C3BAEB000C4A319 /* DateTimeFormatter.swift */; };
 		D20682DB2C3BAF4D00C4A319 /* InformationForPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20682DA2C3BAF4D00C4A319 /* InformationForPlant.swift */; };
 		D20682DD2C3BAF7300C4A319 /* PlantInfoField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20682DC2C3BAF7300C4A319 /* PlantInfoField.swift */; };
-		D21D55102C3EC0D700B47123 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D21D550F2C3EC0D700B47123 /* Localizable.xcstrings */; };
 		D21D55122C3EC7D700B47123 /* EditCapturedPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21D55112C3EC7D700B47123 /* EditCapturedPlantView.swift */; };
 		D29F7C9E2C3E616A00BBE0DE /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29F7C9D2C3E616A00BBE0DE /* CameraView.swift */; };
 		D2A2B3692C3FC1D100164139 /* ColorLightDark.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A2B3682C3FC1D100164139 /* ColorLightDark.swift */; };
@@ -123,6 +124,9 @@
 		2E97F6C52C4DEDE900C7AE66 /* PlantImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantImage.swift; sourceTree = "<group>"; };
 		2E97F6C72C4DEE0700C7AE66 /* PlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModel.swift; sourceTree = "<group>"; };
 		2E97F6C92C4DEE8600C7AE66 /* ChangableAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangableAvatarView.swift; sourceTree = "<group>"; };
+		2EE2E7712C50A34900F8EB0A /* PlantApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PlantApp.entitlements; sourceTree = "<group>"; };
+		2EE2E7722C50A3A900F8EB0A /* WaterWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WaterWidgetExtension.entitlements; sourceTree = "<group>"; };
+		2EE2E7732C50A41000F8EB0A /* ConfigurationIntent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ConfigurationIntent.entitlements; sourceTree = "<group>"; };
 		C3DCB3C32C4AA94300359B46 /* WaterWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WaterWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3DCB3C52C4AA94300359B46 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		C3DCB3C72C4AA94300359B46 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -139,6 +143,7 @@
 		C3DCB3EE2C4AAAEA00359B46 /* EventItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItem.swift; sourceTree = "<group>"; };
 		C3DCB3F22C4AAB0A00359B46 /* EventStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventStore.swift; sourceTree = "<group>"; };
 		C3DCB3F62C4AAB7100359B46 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3DCB4052C4E813D00359B46 /* Localizable.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		D20682A22C3B9E3C00C4A319 /* PlantApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20682A52C3B9E3C00C4A319 /* PlantAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantAppApp.swift; sourceTree = "<group>"; };
 		D20682A72C3B9E3C00C4A319 /* ContentViewAfterOB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewAfterOB.swift; sourceTree = "<group>"; };
@@ -158,7 +163,6 @@
 		D20682D72C3BAEB000C4A319 /* DateTimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeFormatter.swift; sourceTree = "<group>"; };
 		D20682DA2C3BAF4D00C4A319 /* InformationForPlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationForPlant.swift; sourceTree = "<group>"; };
 		D20682DC2C3BAF7300C4A319 /* PlantInfoField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantInfoField.swift; sourceTree = "<group>"; };
-		D21D550F2C3EC0D700B47123 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		D21D55112C3EC7D700B47123 /* EditCapturedPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCapturedPlantView.swift; sourceTree = "<group>"; };
 		D29F7C9D2C3E616A00BBE0DE /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		D2A2B3682C3FC1D100164139 /* ColorLightDark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLightDark.swift; sourceTree = "<group>"; };
@@ -213,7 +217,6 @@
 				2E522BE52C4AE46C00FFA145 /* DTOs.swift */,
 				2E522BE32C4ACC2700FFA145 /* YandexAuthField.swift */,
 				2E522BE12C4ACC2000FFA145 /* SingleDigitTextField.swift */,
-				2E522BDF2C4ACC1900FFA145 /* Profile.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 		C3DCB3DF2C4AA96C00359B46 /* ConfigurationIntent */ = {
 			isa = PBXGroup;
 			children = (
+				2EE2E7732C50A41000F8EB0A /* ConfigurationIntent.entitlements */,
 				C3DCB3E02C4AA96C00359B46 /* IntentHandler.swift */,
 				C3DCB3E22C4AA96C00359B46 /* Info.plist */,
 			);
@@ -288,10 +292,11 @@
 		D20682992C3B9E3C00C4A319 = {
 			isa = PBXGroup;
 			children = (
+				2EE2E7722C50A3A900F8EB0A /* WaterWidgetExtension.entitlements */,
 				C3DCB3F72C4AAB7100359B46 /* iOS */,
 				C3DCB3F22C4AAB0A00359B46 /* EventStore.swift */,
 				C3DCB3EE2C4AAAEA00359B46 /* EventItem.swift */,
-				D21D550F2C3EC0D700B47123 /* Localizable.xcstrings */,
+				C3DCB4052C4E813D00359B46 /* Localizable.xcstrings */,
 				D20682A42C3B9E3C00C4A319 /* PlantApp */,
 				C3DCB3C92C4AA94400359B46 /* WaterWidget */,
 				C3DCB3DF2C4AA96C00359B46 /* ConfigurationIntent */,
@@ -313,6 +318,7 @@
 		D20682A42C3B9E3C00C4A319 /* PlantApp */ = {
 			isa = PBXGroup;
 			children = (
+				2EE2E7712C50A34900F8EB0A /* PlantApp.entitlements */,
 				2E97F6C42C4DEDDD00C7AE66 /* PlantsGalery */,
 				2E97F6BF2C4DEAA100C7AE66 /* OnBording */,
 				C3DCB3ED2C4AAA1700359B46 /* Info.plist */,
@@ -344,7 +350,6 @@
 		D20682B92C3B9ED000C4A319 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				2E522BDC2C4ACBC800FFA145 /* Profile */,
 				D2FF280C2C453AB50033A404 /* SickPlant */,
 				D2A2B36C2C40EB9200164139 /* Device */,
 				D20682C92C3BA27600C4A319 /* Schedule */,
@@ -435,7 +440,9 @@
 		D2A2B36C2C40EB9200164139 /* Device */ = {
 			isa = PBXGroup;
 			children = (
+				2E522BDC2C4ACBC800FFA145 /* Profile */,
 				D2A2B36D2C40EBA500164139 /* NewDeviceView.swift */,
+				2E522BDF2C4ACC1900FFA145 /* Profile.swift */,
 				D2FF28142C45521A0033A404 /* DeviceListView.swift */,
 				D2FF28162C45524B0033A404 /* SettingsDeviceListView.swift */,
 				D2FF28182C4552690033A404 /* DeviceTileView.swift */,
@@ -455,9 +462,9 @@
 		D2FF280D2C454FC80033A404 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D2FF28102C4550DF0033A404 /* DeviceModel.swift */,
 				D2A2B36F2C40EE0900164139 /* Plant.swift */,
 				D2FF280E2C454FED0033A404 /* RepeatWatering.swift */,
-				D2FF28102C4550DF0033A404 /* DeviceModel.swift */,
 				2E522BEA2C4AF7F600FFA145 /* DateModel.swift */,
 			);
 			path = Models;
@@ -584,7 +591,7 @@
 			files = (
 				D20682AD2C3B9E3E00C4A319 /* Preview Assets.xcassets in Resources */,
 				D20682AA2C3B9E3E00C4A319 /* Assets.xcassets in Resources */,
-				D21D55102C3EC0D700B47123 /* Localizable.xcstrings in Resources */,
+				C3DCB4062C4E813E00359B46 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,6 +605,7 @@
 				C3DCB3F42C4AAB0A00359B46 /* EventStore.swift in Sources */,
 				C3DCB3CB2C4AA94400359B46 /* WaterWidgetBundle.swift in Sources */,
 				C3DCB3CD2C4AA94400359B46 /* WaterWidget.swift in Sources */,
+				C3DCB4042C4E4B3700359B46 /* DTOs.swift in Sources */,
 				C3DCB3EB2C4AA9BA00359B46 /* ConfigurationIntent.intentdefinition in Sources */,
 				C3DCB3F02C4AAAEA00359B46 /* EventItem.swift in Sources */,
 			);
@@ -692,6 +700,7 @@
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = WaterWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FUD5CPHJR9;
@@ -709,7 +718,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = su.brf.apps.PlantPal.WaterWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = su.brf.apps.PlantPal.WaterWidgets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
@@ -725,6 +734,7 @@
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = WaterWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FUD5CPHJR9;
@@ -742,7 +752,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = su.brf.apps.PlantPal.WaterWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = su.brf.apps.PlantPal.WaterWidgets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -755,6 +765,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_ENTITLEMENTS = ConfigurationIntent/ConfigurationIntent.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FUD5CPHJR9;
@@ -772,7 +783,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = su.brf.apps.PlantPal.ConfigurationIntent;
+				PRODUCT_BUNDLE_IDENTIFIER = su.brf.apps.PlantPal.ConfigurationIntents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
@@ -786,6 +797,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_ENTITLEMENTS = ConfigurationIntent/ConfigurationIntent.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FUD5CPHJR9;
@@ -803,7 +815,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = su.brf.apps.PlantPal.ConfigurationIntent;
+				PRODUCT_BUNDLE_IDENTIFIER = su.brf.apps.PlantPal.ConfigurationIntents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -932,6 +944,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PlantApp/PlantApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PlantApp/Preview Content\"";
@@ -966,6 +979,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PlantApp/PlantApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PlantApp/Preview Content\"";

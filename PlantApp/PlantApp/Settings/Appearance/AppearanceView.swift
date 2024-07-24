@@ -2,7 +2,7 @@
 //  AppearanceView.swift
 //  PlantApp
 //
-//  Created by Lucy Rez on 08.07.2024.
+//  Created by ProSkyMishka on 08.07.2024.
 //
 
 import SwiftUI

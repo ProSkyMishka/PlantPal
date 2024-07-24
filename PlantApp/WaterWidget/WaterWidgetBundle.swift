@@ -2,7 +2,7 @@
 //  Placeholder.swift
 //  EventsWidget
 //
-//  Created by Gregor Hermanowski on 24. March 2022.
+//  Created by ProSkyMishka on 08.07.2024.
 //
 
 import SwiftUI
@@ -28,9 +28,7 @@ struct Placeholder: View {
                 
                 Spacer()
             }
-            .padding(.top)
-            
-            Spacer()
+            .padding(.bottom, 15)
         }
         .overlay(alignment: .topLeading) {
             WidgetDate()

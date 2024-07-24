@@ -24,6 +24,7 @@ class Plant: Comparable {
     var imageURL: String = ""
     var seconds: Int = 0
     var watering: [Date] = []
+    var nextWatering: Date = Date()
     var waterInterval: Int = 0 // Один полив в n дней
     var device: Device?
     var numberOfRepeats: Int = 0

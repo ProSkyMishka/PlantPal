@@ -15,8 +15,8 @@ struct ChangableAvatarView: View
     
     var body: some View {
         PlantImage(imageState: viewModel.imageState)
-            .frame(width: UIScreen.main.bounds.width - 5, height: UIScreen.main.bounds.width - 5)
-            .cornerRadius(15)
+            .frame(width: UIScreen.main.bounds.width - 40, height: UIScreen.main.bounds.width - 40)
+//            .cornerRadius(15)
             .overlay(alignment: .center) {
                 PhotosPicker(selection: $viewModel.imageSelection, matching: .images, photoLibrary: .shared()) {
                     Circle()

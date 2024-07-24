@@ -156,7 +156,7 @@ struct AddPlantView: View {
         let boundary = UUID().uuidString
         
         let session = URLSession.shared
-        var urlRequest = URLRequest(url: URL(string: "\(Constants.ngrokModels)/predict/plant")!)
+        var urlRequest = URLRequest(url: URL(string: "\(Constants.urlModelsServer)/predict/plant")!)
         print(urlRequest)
         
         urlRequest.httpMethod = "POST"

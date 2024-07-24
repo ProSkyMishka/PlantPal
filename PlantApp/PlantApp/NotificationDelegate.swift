@@ -2,7 +2,7 @@
 //  NotificationDelegate.swift
 //  PlantApp
 //
-//  Created by Lucy Rez on 16.07.2024.
+//  Created by ProSkyMishka on 16.07.2024.
 //
 
 import Foundation
